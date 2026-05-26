@@ -1,7 +1,7 @@
 "use client";
 import { useState, useMemo, useEffect } from "react";
 import { QUESTIONS_DB } from "./lib/questions";
-import { FORMATION, TEAM_ORDER } from "./lib/game";
+import { FORMATION } from "./lib/game";
 import { playSound } from "./lib/sounds";
 
 // --- CONFIGURACIÓN Y TIPOS ---
@@ -23,7 +23,7 @@ export default function SoccerQuizTriangular() {
   const [currentQ, setCurrentQ] = useState(QUESTIONS_DB[0]);
   const [usedQuestions, setUsedQuestions] = useState<number[]>([]);
   const [timeLeft, setTimeLeft] = useState(40);
-  const [isDarkTheme, setIsDarkTheme] = useState(true);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   // Timer de 40 segundos
   useEffect(() => {
@@ -40,23 +40,9 @@ export default function SoccerQuizTriangular() {
     }, 1000);
     
     return () => clearInterval(timer);
-  }, [teams, possession]);
+  }, [teams]);
 
-  // Aplicar tema al documento
-  useEffect(() => {
-    const htmlElement = document.documentElement;
-    if (isDarkTheme) {
-      htmlElement.classList.remove('light-theme');
-      htmlElement.classList.add('dark-theme');
-      document.body.classList.remove('light-theme');
-      document.body.classList.add('dark-theme');
-    } else {
-      htmlElement.classList.remove('dark-theme');
-      htmlElement.classList.add('light-theme');
-      document.body.classList.remove('dark-theme');
-      document.body.classList.add('light-theme');
-    }
-  }, [isDarkTheme]);
+  // No es necesario aplicar clases al documento, Tailwind maneja esto automáticamente
 
   // Obtener preguntas disponibles (equipos seleccionados + Argentina)
   const availableQuestions = useMemo(() => {
@@ -380,19 +366,20 @@ export default function SoccerQuizTriangular() {
                     ✅ {opt}
                   </button>
                 ))}
-                {/* Botón para "Mal el pase" */}
-                <button 
-                  onClick={() => handleShortPassOption(false)}
-                  className={`p-5 font-black rounded-xl transition-all text-sm uppercase ${
-                    isDarkTheme
-                      ? 'bg-red-900/30 border-2 border-red-600 text-red-400 hover:bg-red-900/50'
-                      : 'bg-red-100 border-2 border-red-400 text-red-600 hover:bg-red-200'
-                  }`}
-                >
-                  ❌ Mal el Pase
-                </button>
               </div>
             )}
+            
+            {/* Botón "Mal el Pase" siempre visible */}
+            <button 
+              onClick={() => handleShortPassOption(false)}
+              className={`p-5 font-black rounded-xl transition-all text-sm uppercase w-full ${
+                isDarkTheme
+                  ? 'bg-red-900/30 border-2 border-red-600 text-red-400 hover:bg-red-900/50'
+                  : 'bg-red-100 border-2 border-red-400 text-red-600 hover:bg-red-200'
+              }`}
+            >
+              ❌ Mal el Pase
+            </button>
           </div>
         </div>
       </div>
@@ -401,8 +388,8 @@ export default function SoccerQuizTriangular() {
       <div className={`flex-[1.2] relative flex items-center justify-center p-6 ${isDarkTheme ? 'bg-zinc-950' : 'bg-slate-100'}`}>
         <div className={`relative w-full max-w-[380px] aspect-[3/4] border-2 rounded-sm overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] ${
           isDarkTheme
-            ? 'border-white/10 bg-emerald-900/5'
-            : 'border-slate-400/30 bg-emerald-100/10'
+            ? 'border-white/10 bg-emerald-900/20'
+            : 'border-slate-400/40 bg-emerald-100/40'
         }`}>
           {/* Línea central */}
           <div className={`absolute top-1/2 w-full h-px ${isDarkTheme ? 'bg-white/10' : 'bg-slate-400/30'}`} />
@@ -452,7 +439,14 @@ function ScoreItem({ team, flag, score, isPlaying, color, isDark }: { team: stri
   );
 }
 
-function PlayerCircle({ pos, color, isVisible, isBallOwner }: { pos: any, color: string, isVisible: boolean, isBallOwner: boolean }) {
+interface PlayerPosition {
+  id: number;
+  role: "DEF" | "5" | "VOL" | "ENG" | "9";
+  top: number;
+  left: number;
+}
+
+function PlayerCircle({ pos, color, isVisible, isBallOwner }: { pos: PlayerPosition, color: string, isVisible: boolean, isBallOwner: boolean }) {
   return (
     <div
       className={`absolute w-8 h-8 rounded-full border border-white/40 transition-all duration-700 shadow-xl
