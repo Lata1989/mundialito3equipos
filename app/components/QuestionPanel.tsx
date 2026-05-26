@@ -34,9 +34,18 @@ export default function QuestionPanel({
     );
   }
 
-  const isShotAction = possessionRole === "9" || possessionRole === "ENG";
-  const primaryButtonText = isShotAction ? "⚽ ¡Tirar al Arco!" : "Dar Pase Largo";
-  const alternateButtonText = possessionRole === "9" ? "Tiro Colocado (Opciones)" : "Pase Corto (Opciones)";
+  // Definición de etiquetas dinámicas según la posición táctica
+  const getButtonsConfig = () => {
+    if (possessionRole === "9") {
+      return { primary: "🚀 Tiro Fuerte (¡Gol Directo!)", alternate: "🎯 Tiro Colocado (Opciones)" };
+    }
+    if (possessionRole === "ENG") {
+      return { primary: "🚀 Tiro Fuerte (¡Gol Directo!)", alternate: "🎯 Pase Corto (Opciones)" };
+    }
+    return { primary: "🔫 Dar Pase Largo", alternate: "🎯 Pase Corto (Opciones)" };
+  };
+
+  const { primary, alternate } = getButtonsConfig();
 
   return (
     <>
@@ -50,7 +59,7 @@ export default function QuestionPanel({
               type="text"
               value={userInput}
               onChange={(e) => setUserInput(e.target.value)}
-              className="w-full bg-zinc-900 border-b-4 border-blue-600 p-5 text-2xl font-black outline-none placeholder:text-zinc-800 uppercase focus:bg-zinc-800/50 transition-colors"
+              className="w-full bg-zinc-900 border-b-4 border-blue-600 p-5 text-2xl font-black outline-none placeholder:text-zinc-800 uppercase focus:bg-zinc-800/50 transition-colors text-white"
               placeholder="Respuesta..."
               onKeyDown={(e) => e.key === "Enter" && onAnswer(userInput)}
               autoFocus
@@ -59,26 +68,47 @@ export default function QuestionPanel({
               onClick={() => onAnswer(userInput)}
               className="w-full bg-white text-black p-5 font-black uppercase text-xl hover:bg-zinc-200 transition-transform active:scale-95 shadow-lg"
             >
-              {primaryButtonText}
+              {primary}
             </button>
             <button
               onClick={onToggleMultipleChoice}
               className="w-full border-2 border-zinc-800 p-3 font-black text-zinc-500 text-xs hover:text-white transition-colors uppercase tracking-widest"
             >
-              {alternateButtonText}
+              {alternate}
             </button>
           </>
         ) : (
-          <div className="grid grid-cols-1 gap-2">
-            {currentQ.options.map((opt) => (
+          <div className="space-y-4">
+            <div className="text-xs font-black text-blue-500 uppercase tracking-widest">
+              {possessionRole === "9" ? "Opciones del Tiro Colocado:" : "Opciones del Pase Corto:"}
+            </div>
+            
+            <div className="grid grid-cols-1 gap-2">
+              {currentQ.options.map((opt) => (
+                <div
+                  key={opt}
+                  className="p-4 bg-zinc-900 border border-zinc-800 rounded-xl font-black uppercase text-sm text-zinc-300"
+                >
+                  • {opt}
+                </div>
+              ))}
+            </div>
+
+            {/* Decisiones del Docente */}
+            <div className="grid grid-cols-2 gap-2 pt-2">
               <button
-                key={opt}
-                onClick={() => onAnswer(opt)}
-                className="p-5 text-left bg-zinc-900 border border-zinc-800 rounded-xl font-black hover:border-blue-500 transition-all uppercase text-sm"
+                onClick={() => onAnswer(currentQ.answer)}
+                className="p-4 bg-green-600 text-white font-black uppercase text-sm rounded-xl hover:bg-green-700 transition-colors"
               >
-                {opt}
+                {possessionRole === "9" ? "⚽ Registrar GOL" : "✅ Confirmar Pase"}
               </button>
-            ))}
+              <button
+                onClick={() => onAnswer("INCORRECT_MANUAL_TRIGGER")}
+                className="p-4 bg-red-600 text-white font-black uppercase text-sm rounded-xl hover:bg-red-700 transition-colors"
+              >
+                {possessionRole === "9" ? "❌ Tiro Errado" : "❌ Pase Fallido"}
+              </button>
+            </div>
           </div>
         )}
       </div>
