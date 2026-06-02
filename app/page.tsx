@@ -66,7 +66,7 @@ export default function SoccerQuizTriangular() {
   const [poolQuestions, setPoolQuestions] = useState<any[]>([]);
   const [currentQ, setCurrentQ] = useState<any>(null);
 
-  const [timeLeft, setTimeLeft] = useState(40);
+  const [timeLeft, setTimeLeft] = useState(30);
   const [isTimerRunning, setIsTimerRunning] = useState(false); 
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
@@ -102,7 +102,7 @@ export default function SoccerQuizTriangular() {
       setTimeLeft((prev) => {
         if (prev <= 1) {
           handleTimeOut();
-          return 40;
+          return 30;
         }
         return prev - 1;
       });
@@ -248,7 +248,7 @@ export default function SoccerQuizTriangular() {
       const nextRole = getRecoveryRole(prev.role);
       return { team: nextTeam, role: nextRole };
     });
-    setTimeLeft(40);
+    setTimeLeft(30);
     setIsMultipleChoice(false);
     advanceToNextPlay();
   };
@@ -256,7 +256,7 @@ export default function SoccerQuizTriangular() {
   const handleSkipQuestion = () => {
     setIsTimerRunning(false);
     setIsMultipleChoice(false);
-    setTimeLeft(40);
+    setTimeLeft(30);
     advanceToNextPlay();
   };
 
@@ -274,7 +274,7 @@ export default function SoccerQuizTriangular() {
         team: getDefenderTeam(prev.team),
         role: getRecoveryRole(prev.role),
       }));
-      setTimeLeft(40);
+      setTimeLeft(30);
       setIsMultipleChoice(false);
       advanceToNextPlay();
     } else if (buttonType === "mal-pase") {
@@ -283,7 +283,7 @@ export default function SoccerQuizTriangular() {
         team: getDefenderTeam(prev.team),
         role: getRecoveryRole(prev.role),
       }));
-      setTimeLeft(40);
+      setTimeLeft(30);
       setIsMultipleChoice(false);
       advanceToNextPlay();
     } else if (buttonType === "pase-largo") {
@@ -292,7 +292,7 @@ export default function SoccerQuizTriangular() {
       const currentIndex = roles.indexOf(possession.role as any);
       let nextIndex = Math.min(currentIndex + 2, roles.length - 1);
       setPossession((prev) => ({ ...prev, role: roles[nextIndex] }));
-      setTimeLeft(40);
+      setTimeLeft(30);
       setIsMultipleChoice(false);
       advanceToNextPlay();
     } else if (buttonType === "pase-corto") {
@@ -328,7 +328,7 @@ export default function SoccerQuizTriangular() {
       }));
     }
 
-    setTimeLeft(40);
+    setTimeLeft(30);
     setIsMultipleChoice(false);
     advanceToNextPlay();
   };
@@ -407,13 +407,13 @@ export default function SoccerQuizTriangular() {
               <>
                 {possession.role === "9" ? (
                   <>
-                    <button onClick={() => handleButtonClick("gol")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-orange-600 text-white border-orange-600 hover:bg-orange-700">🚀 Reventar el Arco</button>
+                    <button onClick={() => handleButtonClick("gol")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-orange-600 text-white border-orange-600 hover:bg-orange-700">🚀 Reventar el Arco (GOOOOL!!!!)</button>
                     <button onClick={() => handleButtonClick("pase-corto")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-blue-600 text-white border-blue-600 hover:bg-blue-700">🎯 Tiro colocado (Ver Opciones)</button>
                     <button onClick={() => handleButtonClick("mal-pase")} className={`w-full p-4 font-black rounded-lg transition-all text-base uppercase border-2 ${isDarkTheme ? "bg-red-900/20 border-red-800 text-red-400 hover:bg-red-900/40" : "bg-red-50 border-red-300 text-red-600 hover:bg-red-100"}`}>❌ Tirarla a la tribuna</button>
                   </>
                 ) : possession.role === "ENG" ? (
                   <>
-                    <button onClick={() => handleButtonClick("gol")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-orange-600 text-white border-orange-600 hover:bg-orange-700">🚀 Tiro fuerte (¡Gol Directo!)</button>
+                    <button onClick={() => handleButtonClick("gol")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-orange-600 text-white border-orange-600 hover:bg-orange-700">🚀 Tiro fuerte (¡Gol!)</button>
                     <button onClick={() => handleButtonClick("pase-corto")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-blue-600 text-white border-blue-600 hover:bg-blue-700">🎯 Pase corto (Ver Opciones)</button>
                     <button onClick={() => handleButtonClick("mal-pase")} className={`w-full p-4 font-black rounded-lg transition-all text-base uppercase border-2 ${isDarkTheme ? "bg-red-900/20 border-red-800 text-red-400 hover:bg-red-900/40" : "bg-red-50 border-red-300 text-red-600 hover:bg-red-100"}`}>❌ Mal pase</button>
                   </>
