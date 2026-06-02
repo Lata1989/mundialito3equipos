@@ -31,10 +31,11 @@ const BANDERAS: Record<string, string> = {
   Noruega: "🇳🇴",
 };
 
-type Role = "DEF" | "5" | "VOL" | "ENG" | "9";
+type Role = "ARQ" | "DEF" | "5" | "VOL" | "ENG" | "9";
 type TeamColor = "blue" | "red" | "white";
 
 const DORSALES: Record<Role, string> = {
+  ARQ: "1",
   DEF: "2",
   "5": "5",
   VOL: "8",
@@ -73,6 +74,42 @@ export default function SoccerQuizTriangular() {
   const recentPasesLargos = useRef<string[]>([]);
   const recentGoles = useRef<string[]>([]);
   const recentErrores = useRef<string[]>([]);
+
+  // --- HOOKS DE OPTIMIZACIÓN (SIEMPRE ARRIBA DE TODO) ---
+  const availableQuestionsPool = useMemo(() => {
+    if (!teams || !teams.blue || !teams.red || !teams.white) return [];
+    const allowedCountries = [teams.blue, teams.red, teams.white, "Argentina"];
+    return QUESTIONS_DB.filter((q) => allowedCountries.includes(q.country));
+  }, [teams]);
+
+  // Modificado: El useMemo del arquero ahora vive arriba con sus hermanos hooks
+  const completeFormation = useMemo<PlayerPosition[]>(() => {
+    const baseFields = FORMATION as any[];
+    const goalkeeper: PlayerPosition = { 
+      id: 99, 
+      role: "ARQ" as Role, 
+      top: 97, 
+      left: 50 
+    };
+    return [goalkeeper, ...baseFields];
+  }, []);
+
+  // --- TIMER ---
+  useEffect(() => {
+    if (!teams || !teams.white || !isTimerRunning) return;
+
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          handleTimeOut();
+          return 40;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [teams, possession, isTimerRunning]);
 
   // --- REPRODUCTOR DE AUDIOS ---
   const triggerAudio = (
@@ -167,29 +204,6 @@ export default function SoccerQuizTriangular() {
     return "blue";
   };
 
-  // --- TIMER ---
-  useEffect(() => {
-    if (!teams || !teams.white || !isTimerRunning) return;
-
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev <= 1) {
-          handleTimeOut();
-          return 40;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [teams, possession, isTimerRunning]);
-
-  const availableQuestionsPool = useMemo(() => {
-    if (!teams || !teams.blue || !teams.red || !teams.white) return [];
-    const allowedCountries = [teams.blue, teams.red, teams.white, "Argentina"];
-    return QUESTIONS_DB.filter((q) => allowedCountries.includes(q.country));
-  }, [teams]);
-
   const advanceToNextPlay = (updatedPool?: any[]) => {
     const currentPool = updatedPool || poolQuestions;
 
@@ -239,7 +253,6 @@ export default function SoccerQuizTriangular() {
     advanceToNextPlay();
   };
 
-  // --- BOTÓN DE CAMBIAR PREGUNTA ---
   const handleSkipQuestion = () => {
     setIsTimerRunning(false);
     setIsMultipleChoice(false);
@@ -320,6 +333,7 @@ export default function SoccerQuizTriangular() {
     advanceToNextPlay();
   };
 
+  // RENDERS TERMPRANOS DESPUÉS DE DECLARAR TODOS LOS HOOKS
   if (!teams || !teams.white) {
     return (
       <div className={`flex flex-col items-center justify-center min-h-screen p-6 text-center transition-colors duration-300 ${isDarkTheme ? "bg-zinc-950 text-white" : "bg-slate-100 text-slate-900"}`}>
@@ -341,7 +355,6 @@ export default function SoccerQuizTriangular() {
 
   const activeDefenderTeam = getDefenderTeam(possession.team);
   const currentTeamName = teams[possession.team];
-  const originalFormation = FORMATION as PlayerPosition[];
 
   const getDynamicPosition = (p: PlayerPosition, currentRenderColor: TeamColor) => {
     if (possession.team === currentRenderColor) {
@@ -373,20 +386,16 @@ export default function SoccerQuizTriangular() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
               </span>
-              Ataca: {BANDERAS[currentTeamName]} {currentTeamName} (Dorsal {DORSALES[possession.role]})
+              Ataca: {BANDERAS[currentTeamName]} {currentTeamName} (Dorsal {DORSALES[possession.role] || "1"})
             </span>
           </div>
 
           <div className="mb-4 flex flex-wrap items-center gap-3 bg-black/5 dark:bg-white/5 p-3 rounded-2xl border border-slate-300 dark:border-zinc-800 w-full justify-between sm:w-fit">
             <div className={`text-3xl font-black tabular-nums ${timeLeft <= 10 ? "text-red-500 animate-pulse" : ""}`}>⏱️ {timeLeft}s</div>
             <div className="flex flex-wrap gap-1.5">
-              <button onClick={() => setIsTimerRunning(true)} className={`px-2.5 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all active:scale-95 ${isTimerRunning ? "bg-green-600 text-white opacity-40 cursor-not-allowed" : "bg-green-600 text-white hover:bg-green-700 shadow-md"}`} disabled={isTimerRunning}>▶️ Iniciar</button>
+              <button onClick={() => setIsTimerRunning(true)} className={`px-2.5 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all active:scale-95 ${isTimerRunning ? "bg-green-600 text-white opacity-40 cursor-not-allowed" : "bg-green-600 text-white hover:bg-green-700 shadow-md"}`} disabled={isTimerRunning}>▶️ Play</button>
               <button onClick={() => setIsTimerRunning(false)} className={`px-2.5 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all active:scale-95 ${!isTimerRunning ? "bg-amber-500 text-white opacity-40 cursor-not-allowed" : "bg-amber-500 text-white hover:bg-amber-600 shadow-md"}`} disabled={!isTimerRunning}>⏸️ Pausa</button>
-              
-              {/* BOTÓN NUEVO DE CAMBIAR PREGUNTA */}
-              <button onClick={handleSkipQuestion} className={`px-2.5 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all active:scale-95 bg-indigo-600 text-white hover:bg-indigo-700 shadow-md border-b-2 border-indigo-800`}>
-                🔄 Cambiar
-              </button>
+              <button onClick={handleSkipQuestion} className={`px-2.5 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all active:scale-95 bg-indigo-600 text-white hover:bg-indigo-700 shadow-md border-b-2 border-indigo-800`}>🔄 Cambiar</button>
             </div>
           </div>
 
@@ -398,15 +407,15 @@ export default function SoccerQuizTriangular() {
               <>
                 {possession.role === "9" ? (
                   <>
-                    <button onClick={() => handleButtonClick("gol")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-orange-600 text-white border-orange-600 hover:bg-orange-700">🚀 Reventar el arquero</button>
+                    <button onClick={() => handleButtonClick("gol")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-orange-600 text-white border-orange-600 hover:bg-orange-700">🚀 Reventar el Arco</button>
                     <button onClick={() => handleButtonClick("pase-corto")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-blue-600 text-white border-blue-600 hover:bg-blue-700">🎯 Tiro colocado (Ver Opciones)</button>
                     <button onClick={() => handleButtonClick("mal-pase")} className={`w-full p-4 font-black rounded-lg transition-all text-base uppercase border-2 ${isDarkTheme ? "bg-red-900/20 border-red-800 text-red-400 hover:bg-red-900/40" : "bg-red-50 border-red-300 text-red-600 hover:bg-red-100"}`}>❌ Tirarla a la tribuna</button>
                   </>
                 ) : possession.role === "ENG" ? (
                   <>
-                    <button onClick={() => handleButtonClick("gol")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-orange-600 text-white border-orange-600 hover:bg-orange-700">🚀 Remate desde afuera</button>
+                    <button onClick={() => handleButtonClick("gol")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-orange-600 text-white border-orange-600 hover:bg-orange-700">🚀 Tiro fuerte (¡Gol Directo!)</button>
                     <button onClick={() => handleButtonClick("pase-corto")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-blue-600 text-white border-blue-600 hover:bg-blue-700">🎯 Pase corto (Ver Opciones)</button>
-                    <button onClick={() => handleButtonClick("mal-pase")} className={`w-full p-4 font-black rounded-lg transition-all text-base uppercase border-2 ${isDarkTheme ? "bg-red-900/20 border-red-800 text-red-400 hover:bg-red-900/40" : "bg-red-50 border-red-300 text-red-600 hover:bg-red-100"}`}>❌ Pifiaaaa!!!</button>
+                    <button onClick={() => handleButtonClick("mal-pase")} className={`w-full p-4 font-black rounded-lg transition-all text-base uppercase border-2 ${isDarkTheme ? "bg-red-900/20 border-red-800 text-red-400 hover:bg-red-900/40" : "bg-red-50 border-red-300 text-red-600 hover:bg-red-100"}`}>❌ Mal pase</button>
                   </>
                 ) : (
                   <>
@@ -447,7 +456,7 @@ export default function SoccerQuizTriangular() {
           <div className="absolute bottom-0 left-1/2 w-[30%] h-[6%] border-t-[3px] border-x-[3px] border-white/30 -translate-x-1/2" />
           <div className="absolute inset-3 border-2 border-white/20 rounded-lg pointer-events-none" />
 
-          {originalFormation.map((p) => {
+          {completeFormation.map((p) => {
             const bluePos = getDynamicPosition(p, "blue");
             const redPos = getDynamicPosition(p, "red");
             const whitePos = getDynamicPosition(p, "white");
@@ -497,9 +506,12 @@ function ScoreItem({ team, flag, score, isPlaying, color, isDark }: { team: stri
 }
 
 function PlayerCircle({ pos, color, isVisible, isBallOwner, role }: { pos: { top: number; left: number }; color: string; isVisible: boolean; isBallOwner: boolean; role: Role }) {
+  const isArq = role === "ARQ";
+  
   return (
     <div
-      className={`absolute w-12 h-12 rounded-full border-2 border-white/70 transition-all duration-500 shadow-xl flex items-center justify-center font-black text-sm text-black
+      className={`absolute w-12 h-12 rounded-full border-2 transition-all duration-500 shadow-xl flex items-center justify-center font-black text-sm text-black
+        ${isArq ? "border-yellow-300 scale-95" : "border-white/70"}
         ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-50 pointer-events-none"}
         ${isBallOwner ? `scale-[1.4] z-50 ring-4 ring-yellow-400 shadow-[0_0_35px_rgba(250,204,21,0.7)] ${color}` : `${color}`}
       `}
