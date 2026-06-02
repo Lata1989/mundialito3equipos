@@ -82,7 +82,6 @@ export default function SoccerQuizTriangular() {
     return QUESTIONS_DB.filter((q) => allowedCountries.includes(q.country));
   }, [teams]);
 
-  // Modificado: El useMemo del arquero ahora vive arriba con sus hermanos hooks
   const completeFormation = useMemo<PlayerPosition[]>(() => {
     const baseFields = FORMATION as any[];
     const goalkeeper: PlayerPosition = { 
@@ -272,7 +271,7 @@ export default function SoccerQuizTriangular() {
       }));
       setPossession((prev) => ({
         team: getDefenderTeam(prev.team),
-        role: getRecoveryRole(prev.role),
+        role: "5", // CORREGIDO: El equipo que recibe el gol saca desde el medio con el '5'
       }));
       setTimeLeft(30);
       setIsMultipleChoice(false);
@@ -311,7 +310,7 @@ export default function SoccerQuizTriangular() {
         }));
         setPossession((prev) => ({
           team: getDefenderTeam(prev.team),
-          role: getRecoveryRole(prev.role),
+          role: "5", // CORREGIDO: Al definir colocado y meter gol, también saca el '5' rival
         }));
       } else {
         triggerAudio("pase-corto");
@@ -333,7 +332,7 @@ export default function SoccerQuizTriangular() {
     advanceToNextPlay();
   };
 
-  // RENDERS TERMPRANOS DESPUÉS DE DECLARAR TODOS LOS HOOKS
+  // RENDERS TEMPRANOS DESPUÉS DE DECLARAR TODOS LOS HOOKS
   if (!teams || !teams.white) {
     return (
       <div className={`flex flex-col items-center justify-center min-h-screen p-6 text-center transition-colors duration-300 ${isDarkTheme ? "bg-zinc-950 text-white" : "bg-slate-100 text-slate-900"}`}>
