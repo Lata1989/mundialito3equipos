@@ -25,14 +25,47 @@ export default function SoccerQuizTriangular() {
   const [timeLeft, setTimeLeft] = useState(40);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
+  // --- REPRODUCTOR DE AUDIOS DINÁMICO ---
+  const triggerAudio = (type: 'pase-corto' | 'pase-largo' | 'gol' | 'error' | 'incorrecta') => {
+    let audioFile = '';
+
+    switch (type) {
+      case 'pase-corto':
+        const pasesCortos = ['PASE CORTO.m4a', 'PASE CORTO CENTURION (1).m4a', 'PASE CORTO MARADONA.m4a'];
+        audioFile = pasesCortos[Math.floor(Math.random() * pasesCortos.length)];
+        break;
+      case 'pase-largo':
+        const pasesLargos = ['PASE LARGO.m4a', 'BRRR PASE LARGO.m4a', 'PASE LARGO INVENTE.m4a', 'PASE LARGO MARADONA .m4a', 'PASE LARGO POCHO.m4a', 'PASE LARGO POMELO.m4a', 'pase largo vignolo.m4a'];
+        audioFile = pasesLargos[Math.floor(Math.random() * pasesLargos.length)];
+        break;
+      case 'gol':
+        const goles = ['gol 1.m4a', 'gol 2.m4a', 'gol 3.m4a', 'gol almiron.m4a', 'gola.m4a', 'GOL BENZEMAAAA.m4a', 'gol canrtalo cantalo.m4a', 'GOL DI MARIA.m4a', 'GOL PALERMO .m4a', 'relato gol araujo.m4a', 'marteee gol araujo.m4a'];
+        audioFile = goles[Math.floor(Math.random() * goles.length)];
+        break;
+      case 'error':
+        // Tenés del 1 al 17 en tu carpeta public/sounds
+        const randomNum = Math.floor(Math.random() * 17) + 1;
+        audioFile = `pase incorrecto ${randomNum}.m4a`;
+        break;
+      case 'incorrecta':
+        audioFile = 'incorrecta respuesta.m4a';
+        break;
+    }
+
+    if (audioFile) {
+      const audio = new Audio(`/sounds/${audioFile}`);
+      audio.play().catch(err => console.log("Error al reproducir audio:", err));
+    }
+  };
+
   // Lógica estricta de recuperaciones según quién pierde el balón
   const getRecoveryRole = (currentRole: Role): Role => {
     switch (currentRole) {
-      case "DEF": return "9";      // Si la pierde el 2 (DEF) -> recupera el 9 rival
-      case "9": return "DEF";       // Si la pierde el 9 -> recupera el 2 (DEF) rival
-      case "5": return "ENG";       // Si la pierde el 5 -> recupera el ENG rival
-      case "ENG": return "5";       // Si la pierde el ENG -> recupera el 5 rival
-      case "VOL": return "VOL";     // Si la pierde el VOL -> recupera el VOL rival
+      case "DEF": return "9";
+      case "9": return "DEF";
+      case "5": return "ENG";
+      case "ENG": return "5";
+      case "VOL": return "VOL";
       default: return "5";
     }
   };
@@ -59,7 +92,7 @@ export default function SoccerQuizTriangular() {
     }, 1000);
     
     return () => clearInterval(timer);
-  }, [teams, possession]); // Añadido possession para sincronizar correctamente el timer
+  }, [teams, possession]);
 
   // Obtener preguntas disponibles
   const availableQuestions = useMemo(() => {
@@ -100,6 +133,7 @@ export default function SoccerQuizTriangular() {
   };
 
   const handleTimeOut = () => {
+    triggerAudio('incorrecta');
     setPossession(prev => {
       const nextTeam = getDefenderTeam(prev.team);
       const nextRole = getRecoveryRole(prev.role);
@@ -113,10 +147,9 @@ export default function SoccerQuizTriangular() {
   // Botones del flujo principal
   const handleButtonClick = (buttonType: 'pase-largo' | 'pase-corto' | 'mal-pase' | 'gol') => {
     if (buttonType === 'gol') {
-      playSound('gol');
+      triggerAudio('gol');
       setScore(prev => ({ ...prev, [possession.team]: prev[possession.team] + 1 }));
       
-      // Reinicio de ronda ordenado: Pasa al rival y recupera según el rol que anotó/tenía la pelota
       setPossession(prev => {
         const nextTeam = getDefenderTeam(prev.team);
         const nextRole = getRecoveryRole(prev.role);
@@ -127,9 +160,8 @@ export default function SoccerQuizTriangular() {
       setIsMultipleChoice(false);
       setCurrentQ(getNextQuestion());
     } else if (buttonType === 'mal-pase') {
-      playSound('perdida');
+      triggerAudio('error');
       
-      // Pérdida inmediata: Cambia de equipo atómicamente usando el estado previo exacto
       setPossession(prev => {
         const nextTeam = getDefenderTeam(prev.team);
         const nextRole = getRecoveryRole(prev.role);
@@ -140,7 +172,7 @@ export default function SoccerQuizTriangular() {
       setIsMultipleChoice(false);
       setCurrentQ(getNextQuestion());
     } else if (buttonType === 'pase-largo') {
-      playSound('pase-largo');
+      triggerAudio('pase-largo');
       const roles: Role[] = ["DEF", "5", "VOL", "ENG", "9"];
       const currentIndex = roles.indexOf(possession.role);
       let nextIndex = Math.min(currentIndex + 2, roles.length - 1);
@@ -150,16 +182,16 @@ export default function SoccerQuizTriangular() {
       setIsMultipleChoice(false);
       setCurrentQ(getNextQuestion());
     } else if (buttonType === 'pase-corto') {
-      playSound('pase-corto');
+      // Al tocar Pase Corto solo abrimos el menú de opciones, el sonido va cuando se decide el éxito o fracaso
       setIsMultipleChoice(true);
     }
   };
 
-  // Resoluciones manuales del docente dentro del panel de opciones abiertas (Pase corto / Tiro colocado)
+  // Resoluciones manuales del docente
   const handleMenuDecision = (isSuccess: boolean) => {
     if (isSuccess) {
       if (possession.role === "9") {
-        playSound('gol');
+        triggerAudio('gol');
         setScore(prev => ({ ...prev, [possession.team]: prev[possession.team] + 1 }));
         setPossession(prev => {
           const nextTeam = getDefenderTeam(prev.team);
@@ -167,14 +199,14 @@ export default function SoccerQuizTriangular() {
           return { team: nextTeam, role: nextRole };
         });
       } else {
-        playSound('pase-corto');
+        triggerAudio('pase-corto');
         const roles: Role[] = ["DEF", "5", "VOL", "ENG", "9"];
         const currentIndex = roles.indexOf(possession.role);
         let nextIndex = Math.min(currentIndex + 1, roles.length - 1);
         setPossession(prev => ({ ...prev, role: roles[nextIndex] }));
       }
     } else {
-      playSound('perdida');
+      triggerAudio('error');
       setPossession(prev => {
         const nextTeam = getDefenderTeam(prev.team);
         const nextRole = getRecoveryRole(prev.role);
@@ -224,7 +256,6 @@ export default function SoccerQuizTriangular() {
     );
   }
 
-  // Determinar quién defiende para renderizar la cancha
   const activeDefenderTeam = getDefenderTeam(possession.team);
 
   return (
@@ -385,14 +416,23 @@ export default function SoccerQuizTriangular() {
         </div>
       </div>
 
-      {/* Campo de Fútbol */}
+      {/* Campo de Fútbol con Fondo Temático (La Bombonera) */}
       <div className={`flex-[1.2] relative flex items-center justify-center p-6 ${isDarkTheme ? 'bg-zinc-950' : 'bg-slate-100'}`}>
-        <div className={`relative w-full max-w-[380px] aspect-[3/4] border-2 rounded-sm overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] ${
-          isDarkTheme ? 'border-white/10 bg-emerald-900/20' : 'border-slate-400/40 bg-emerald-100/40'
-        }`}>
-          <div className={`absolute top-1/2 w-full h-px ${isDarkTheme ? 'bg-white/10' : 'bg-slate-400/30'}`} />
+        <div 
+          className={`relative w-full max-w-[380px] aspect-[3/4] border-2 rounded-sm overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] transition-colors duration-300 bg-cover bg-center ${
+            isDarkTheme ? 'border-white/10' : 'border-slate-400/40'
+          }`}
+          style={{ backgroundImage: "url('/bombonera.webp')" }}
+        >
+          {/* Capa traslúcida que regula la opacidad según el tema para que no interfiera con los jugadores */}
+          <div className={`absolute inset-0 transition-colors duration-300 ${
+            isDarkTheme ? 'bg-emerald-950/80 backdrop-blur-[1px]' : 'bg-emerald-100/75 backdrop-blur-[1px]'
+          }`} />
+
+          {/* Líneas tradicionales de la cancha por encima del fondo */}
+          <div className={`absolute top-1/2 w-full h-px ${isDarkTheme ? 'bg-white/20' : 'bg-slate-400/40'}`} />
           <div className={`absolute top-1/2 left-1/2 w-24 h-24 border rounded-full -translate-x-1/2 -translate-y-1/2 ${
-            isDarkTheme ? 'border-white/10' : 'border-slate-400/30'
+            isDarkTheme ? 'border-white/20' : 'border-slate-400/40'
           }`} />
 
           {FORMATION.map(p => (
@@ -426,7 +466,7 @@ function ScoreItem({ team, flag, score, isPlaying, color, isDark }: { team: stri
 function PlayerCircle({ pos, color, isVisible, isBallOwner }: { pos: any, color: string, isVisible: boolean, isBallOwner: boolean }) {
   return (
     <div
-      className={`absolute w-8 h-8 rounded-full border border-white/40 transition-all duration-700 shadow-xl
+      className={`absolute w-8 h-8 rounded-full border border-white/50 transition-all duration-700 shadow-xl
         ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-50 pointer-events-none'}
         ${isBallOwner ? `scale-[1.8] z-50 ring-4 ring-blue-400 shadow-[0_0_30px_rgba(59,130,246,0.6)] ${color}` : `${color}`}
       `}
