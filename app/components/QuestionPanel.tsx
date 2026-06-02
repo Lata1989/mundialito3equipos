@@ -37,10 +37,10 @@ export default function QuestionPanel({
   // Definición de etiquetas dinámicas según la posición táctica
   const getButtonsConfig = () => {
     if (possessionRole === "9") {
-      return { primary: "🚀 Tiro Fuerte (¡Gol Directo!)", alternate: "🎯 Tiro Colocado (Opciones)" };
+      return { primary: "🚀 Reventar al arquero", alternate: "🎯 Tiro Colocado (Opciones)" };
     }
     if (possessionRole === "ENG") {
-      return { primary: "🚀 Tiro Fuerte (¡Gol Directo!)", alternate: "🎯 Pase Corto (Opciones)" };
+      return { primary: "🚀 Reventar al arquero", alternate: "🎯 Pase Corto (Opciones)" };
     }
     return { primary: "🔫 Dar Pase Largo", alternate: "🎯 Pase Corto (Opciones)" };
   };

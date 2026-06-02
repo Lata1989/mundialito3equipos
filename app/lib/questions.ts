@@ -5638,8 +5638,9 @@ export const QUESTIONS_DB: QuestionItem[] = [
 
 ];
 
-export function getQuestionPoolForTeams(teamNames: string[]) {
-  const allowedCountries = new Set(teamNames);
+// Retorna el pool total filtrado por los tres países en juego + Argentina (siempre incluida)
+export function getQuestionPoolForTeams(teamNames: string[]): QuestionItem[] {
+  const allowedCountries = new Set([...teamNames, "Argentina"]);
   return QUESTIONS_DB.filter((item) => allowedCountries.has(item.country));
 }
 
