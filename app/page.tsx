@@ -32,8 +32,26 @@ const BANDERAS: Record<string, string> = {
   Noruega: "🇳🇴",
 };
 
-type Role = "DEF" | "5" | "VOL" | "ENG" | "9";
+// Añadimos ARQ al tipo de Rol
+type Role = "ARQ" | "DEF" | "5" | "VOL" | "ENG" | "9";
 type TeamColor = "blue" | "red" | "white";
+
+// Mapeo estricto de dorsales solicitados
+const DORSALES: Record<Role, string> = {
+  ARQ: "1",
+  DEF: "2",
+  "5": "5",
+  VOL: "8",
+  ENG: "10",
+  "9": "9",
+};
+
+interface PlayerPosition {
+  id: number;
+  role: Role;
+  top: number;
+  left: number;
+}
 
 export default function SoccerQuizTriangular() {
   const [teams, setTeams] = useState<{
@@ -49,15 +67,15 @@ export default function SoccerQuizTriangular() {
   const [currentQ, setCurrentQ] = useState(QUESTIONS_DB[0]);
   const [usedQuestions, setUsedQuestions] = useState<number[]>([]);
   const [timeLeft, setTimeLeft] = useState(40);
+  const [isTimerRunning, setIsTimerRunning] = useState(false); 
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
-  // Historiales en memoria (Refs) para evitar la repetición inmediata de los audios
   const recentPasesCortos = useRef<string[]>([]);
   const recentPasesLargos = useRef<string[]>([]);
   const recentGoles = useRef<string[]>([]);
   const recentErrores = useRef<string[]>([]);
 
-  // --- REPRODUCTOR DE AUDIOS ULTRA-ALEATORIO (SIN REPETICIÓN CERCANA) ---
+  // --- REPRODUCTOR DE AUDIOS ULTRA-ALEATORIO ---
   const triggerAudio = (
     type: "pase-corto" | "pase-largo" | "gol" | "error" | "incorrecta",
   ) => {
@@ -68,19 +86,13 @@ export default function SoccerQuizTriangular() {
       recentRef: React.MutableRefObject<string[]>,
       maxHistory: number,
     ) => {
-      // Filtramos los que ya se usaron recientemente
       let validOptions = pool.filter((f) => !recentRef.current.includes(f));
-
-      // Si por alguna razón nos quedamos sin opciones, vaciamos el historial para reiniciar la rotación
       if (validOptions.length === 0) {
         recentRef.current = [];
         validOptions = pool;
       }
-
       const chosen =
         validOptions[Math.floor(Math.random() * validOptions.length)];
-
-      // Agregamos al historial y mantenemos un tope para que vuelva a estar disponible después
       recentRef.current.push(chosen);
       if (recentRef.current.length > maxHistory) {
         recentRef.current.shift();
@@ -149,7 +161,6 @@ export default function SoccerQuizTriangular() {
     }
   };
 
-  // Lógica estricta de recuperaciones según quién pierde el balón
   const getRecoveryRole = (currentRole: Role): Role => {
     switch (currentRole) {
       case "DEF":
@@ -173,9 +184,8 @@ export default function SoccerQuizTriangular() {
     return "blue";
   };
 
-  // Timer de 40 segundos
   useEffect(() => {
-    if (!teams || !teams.white) return;
+    if (!teams || !teams.white || !isTimerRunning) return;
 
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
@@ -188,16 +198,14 @@ export default function SoccerQuizTriangular() {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [teams, possession]);
+  }, [teams, possession, isTimerRunning]);
 
-  // Pool dinámico: Solo preguntas de los 3 países elegidos + Argentina
   const availableQuestions = useMemo(() => {
     if (!teams || !teams.blue || !teams.red || !teams.white) return [];
     const allowedCountries = [teams.blue, teams.red, teams.white, "Argentina"];
     return QUESTIONS_DB.filter((q) => allowedCountries.includes(q.country));
   }, [teams]);
 
-  // Siguiente pregunta sin repetir del mazo filtrado
   const getNextQuestion = () => {
     if (availableQuestions.length === 0) {
       return QUESTIONS_DB[Math.floor(Math.random() * QUESTIONS_DB.length)];
@@ -208,7 +216,7 @@ export default function SoccerQuizTriangular() {
       .filter((idx) => !usedQuestions.includes(idx));
 
     if (availableIdx.length === 0) {
-      setUsedQuestions([]); // Reseteamos si se agotan
+      setUsedQuestions([]);
       return availableQuestions[
         Math.floor(Math.random() * availableQuestions.length)
       ];
@@ -230,7 +238,6 @@ export default function SoccerQuizTriangular() {
     else if (!teams.red) setTeams({ ...teams, red: name });
     else if (!teams.white) {
       setTeams({ ...teams, white: name });
-      // Ejecutamos la búsqueda de la primera pregunta una vez elegidos todos los rivales
       setTimeout(() => {
         const allowed = [teams.blue, teams.red, name, "Argentina"];
         const pool = QUESTIONS_DB.filter((q) => allowed.includes(q.country));
@@ -243,6 +250,7 @@ export default function SoccerQuizTriangular() {
 
   const handleTimeOut = () => {
     triggerAudio("incorrecta");
+    setIsTimerRunning(false); 
     setPossession((prev) => {
       const nextTeam = getDefenderTeam(prev.team);
       const nextRole = getRecoveryRole(prev.role);
@@ -256,6 +264,7 @@ export default function SoccerQuizTriangular() {
   const handleButtonClick = (
     buttonType: "pase-largo" | "pase-corto" | "mal-pase" | "gol",
   ) => {
+    setIsTimerRunning(false); 
     if (buttonType === "gol") {
       triggerAudio("gol");
       setScore((prev) => ({
@@ -281,7 +290,7 @@ export default function SoccerQuizTriangular() {
     } else if (buttonType === "pase-largo") {
       triggerAudio("pase-largo");
       const roles: Role[] = ["DEF", "5", "VOL", "ENG", "9"];
-      const currentIndex = roles.indexOf(possession.role);
+      const currentIndex = roles.indexOf(possession.role as any);
       let nextIndex = Math.min(currentIndex + 2, roles.length - 1);
       setPossession((prev) => ({ ...prev, role: roles[nextIndex] }));
       setTimeLeft(40);
@@ -293,6 +302,7 @@ export default function SoccerQuizTriangular() {
   };
 
   const handleMenuDecision = (isSuccess: boolean) => {
+    setIsTimerRunning(false); 
     if (isSuccess) {
       if (possession.role === "9") {
         triggerAudio("gol");
@@ -307,7 +317,7 @@ export default function SoccerQuizTriangular() {
       } else {
         triggerAudio("pase-corto");
         const roles: Role[] = ["DEF", "5", "VOL", "ENG", "9"];
-        const currentIndex = roles.indexOf(possession.role);
+        const currentIndex = roles.indexOf(possession.role as any);
         let nextIndex = Math.min(currentIndex + 1, roles.length - 1);
         setPossession((prev) => ({ ...prev, role: roles[nextIndex] }));
       }
@@ -384,6 +394,12 @@ export default function SoccerQuizTriangular() {
 
   const activeDefenderTeam = getDefenderTeam(possession.team);
 
+  // Unimos la formación táctica estática con el Arquero dinámico (ID: 99)
+  const completeFormation: PlayerPosition[] = [
+    { id: 99, role: "ARQ", top: 4, left: 50 },
+    ...(FORMATION as PlayerPosition[]),
+  ];
+
   return (
     <div
       className={`flex flex-col lg:flex-row min-h-screen font-sans overflow-hidden transition-colors duration-300 ${
@@ -452,14 +468,40 @@ export default function SoccerQuizTriangular() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
               </span>
               Ataca: {BANDERAS[currentTeamName]} {currentTeamName} (
-              {possession.role})
+              Dorsal {DORSALES[possession.role]})
             </span>
           </div>
 
-          <div
-            className={`mb-4 text-2xl font-black ${timeLeft <= 10 ? "text-red-500 animate-pulse" : ""}`}
-          >
-            ⏱️ {timeLeft}s
+          <div className="mb-4 flex items-center gap-4 bg-black/5 dark:bg-white/5 p-3 rounded-2xl w-fit border border-slate-300 dark:border-zinc-800">
+            <div
+              className={`text-3xl font-black tabular-nums ${timeLeft <= 10 ? "text-red-500 animate-pulse" : ""}`}
+            >
+              ⏱️ {timeLeft}s
+            </div>
+            <div className="flex gap-1.5">
+              <button
+                onClick={() => setIsTimerRunning(true)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all active:scale-95 flex items-center gap-1 ${
+                  isTimerRunning
+                    ? "bg-green-600 text-white opacity-40 cursor-not-allowed"
+                    : "bg-green-600 text-white hover:bg-green-700 shadow-md"
+                }`}
+                disabled={isTimerRunning}
+              >
+                ▶️ Play
+              </button>
+              <button
+                onClick={() => setIsTimerRunning(false)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all active:scale-95 flex items-center gap-1 ${
+                  !isTimerRunning
+                    ? "bg-amber-500 text-white opacity-40 cursor-not-allowed"
+                    : "bg-amber-500 text-white hover:bg-amber-600 shadow-md"
+                }`}
+                disabled={!isTimerRunning}
+              >
+                ⏸️ Pausa
+              </button>
+            </div>
           </div>
 
           <div
@@ -565,7 +607,7 @@ export default function SoccerQuizTriangular() {
                     : "Opciones para descargar Pase Corto:"}
                 </div>
                 <div className="grid grid-cols-1 gap-2">
-                  {currentQ?.options.map((opt) => (
+                  {currentQ?.options.map((opt: string) => (
                     <div
                       key={opt}
                       className={`p-4 font-bold rounded-lg text-base uppercase border ${
@@ -601,36 +643,31 @@ export default function SoccerQuizTriangular() {
         </div>
       </div>
 
-      {/* Campo de Fútbol Gigante (Estadio Completo Proporcional) */}
+      {/* Campo de Fútbol Dibujado Táctico Avanzado */}
       <div
         className={`flex-[2] relative flex items-center justify-center p-4 min-h-[70vh] lg:min-h-0 ${isDarkTheme ? "bg-zinc-950" : "bg-slate-100"}`}
       >
         <div
-          className={`relative w-full max-w-[850px] max-h-[85vh] aspect-[3/4] border-2 rounded-xl overflow-hidden shadow-[0_0_65px_rgba(0,0,0,0.65)] transition-all duration-300 bg-cover bg-center ${
-            isDarkTheme ? "border-white/10" : "border-slate-400/40"
+          className={`relative w-full max-w-[850px] max-h-[85vh] aspect-[3/4] border-4 rounded-2xl overflow-hidden shadow-[0_0_65px_rgba(0,0,0,0.65)] transition-all duration-300 bg-gradient-to-b from-emerald-600 to-green-700 ${
+            isDarkTheme ? "border-zinc-700" : "border-slate-800"
           }`}
-          style={{ backgroundImage: "url('/bombonera.webp')" }}
         >
-          {/* Capa traslúcida optimizada */}
-          <div
-            className={`absolute inset-0 transition-colors duration-300 ${
-              isDarkTheme
-                ? "bg-emerald-950/75 backdrop-blur-[0.5px]"
-                : "bg-emerald-100/70 backdrop-blur-[0.5px]"
-            }`}
-          />
+          {isDarkTheme && <div className="absolute inset-0 bg-black/10 mix-blend-multiply pointer-events-none" />}
 
-          {/* Líneas tácticas escaladas al nuevo tamaño */}
-          <div
-            className={`absolute top-1/2 w-full h-px ${isDarkTheme ? "bg-white/20" : "bg-slate-400/40"}`}
-          />
-          <div
-            className={`absolute top-1/2 left-1/2 w-44 h-44 border rounded-full -translate-x-1/2 -translate-y-1/2 ${
-              isDarkTheme ? "border-white/20" : "border-slate-400/40"
-            }`}
-          />
+          {/* --- LÍNEAS REGLAMENTARIAS --- */}
+          <div className="absolute top-1/2 w-full h-[3px] bg-white/40 -translate-y-1/2" />
+          <div className="absolute top-1/2 left-1/2 w-44 h-44 border-[3px] border-white/40 rounded-full -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute top-1/2 left-1/2 w-3 h-3 bg-white/50 rounded-full -translate-x-1/2 -translate-y-1/2" />
 
-          {FORMATION.map((p) => (
+          <div className="absolute top-0 left-1/2 w-[60%] h-[15%] border-b-[3px] border-x-[3px] border-white/40 -translate-x-1/2" />
+          <div className="absolute top-0 left-1/2 w-[30%] h-[6%] border-b-[3px] border-x-[3px] border-white/30 -translate-x-1/2" />
+
+          <div className="absolute bottom-0 left-1/2 w-[60%] h-[15%] border-t-[3px] border-x-[3px] border-white/40 -translate-x-1/2" />
+          <div className="absolute bottom-0 left-1/2 w-[30%] h-[6%] border-t-[3px] border-x-[3px] border-white/30 -translate-x-1/2" />
+
+          <div className="absolute inset-3 border-2 border-white/20 rounded-lg pointer-events-none" />
+
+          {completeFormation.map((p) => (
             <div key={p.id}>
               {/* Equipo Azul */}
               <PlayerCircle
@@ -719,14 +756,14 @@ function PlayerCircle({
   isVisible,
   isBallOwner,
 }: {
-  pos: any;
+  pos: PlayerPosition;
   color: string;
   isVisible: boolean;
   isBallOwner: boolean;
 }) {
   return (
     <div
-      className={`absolute w-12 h-12 rounded-full border-2 border-white/60 transition-all duration-700 shadow-xl flex items-center justify-center
+      className={`absolute w-12 h-12 rounded-full border-2 border-white/70 transition-all duration-700 shadow-xl flex items-center justify-center font-black text-sm text-black
         ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-50 pointer-events-none"}
         ${isBallOwner ? `scale-[1.5] z-50 ring-4 ring-blue-400 shadow-[0_0_35px_rgba(59,130,246,0.7)] ${color}` : `${color}`}
       `}
@@ -736,8 +773,11 @@ function PlayerCircle({
         transform: "translate(-50%, -50%)",
       }}
     >
-      {isBallOwner && (
+      {/* Si tiene la pelota muestra un punto blanco parpadeante, si no, su dorsal negro */}
+      {isBallOwner ? (
         <div className="w-3.5 h-3.5 bg-white rounded-full animate-pulse shadow-md" />
+      ) : (
+        DORSALES[pos.role]
       )}
     </div>
   );
