@@ -1216,9 +1216,9 @@ export const QUESTIONS_DB: QuestionItem[] = [
   },
   {
     "country": "Francia",
-    "question": "FRA-2 | ¿Qué representan tradicionalmente los tres colores de la bandera de Francia?",
-    "answer": "libertad, igualdad y fraternidad",
-    "options": ["Libertad, Igualdad y Fraternidad", "Paz, Trabajo y Justicia", "Tierra, Mar y Cielo", "Monarquía, Iglesia y Ejército"]
+    "question": "FRA-2 | ¿Qué colores tiene la bandera de Francia?",
+    "answer": "azul, blanco y rojo",
+    "options": ["Verde, blanco y rojo", "Azul, blanco y rojo", "Amarillo, azul y rojo"]
   },
   {
     "country": "Francia",
@@ -1342,8 +1342,8 @@ export const QUESTIONS_DB: QuestionItem[] = [
   },
   {
     "country": "Francia",
-    "question": "FRA-23 | ¿Cuál es la segunda ciudad mas poblada de Francia?",
-    "answer": "Marsella",
+    "question": "FRA-23 | ¿Cuál es la capital de Francia?",
+    "answer": "parís",
     "options": ["Marsella", "Lyon", "París"]
   },
   {
@@ -1390,9 +1390,9 @@ export const QUESTIONS_DB: QuestionItem[] = [
   },
   {
     "country": "Francia",
-    "question": "FRA-31 | ¿Cuál es el segundo idioma mas hablado en Francia?",
-    "answer": "arabe",
-    "options": ["Arabe", "Italiano", "Ingles"]
+    "question": "FRA-31 | ¿Cuál es el idioma oficial de Francia?",
+    "answer": "francés",
+    "options": ["Italiano", "Francés", "Alemán"]
   },
   {
     "country": "Francia",
@@ -1466,10 +1466,6 @@ export const QUESTIONS_DB: QuestionItem[] = [
     "answer": "la marsellesa",
     "options": ["El Elíseo", "La Marsellesa", "La Bonaparte"]
   },
-
-  //===========================
-  // Canada
-  //===========================
   {
     "country": "Canadá",
     "question": "CAN-1 | ¿Cuál es la capital de Canadá?",
@@ -1538,9 +1534,9 @@ export const QUESTIONS_DB: QuestionItem[] = [
   },
   {
     "country": "Canadá",
-    "question": "CAN-12 | ¿Cuál es la tercera ciudad más poblada de Canadá?",
-    "answer": "calgary",
-    "options": ["Ottawa", "Calgary", "Edmonton"]
+    "question": "CAN-12 | ¿Qué color NO está en la bandera de Canadá?",
+    "answer": "azul",
+    "options": ["Blanco", "Rojo", "Azul"]
   },
   {
     "country": "Canadá",
@@ -1598,9 +1594,9 @@ export const QUESTIONS_DB: QuestionItem[] = [
   },
   {
     "country": "Canadá",
-    "question": "CAN-22 | ¿Cuántas veces ha clasificado Canadá a la Copa Mundial?",
-    "answer": "4",
-    "options": ["2", "3", "4"]
+    "question": "CAN-22 | ¿Cuántas veces ha clasificado Canadá a la Copa Mundial femenina?",
+    "answer": "8",
+    "options": ["5", "3", "8"]
   },
   {
     "country": "Canadá",
@@ -1646,33 +1642,33 @@ export const QUESTIONS_DB: QuestionItem[] = [
   },
   {
     "country": "Canadá",
-    "question": "CAN-30 | ¿Quién es el segundo máximo goleador histórico de la selección de fútbol masculino de Canadá?",
-    "answer": "cyle larin",
-    "options": ["Cyle Larin", "Jonathan David", "Lucas Cavallini"]
+    "question": "CAN-30 | ¿En qué categoría Canadá ha tenido más éxito mundialmente?",
+    "answer": "fútbol femenino",
+    "options": ["Fútbol masculino", "Fútbol femenino", "Futsal"]
   },
   {
     "country": "Canadá",
-    "question": "CAN-31 | ¿Como salio el primer partido de Canadá en Qatar 2022?",
-    "answer": "1 a 0 perdio",
-    "options": ["1 a 0 perdio", "0 a 0 ampato", "1 a 0 gano"]
+    "question": "CAN-31 | ¿Qué año fue el primer Mundial femenino en el que participó Canadá?",
+    "answer": "1995",
+    "options": ["1995", "1991", "1999"]
   },
   {
     "country": "Canadá",
-    "question": "CAN-32 | ¿Cuántos goles de penal anotó Jonathan David el máximo goleador histórico de la selección masculina de Canadá?",
-    "answer": "8",
-    "options": ["3", "6", "8"]
+    "question": "CAN-32 | ¿Quién es la máxima goleadora canadiense en Copas del Mundo femeninas?",
+    "answer": "christine sinclair",
+    "options": ["Christine Sinclair", "Diana Matheson", "Sophie Schmidt"]
   },
   {
     "country": "Canadá",
     "question": "CAN-33 | ¿Contra qué país jugó Canadá su último partido en el Mundial 1986?",
     "answer": "unión soviética",
-    "options": ["Uruguay", "Francia", "Unión Soviética"]
+    "options": ["Bélgica", "Francia", "Unión Soviética"]
   },
   {
     "country": "Canadá",
-    "question": "CAN-34 | ¿Contra qué selección obtuvo Canadá su primer punto en la historia de los Mundiales?",
-    "answer": "marruecos",
-    "options": ["Bélgica", "Croacia", "Marruecos"]
+    "question": "CAN-34 | ¿Qué posición ocupó Canadá en el Mundial Femenino de 2015?",
+    "answer": "cuartos de final",
+    "options": ["Cuartos de final", "Semifinales", "Octavos de final"]
   },
   {
     "country": "Canadá",
@@ -1682,9 +1678,9 @@ export const QUESTIONS_DB: QuestionItem[] = [
   },
   {
     "country": "Canadá",
-    "question": "CAN-36 | ¿Cuantos goles marco Canada en el mundial Qatar 2022?",
-    "answer": "2",
-    "options": ["1", "2", "3"]
+    "question": "CAN-36 | ¿En qué año Canadá obtuvo su primer triunfo en Juegos Olímpicos de fútbol?",
+    "answer": "1904",
+    "options": ["1984", "1904", "1992"]
   },
   {
     "country": "Canadá",
@@ -1700,9 +1696,9 @@ export const QUESTIONS_DB: QuestionItem[] = [
   },
   {
     "country": "Canadá",
-    "question": "CAN-39 | ¿Quién fue el entrenador de Canadá en Qatar 2022?",
-    "answer": "John Herdman",
-    "options": ["John Herdman", "Mauro Biello", "George O'Connor"]
+    "question": "CAN-39 | ¿En qué Mundial Canadá logró su primera victoria en el fútbol femenino?",
+    "answer": "2003",
+    "options": ["1999", "1995", "2003"]
   },
   {
     "country": "Canadá",
@@ -1710,11 +1706,6 @@ export const QUESTIONS_DB: QuestionItem[] = [
     "answer": "tres derrotas",
     "options": ["Un empate y dos derrotas", "Tres derrotas", "Dos derrotas y un empate"]
   },
-
-  //==========================
-  // Uruguay
-  //==========================
-
   {
     "country": "Uruguay",
     "question": "URU-1 | ¿En qué año se disputó el primer Mundial organizado y ganado por Uruguay?",
@@ -6862,13 +6853,3 @@ export const QUESTIONS_DB: QuestionItem[] = [
 
 
 ];
-
-// Retorna el pool total filtrado por los tres países en juego + Argentina (siempre incluida)
-export function getQuestionPoolForTeams(teamNames: string[]): QuestionItem[] {
-  const allowedCountries = new Set([...teamNames, "Argentina"]);
-  return QUESTIONS_DB.filter((item) => allowedCountries.has(item.country));
-}
-
-export function pickRandomQuestion(questions: QuestionItem[]) {
-  return questions[Math.floor(Math.random() * questions.length)];
-}
