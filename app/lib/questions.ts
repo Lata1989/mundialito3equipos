@@ -8,1727 +8,1913 @@ export interface QuestionItem {
 // Falta grupo suiza egipto y austria (no estan las de austria)
 export const QUESTIONS_DB: QuestionItem[] = [
   // ==========================================
-  // ARGENTINA (ARG) Linea 13 - 197
-  // ==========================================
-  // ==========================================
   // ARGENTINA (ARG)
   // ==========================================
   {
-    country: "Argentina",
-    question: "ARG-1 | ¿En qué ciudad se encuentra el famoso Obelisco?",
-    answer: "buenos aires",
-    options: ["Mendoza", "Córdoba", "Buenos Aires", "Rosario"],
+    "country": "Argentina",
+    "question": "ARG-1 | ¿En qué estadio Argentina ganó su primer Mundial en 1978?",
+    "answer": "estadio monumental",
+    "options": ["Estadio José Amalfitani", "Estadio Monumental", "Estadio Gigante de Arroyito", "Estadio Mario Kempes"]
   },
   {
-    country: "Argentina",
-    question: "ARG-2 | ¿Cuál es el apodo de la camiseta argentina?",
-    answer: "la albiceleste",
-    options: ["La Roja", "La Albiceleste", "La Verde", "La Celeste"],
+    "country": "Argentina",
+    "question": "ARG-2 | ¿Quién convirtió el primer gol de Argentina en el Mundial de 1986?",
+    "answer": "josé luis brown",
+    "options": ["Diego Maradona", "Jorge Valdano", "Oscar Ruggeri", "José Luis Brown"]
   },
   {
-    country: "Argentina",
-    question: "ARG-3 | ¿En qué estadio Argentina ganó su primer Mundial en 1978?",
-    answer: "estadio monumental",
-    options: ["Estadio José Amalfitani", "Estadio Monumental", "Estadio Gigante de Arroyito", "Estadio Mario Kempes"],
+    "country": "Argentina",
+    "question": "ARG-3 | ¿Cómo le fue a Argentina en el Mundial 2002?",
+    "answer": "no pasó la fase de grupos",
+    "options": ["No pasó la fase de grupos", "Campeón", "Eliminado en Octavos de Final", "No clasificó"]
   },
   {
-    country: "Argentina",
-    question: "ARG-4 | ¿Quién convirtió el primer gol de Argentina en el Mundial de 1986?",
-    answer: "josé luis brown",
-    options: ["Diego Maradona", "Jorge Valdano", "Oscar Ruggeri", "José Luis Brown"],
+    "country": "Argentina",
+    "question": "ARG-4 | ¿Cuál fue el único Mundial en el que Argentina defendió el título como campeón vigente?",
+    "answer": "italia 1990",
+    "options": ["México 1986", "Italia 1990", "Francia 1998", "Sudáfrica 2010"]
   },
   {
-    country: "Argentina",
-    question: "ARG-5 | ¿Cómo le fue a Argentina en el Mundial 2002?",
-    answer: "no pasó la fase de grupos",
-    options: ["No pasó la fase de grupos", "Campeón", "Eliminado en Octavos de Final", "No clasificó"],
+    "country": "Argentina",
+    "question": "ARG-5 | ¿Quién hizo el gol de Argentina en la final del Mundial 2014?",
+    "answer": "ningún argentino convirtió",
+    "options": ["Lionel Messi", "Gonzalo Higuaín", "Sergio Agüero", "Ningún argentino convirtió"]
   },
   {
-    country: "Argentina",
-    question: "ARG-6 | ¿Cuál fue el único Mundial en el que Argentina defendió el título como campeón vigente?",
-    answer: "italia 1990",
-    options: ["México 1986", "Italia 1990", "Francia 1998", "Sudáfrica 2010"],
+    "country": "Argentina",
+    "question": "ARG-6 | ¿Contra qué país debutó Lionel Messi en un Mundial?",
+    "answer": "serbia y montenegro",
+    "options": ["Costa de Marfil", "Serbia y Montenegro", "Alemania", "Países Bajos"]
   },
   {
-    country: "Argentina",
-    question: "ARG-7 | ¿Quién hizo el gol de Argentina en la final del Mundial 2014?",
-    answer: "ningún argentino convirtió",
-    options: ["Lionel Messi", "Gonzalo Higuaín", "Sergio Agüero", "Ningún argentino convirtió"],
+    "country": "Argentina",
+    "question": "ARG-7 | ¿Qué arquero argentino fue figura en la tanda de penales contra Países Bajos en Qatar 2022?",
+    "answer": "emiliano martínez",
+    "options": ["Sergio Romero", "Franco Armani", "Emiliano Martínez", "Gerónimo Rulli"]
   },
   {
-    country: "Argentina",
-    question: "ARG-8 | ¿Contra qué país debutó Lionel Messi en un Mundial?",
-    answer: "serbia y montenegro",
-    options: ["Costa de Marfil", "Serbia y Montenegro", "Alemania", "Países Bajos"],
+    "country": "Argentina",
+    "question": "ARG-8 | ¿Cuál de estos jugadores NO fue campeón mundial con Argentina en 2022?",
+    "answer": "giovani lo celso",
+    "options": ["Ángel Di María", "Paulo Dybala", "Giovani Lo Celso", "Julián Álvarez"]
   },
   {
-    country: "Argentina",
-    question: "ARG-9 | ¿Qué arquero argentino fue figura en la tanda de penales contra Países Bajos en Qatar 2022?",
-    answer: "emiliano martínez",
-    options: ["Sergio Romero", "Franco Armani", "Emiliano Martínez", "Gerónimo Rulli"],
+    "country": "Argentina",
+    "question": "ARG-9 | ¿Qué ocurrió el 25 de Mayo de 1810?",
+    "answer": "se formó la primera junta",
+    "options": ["Se declaró la independencia", "Asumió el primer presidente", "Se formó la Primera Junta", "Se sancionó la Constitución"]
   },
   {
-    country: "Argentina",
-    question: "ARG-10 | ¿Cuál de estos jugadores NO fue campeón mundial con Argentina en 2022?",
-    answer: "giovani lo celso",
-    options: ["Ángel Di María", "Paulo Dybala", "Giovani Lo Celso", "Julián Álvarez"],
+    "country": "Argentina",
+    "question": "ARG-10 | ¿En qué provincia se declaró la Independencia Argentina?",
+    "answer": "tucumán",
+    "options": ["Córdoba", "Buenos Aires", "Mendoza", "Tucumán"]
   },
   {
-    country: "Argentina",
-    question: "ARG-11 | ¿Qué ocurrió el 25 de Mayo de 1810?",
-    answer: "se formó la primera junta",
-    options: ["Se declaró la independencia", "Asumió el primer presidente", "Se formó la Primera Junta", "Se sancionó la Constitución"],
+    "country": "Argentina",
+    "question": "ARG-11 | ¿Quién fue the director supremo de las Provincias Unidas y organizó el Congreso de Tucumán?",
+    "answer": "juan martín de pueyrredón",
+    "options": ["Manuel Belgrano", "Gervasio Posadas", "Juan Martín de Pueyrredón", "Bernardino Rivadavia"]
   },
   {
-    country: "Argentina",
-    question: "ARG-12 | ¿En qué provincia se declaró la Independencia Argentina?",
-    answer: "tucumán",
-    options: ["Córdoba", "Buenos Aires", "Mendoza", "Tucumán"],
+    "country": "Argentina",
+    "question": "ARG-12 | ¿Cuál fue el nombre original de Argentina en la época colonial?",
+    "answer": "virreinato del río de la plata",
+    "options": ["Virreinato del Río de la Plata", "Provincias Unidas del Sur", "Confederación Argentina", "República Federal del Plata"]
   },
   {
-    country: "Argentina",
-    question: "ARG-13 | ¿Quién fue el director supremo de las Provincias Unidas y organizó el Congreso de Tucumán?",
-    answer: "juan martín de pueyrredón",
-    options: ["Manuel Belgrano", "Gervasio Posadas", "Juan Martín de Pueyrredón", "Bernardino Rivadavia"],
+    "country": "Argentina",
+    "question": "ARG-13 | ¿Quién creó la bandera argentina?",
+    "answer": "manuel belgrano",
+    "options": ["José de San Martín", "Manuel Belgrano", "Mariano Moreno", "Domingo Sarmiento"]
   },
   {
-    country: "Argentina",
-    question: "ARG-14 | ¿Cuál fue el nombre original de Argentina en la época colonial?",
-    answer: "virreinato del río de la plata",
-    options: ["Virreinato del Río de la Plata", "Provincias Unidas del Sur", "Confederación Argentina", "República Federal del Plata"],
+    "country": "Argentina",
+    "question": "ARG-14 | ¿En qué batalla fue derrotado definitivamente Juan Manuel de Rosas?",
+    "answer": "caseros",
+    "options": ["Cepeda", "Pavón", "Caseros", "San Lorenzo"]
   },
   {
-    country: "Argentina",
-    question: "ARG-15 | ¿Quién creó la bandera argentina?",
-    answer: "manuel belgrano",
-    options: ["José de San Martín", "Manuel Belgrano", "Mariano Moreno", "Domingo Sarmiento"],
+    "country": "Argentina",
+    "question": "ARG-15 | ¿Cuál fue el primer presidente constitucional de Argentina?",
+    "answer": "bernardino rivadavia",
+    "options": ["Julio A. Roca", "Bartolomé Mitre", "Bernardino Rivadavia", "Nicolás Avellaneda"]
   },
   {
-    country: "Argentina",
-    question: "ARG-16 | ¿En qué batalla fue derrotado definitivamente Juan Manuel de Rosas?",
-    answer: "caseros",
-    options: ["Cepeda", "Pavón", "Caseros", "San Lorenzo"],
+    "country": "Argentina",
+    "question": "ARG-16 | ¿Cuál es la provincia argentina con mayor superficie?",
+    "answer": "santa cruz",
+    "options": ["Buenos Aires", "Chubut", "Santa Cruz", "Mendoza"]
   },
   {
-    country: "Argentina",
-    question: "ARG-17 | ¿Cuál fue el primer presidente constitucional de Argentina?",
-    answer: "bernardino rivadavia",
-    options: ["Julio A. Roca", "Bartolomé Mitre", "Bernardino Rivadavia", "Nicolás Avellaneda"],
+    "country": "Argentina",
+    "question": "ARG-17 | ¿Qué río sirve de límite natural entre Argentina y Uruguay?",
+    "answer": "río uruguay",
+    "options": ["Río Paraná", "Río Uruguay", "Río Salado", "Río Pilcomayo"]
   },
   {
-    country: "Argentina",
-    question: "ARG-18 | ¿Cuál es la provincia argentina con mayor superficie?",
-    answer: "santa cruz",
-    options: ["Buenos Aires", "Chubut", "Santa Cruz", "Mendoza"],
+    "country": "Argentina",
+    "question": "ARG-18 | ¿Cuál es la capital de la provincia de Tierra del Fuego?",
+    "answer": "ushuaia",
+    "options": ["Río Grande", "Tolhuin", "Ushuaia", "Caleta Olivia"]
   },
   {
-    country: "Argentina",
-    question: "ARG-19 | ¿Qué río sirve de límite natural entre Argentina y Uruguay?",
-    answer: "río uruguay",
-    options: ["Río Paraná", "Río Uruguay", "Río Salado", "Río Pilcomayo"],
+    "country": "Argentina",
+    "question": "ARG-19 | ¿Qué provincia argentina NO tiene salida al mar?",
+    "answer": "neuquén",
+    "options": ["Río Negro", "Chubut", "Neuquén", "Santa Cruz"]
   },
   {
-    country: "Argentina",
-    question: "ARG-20 | ¿Cuál es la capital de la provincia de Tierra del Fuego?",
-    answer: "ushuaia",
-    options: ["Río Grande", "Tolhuin", "Ushuaia", "Caleta Olivia"],
+    "country": "Argentina",
+    "question": "ARG-20 | ¿Cuál es el cerro más alto de América?",
+    "answer": "aconcagua",
+    "options": ["Lanín", "Fitz Roy", "Mercedario", "Aconcagua"]
   },
   {
-    country: "Argentina",
-    question: "ARG-21 | ¿Qué provincia argentina NO tiene salida al mar?",
-    answer: "neuquén",
-    options: ["Río Negro", "Chubut", "Neuquén", "Santa Cruz"],
+    "country": "Argentina",
+    "question": "ARG-21 | ¿En qué provincia se encuentran las Cataratas del Iguazú?",
+    "answer": "misiones",
+    "options": ["Corrientes", "Chaco", "Misiones", "Formosa"]
   },
   {
-    country: "Argentina",
-    question: "ARG-22 | ¿Cuál es el cerro más alto de América?",
-    answer: "aconcagua",
-    options: ["Lanín", "Fitz Roy", "Mercedario", "Aconcagua"],
+    "country": "Argentina",
+    "question": "ARG-22 | ¿Cuál es el lago más grande de Argentina?",
+    "answer": "lago argentino",
+    "options": ["Lago Nahuel Huapi", "Lago Argentino", "Lago Viedma", "Lago Fagnano"]
   },
   {
-    country: "Argentina",
-    question: "ARG-23 | ¿En qué provincia se encuentran las Cataratas del Iguazú?",
-    answer: "misiones",
-    options: ["Corrientes", "Chaco", "Misiones", "Formosa"],
+    "country": "Argentina",
+    "question": "ARG-23 | ¿Qué provincia argentina limita con más países?",
+    "answer": "salta",
+    "options": ["Salta", "Jujuy", "Misiones", "Mendoza"]
   },
   {
-    country: "Argentina",
-    question: "ARG-24 | ¿Cuál es el lago más grande de Argentina?",
-    answer: "lago argentino",
-    options: ["Lago Nahuel Huapi", "Lago Argentino", "Lago Viedma", "Lago Fagnano"],
+    "country": "Argentina",
+    "question": "ARG-24 | ¿Cuál es la ciudad más austral del mundo reconocida oficialmente?",
+    "answer": "ushuaia",
+    "options": ["Río Gallegos", "Punta Arenas", "Ushuaia", "Puerto Madryn"]
   },
   {
-    country: "Argentina",
-    question: "ARG-25 | ¿Qué provincia argentina limita con más países?",
-    answer: "salta",
-    options: ["Salta", "Jujuy", "Misiones", "Mendoza"],
+    "country": "Argentina",
+    "question": "ARG-25 | ¿Qué provincia argentina produce mayor cantidad de vino?",
+    "answer": "mendoza",
+    "options": ["San Juan", "Mendoza", "La Rioja", "Neuquén"]
   },
   {
-    country: "Argentina",
-    question: "ARG-26 | ¿Cuál es la ciudad más austral del mundo reconocida oficialmente?",
-    answer: "ushuaia",
-    options: ["Río Gallegos", "Punta Arenas", "Ushuaia", "Puerto Madryn"],
+    "country": "Argentina",
+    "question": "ARG-26 | Quién convirtió el gol para la clasificación contra Nigeria en el mundial 2018?",
+    "answer": "marcos rojo",
+    "options": ["Marcos Rojo", "lionel messi", "sergio aguero", "Dario Benedetto"]
   },
   {
-    country: "Argentina",
-    question: "ARG-27 | ¿Qué provincia argentina produce mayor cantidad de vino?",
-    answer: "mendoza",
-    options: ["San Juan", "Mendoza", "La Rioja", "Neuquén"],
+    "country": "Argentina",
+    "question": "ARG-27 | ¿Cuánto mide la Copa Mundial de la FIFA?",
+    "answer": "36,8 cm",
+    "options": ["34,5 cm", "36,8 cm", "38,1cm", "30,30 cm"]
   },
   {
-    country: "Argentina",
-    question: "ARG-28 | ¿Quién convirtió el gol para la clasificación contra Nigeria en el mundial 2018?",
-    answer: "marcos rojo",
-    options: ["Marcos Rojo", "Lionel Messi", "Sergio Agüero", "Darío Benedetto"],
+    "country": "Argentina",
+    "question": "ARG-28 | ¿Cuánto pesa la Copa Mundial de la FIFA?",
+    "answer": "6,175 kg",
+    "options": ["4,805 kg", "6,175 kg", "7,355 kg", "6,500 kg"]
   },
   {
-    country: "Argentina",
-    question: "ARG-29 | ¿Cuánto mide la Copa Mundial de la FIFA?",
-    answer: "36,8 cm",
-    options: ["34,5 cm", "36,8 cm", "38,1 cm", "30,30 cm"],
+    "country": "Argentina",
+    "question": "ARG-29 | ¿Quién convirtió el gol de Argentina en la defeat 2-1 ante Países Bajos en los cuartos de final del Mundial 1998?",
+    "answer": "claudio caniggia",
+    "options": ["Gabriel Batistuta", "Claudio López", "Claudio Caniggia", "Diego Maradona"]
   },
   {
-    country: "Argentina",
-    question: "ARG-30 | ¿Cuánto pesa la Copa Mundial de la FIFA?",
-    answer: "6,175 kg",
-    options: ["4,805 kg", "6,175 kg", "7,355 kg", "6,500 kg"],
+    "country": "Argentina",
+    "question": "ARG-30 | ¿Quién era el capitán de Argentina en el Mundial de Francia 1998?",
+    "answer": "gabriel batistuta",
+    "options": ["Gabriel Batistuta", "Diego Simeone", "Roberto Ayala", "Lionel Scaloni"]
   },
   {
-    country: "Argentina",
-    question: "ARG-31 | ¿Quién convirtió el gol de Argentina en la derrota 2-1 ante Países Bajos en los cuartos de final del Mundial 1998?",
-    answer: "claudio lópez",
-    options: ["Gabriel Batistuta", "Claudio López", "Claudio Caniggia", "Diego Maradona"],
+    "country": "Argentina",
+    "question": "ARG-31 | ¿Cómo terminó el partido entre Argentina e Inglaterra en octavos de final del Mundial 1998?",
+    "answer": "2-2 y ganó argentina por penales",
+    "options": ["2-1 Argentina", "2-2 y ganó Argentina por penales", "1-1 y ganó Inglaterra por penales", "2-2 y ganó Inglaterra por penales"]
   },
   {
-    country: "Argentina",
-    question: "ARG-32 | ¿Quién era el capitán de Argentina en el Mundial de Francia 1998?",
-    answer: "diego simeone",
-    options: ["Gabriel Batistuta", "Diego Simeone", "Roberto Ayala", "Lionel Scaloni"],
+    "country": "Argentina",
+    "question": "ARG-32 | ¿Quién convirtió el penal decisivo ante Inglaterra en 1998?",
+    "answer": "javier zanetti",
+    "options": ["Ariel Ortega", "Javier Zanetti", "Hernán Crespo", "Gabriel Batistuta"]
   },
   {
-    country: "Argentina",
-    question: "ARG-33 | ¿Cómo terminó el partido entre Argentina e Inglaterra en octavos de final del Mundial 1998?",
-    answer: "2-2 y ganó argentina por penales",
-    options: ["2-1 Argentina", "2-2 y ganó Argentina por penales", "1-1 y ganó Inglaterra por penales", "2-2 y ganó Inglaterra por penales"],
+    "country": "Argentina",
+    "question": "ARG-33 | ¿Quién hizo el histórico gol tras la jugada preparada ante Inglaterra en 1998?",
+    "answer": "javier zanetti",
+    "options": ["Gabriel Batistuta", "Javier Zanetti", "Claudio López", "Hernán Crespo"]
   },
   {
-    country: "Argentina",
-    question: "ARG-34 | ¿Quién convirtió el penal decisivo ante Inglaterra en 1998?",
-    answer: "carlos roa",
-    options: ["Ariel Ortega", "Javier Zanetti", "Hernán Crespo", "Carlos Roa"],
+    "country": "Argentina",
+    "question": "ARG-34 | ¿Quién fue el capitán de Argentina en el Mundial 2002?",
+    "answer": "gabriel batistuta",
+    "options": ["Juan Pablo Sorín", "Gabriel Batistuta", "Javier Zanetti", "Juan Román Riquelme"]
   },
   {
-    country: "Argentina",
-    question: "ARG-35 | ¿Quién hizo el histórico gol tras la jugada preparada ante Inglaterra en 1998?",
-    answer: "javier zanetti",
-    options: ["Gabriel Batistuta", "Javier Zanetti", "Claudio López", "Hernán Crespo"],
+    "country": "Argentina",
+    "question": "ARG-35 | ¿Qué selección eliminó a Argentina del Mundial 2002?",
+    "answer": "suecia",
+    "options": ["Suecia", "Inglaterra", "Nigeria", "Uruguay"]
   },
   {
-    country: "Argentina",
-    question: "ARG-36 | ¿Quién era el capitán de Argentina en el Mundial 2002?",
-    answer: "juan sebastián verón",
-    options: ["Juan Pablo Sorín", "Gabriel Batistuta", "Javier Zanetti", "Juan Sebastián Verón"],
+    "country": "Argentina",
+    "question": "ARG-36 | ¿Cómo salió el partido entre Argentina y Suecia en 2002?",
+    "answer": "1-1",
+    "options": ["2-1 Suecia", "1-1", "0-0"]
   },
   {
-    country: "Argentina",
-    question: "ARG-37 | ¿Qué selección eliminó a Argentina del Mundial 2002?",
-    answer: "suecia",
-    options: ["Suecia", "Inglaterra", "Nigeria", "Uruguay"],
+    "country": "Argentina",
+    "question": "ARG-37 | ¿Quién convirtió el único gol argentino ante Suecia en 2002?",
+    "answer": "hernán crespo",
+    "options": ["Hernán Crespo", "Batistuta", "Verón"]
   },
   {
-    country: "Argentina",
-    question: "ARG-38 | ¿Cómo salió el partido entre Argentina y Suecia en 2002?",
-    answer: "1-1",
-    options: ["2-1 Suecia", "1-1", "0-0"],
+    "country": "Argentina",
+    "question": "ARG-38 | ¿Quién era el capitán argentino en Alemania 2006?",
+    "answer": "roberto ayala",
+    "options": ["Roberto Ayala", "Sorín", "Crespo"]
   },
   {
-    country: "Argentina",
-    question: "ARG-39 | ¿Quién convirtió el único gol argentino ante Suecia en 2002?",
-    answer: "hernán crespo",
-    options: ["Hernán Crespo", "Gabriel Batistuta", "Juan Sebastián Verón"],
+    "country": "Argentina",
+    "question": "ARG-39 | ¿Cómo terminó Argentina vs México en 2006?",
+    "answer": "2-1 argentina",
+    "options": ["2-1 Argentina", "1-0 Argentina", "3-1 Argentina"]
   },
   {
-    country: "Argentina",
-    question: "ARG-40 | ¿Quién era el capitán argentino en Alemania 2006?",
-    answer: "juan pablo sorín",
-    options: ["Roberto Ayala", "Juan Pablo Sorín", "Hernán Crespo"],
+    "country": "Argentina",
+    "question": "ARG-40 | ¿Qué selección eliminó a Argentina en cuartos de final del Mundial 2006?",
+    "answer": "alemania",
+    "options": ["Italia", "Alemania", "Brasil"]
   },
   {
-    country: "Argentina",
-    question: "ARG-41 | ¿Cómo terminó Argentina vs México en 2006?",
-    answer: "2-1 argentina",
-    options: ["2-1 Argentina", "1-0 Argentina", "3-1 Argentina"],
+    "country": "Argentina",
+    "question": "ARG-41 | ¿Quién era el arquero titular de Argentina en Sudáfrica 2010?",
+    "answer": "sergio romero",
+    "options": ["Sergio Romero", "Mariano Andújar", "Juan Pablo Carrizo"]
   },
   {
-    country: "Argentina",
-    question: "ARG-42 | ¿Qué selección eliminó a Argentina en cuartos de final del Mundial 2006?",
-    answer: "alemania",
-    options: ["Italia", "Alemania", "Brasil"],
+    "country": "Argentina",
+    "question": "ARG-42 | ¿Quién convirtió el primer gol argentino en el Mundial 2010?",
+    "answer": "gabriel heinze",
+    "options": ["Gonzalo Higuaín", "Gabriel Heinze", "Carlos Tévez"]
   },
   {
-    country: "Argentina",
-    question: "ARG-43 | ¿Quién era el arquero titular de Argentina en Sudáfrica 2010?",
-    answer: "sergio romero",
-    options: ["Sergio Romero", "Mariano Andújar", "Juan Pablo Carrizo"],
+    "country": "Argentina",
+    "question": "ARG-43 | ¿Cómo terminó Argentina vs Alemania en cuartos de final de 2010?",
+    "answer": "4-0 alemania",
+    "options": ["3-0 Alemania", "4-0 Alemania", "2-0 Alemania"]
   },
   {
-    country: "Argentina",
-    question: "ARG-44 | ¿Quién convirtió el primer gol argentino en el Mundial 2010?",
-    answer: "gabriel heinze",
-    options: ["Gonzalo Higuaín", "Gabriel Heinze", "Carlos Tévez"],
+    "country": "Argentina",
+    "question": "ARG-44 | ¿Quién era el capitán argentino en Brasil 2014?",
+    "answer": "lionel messi",
+    "options": ["Javier Mascherano", "Ángel Di María", "Lionel Messi"]
   },
   {
-    country: "Argentina",
-    question: "ARG-45 | ¿Cómo terminó Argentina vs Alemania en cuartos de final de 2010?",
-    answer: "4-0 alemania",
-    options: ["3-0 Alemania", "4-0 Alemania", "2-0 Alemania"],
+    "country": "Argentina",
+    "question": "ARG-45 | ¿Quién convirtió el gol de la victoria ante Irán en 2014?",
+    "answer": "messi",
+    "options": ["Agüero", "Messi", "Di María"]
   },
   {
-    country: "Argentina",
-    question: "ARG-46 | ¿Quién era el capitán argentino en Brasil 2014?",
-    answer: "lionel messi",
-    options: ["Javier Mascherano", "Ángel Di María", "Lionel Messi"],
+    "country": "Argentina",
+    "question": "ARG-46 | ¿Cómo terminó la semifinal entre Argentina y Países Bajos en 2014?",
+    "answer": "0-0 y ganó argentina por penales",
+    "options": ["1-0 Argentina", "0-0 y ganó Argentina por penales", "2-1 Argentina"]
   },
   {
-    country: "Argentina",
-    question: "ARG-47 | ¿Quién convirtió el gol de la victoria ante Irán en 2014?",
-    answer: "messi",
-    options: ["Agüero", "Messi", "Di María"],
+    "country": "Argentina",
+    "question": "ARG-47 | ¿Quién atajó dos penales en la semifinal de 2014?",
+    "answer": "romero",
+    "options": ["Romero", "Lux", "Andújar"]
   },
   {
-    country: "Argentina",
-    question: "ARG-48 | ¿Cómo terminó la semifinal entre Argentina y Países Bajos en 2014?",
-    answer: "0-0 y ganó argentina por penales",
-    options: ["1-0 Argentina", "0-0 y ganó Argentina por penales", "2-1 Argentina"],
+    "country": "Argentina",
+    "question": "ARG-48 | ¿Quién hizo el gol ante Suiza en octavos de final de 2014?",
+    "answer": "di maría",
+    "options": ["Messi", "Higuaín", "Di María"]
   },
   {
-    country: "Argentina",
-    question: "ARG-49 | ¿Quién atajó dos penales en la semifinal de 2014?",
-    answer: "romero",
-    options: ["Romero", "Lux", "Andújar"],
+    "country": "Argentina",
+    "question": "ARG-49 | ¿Quién era el capitán argentino en Rusia 2018?",
+    "answer": "lionel messi",
+    "options": ["Javier Mascherano", "Lionel Messi", "Nicolás Otamendi"]
   },
   {
-    country: "Argentina",
-    question: "ARG-50 | ¿Quién hizo el gol ante Suiza en octavos de final de 2014?",
-    answer: "di maría",
-    options: ["Messi", "Higuaín", "Di María"],
+    "country": "Argentina",
+    "question": "ARG-50 | ¿Cómo terminó Argentina vs Francia en octavos de final de 2018?",
+    "answer": "4-3 francia",
+    "options": ["4-3 Francia", "3-2 Francia", "2-1 Francia"]
   },
   {
-    country: "Argentina",
-    question: "ARG-51 | ¿Quién era el capitán argentino en Rusia 2018?",
-    answer: "lionel messi",
-    options: ["Javier Mascherano", "Lionel Messi", "Nicolás Otamendi"],
+    "country": "Argentina",
+    "question": "ARG-51 | ¿Quién convirtió un golazo de volea ante Francia en 2018?",
+    "answer": "di maría",
+    "options": ["Di María", "Pavón", "Messi"]
   },
   {
-    country: "Argentina",
-    question: "ARG-52 | ¿Cómo terminó Argentina vs Francia en octavos de final de 2018?",
-    answer: "4-3 francia",
-    options: ["4-3 Francia", "3-2 Francia", "2-1 Francia"],
+    "country": "Argentina",
+    "question": "ARG-52 | ¿Quién marcó el primer gol de Argentina ante Nigeria en 2018?",
+    "answer": "messi",
+    "options": ["Messi", "Agüero", "Higuaín"]
   },
   {
-    country: "Argentina",
-    question: "ARG-53 | ¿Quién convirtió un golazo de volea ante Francia en 2018?",
-    answer: "Ángel di maría",
-    options: ["Ángel Di María", "Cristian Pavón", "Lionel Messi"],
+    "country": "Argentina",
+    "question": "ARG-53 | ¿Quién fue el capitán argentino en Qatar 2022?",
+    "answer": "messi",
+    "options": ["Otamendi", "Messi", "Di María"]
   },
   {
-    country: "Argentina",
-    question: "ARG-54 | ¿Quién marcó el primer gol de Argentina ante Nigeria en 2018?",
-    answer: "messi",
-    options: ["Messi", "Agüero", "Higuaín"],
+    "country": "Argentina",
+    "question": "ARG-54 | ¿Quién convirtió el primer gol argentino en Qatar 2022?",
+    "answer": "messi",
+    "options": ["Julián Álvarez", "Messi", "Lautaro Martínez"]
   },
   {
-    country: "Argentina",
-    question: "ARG-55 | ¿Quién fue el capitán argentino en Qatar 2022?",
-    answer: "messi",
-    options: ["Otamendi", "Messi", "Di María"],
+    "country": "Argentina",
+    "question": "ARG-55 | ¿Quién hizo los dos goles de Argentina en la semifinal ante Croacia en 2022?",
+    "answer": "messi y julián álvarez",
+    "options": ["Messi y Julián Álvarez", "Messi y Lautaro Martínez", "Julián Álvarez y Enzo Fernández"]
   },
   {
-    country: "Argentina",
-    question: "ARG-56 | ¿Quién convirtió el primer gol argentino en Qatar 2022?",
-    answer: "messi",
-    options: ["Julián Álvarez", "Messi", "Lautaro Martínez"],
+    "country": "Argentina",
+    "question": "ARG-56 | ¿Quién realizó la recordada atajada a Kolo Muani en la final de Qatar 2022?",
+    "answer": "emiliano martínez",
+    "options": ["Nicolás Otamendi", "Emiliano Martínez", "Cristian Romero"]
   },
   {
-    country: "Argentina",
-    question: "ARG-57 | ¿Quién hizo los dos goles de Argentina en la semifinal ante Croacia en 2022?",
-    answer: "julián álvarez",
-    options: ["Lionel Messi", "Julián Álvarez", "Enzo Fernández", "Alexis Mac Allister"],
+    "country": "Argentina",
+    "question": "ARG-57 | ¿Quién convirtió el gol ante México en la fase de grupos de Qatar 2022 que abrió el marcador?",
+    "answer": "messi",
+    "options": ["Enzo Fernández", "Messi", "Mac Allister"]
   },
   {
-    country: "Argentina",
-    question: "ARG-58 | ¿Quién realizó la recordada atajada a Kolo Muani en la final de Qatar 2022?",
-    answer: "emiliano martínez",
-    options: ["Nicolás Otamendi", "Emiliano Martínez", "Cristian Romero"],
+    "country": "Argentina",
+    "question": "ARG-58 | ¿Quién fue el goleador argentino en el Mundial 2006?",
+    "answer": "hernán crespo",
+    "options": ["Hernán Crespo", "Messi", "Tévez"]
   },
   {
-    country: "Argentina",
-    question: "ARG-59 | ¿Quién convirtió el gol ante México en la fase de grupos de Qatar 2022 que abrió el marcador?",
-    answer: "messi",
-    options: ["Enzo Fernández", "Messi", "Mac Allister"],
+    "country": "Argentina",
+    "question": "ARG-59 | ¿Qué número de camiseta utilizó Lionel Messi en su debut mundialista en 2006?",
+    "answer": "19",
+    "options": ["18", "19", "21"]
   },
   {
-    country: "Argentina",
-    question: "ARG-60 | ¿Quién fue el goleador argentino en el Mundial 2006?",
-    answer: "hernán crespo",
-    options: ["Hernán Crespo", "Messi", "Tévez"],
+    "country": "Argentina",
+    "question": "ARG-60 | ¿Qué jugador argentino convirtió el último penal de la serie ante Inglaterra en los octavos de final del Mundial 1998?",
+    "answer": "javier zanetti",
+    "options": ["Diego Simeone", "Javier Zanetti", "Hernán Crespo"]
   },
   {
-    country: "Argentina",
-    question: "ARG-61 | ¿Qué número de camiseta utilizó Lionel Messi en su debut mundialista en 2006?",
-    answer: "19",
-    options: ["18", "19", "21"],
+    "country": "Argentina",
+    "question": "ARG-61 | ¿Quién asistió a Maxi Rodríguez en el recordado gol ante México en los octavos de final de Alemania 2006?",
+    "answer": "juan román riquelme",
+    "options": ["Juan Román Riquelme", "Lionel Messi", "Carlos Tévez"]
   },
   {
-    country: "Argentina",
-    question: "ARG-62 | ¿Qué jugador argentino convirtió el último penal de la serie ante Inglaterra en los octavos de final del Mundial 1998?",
-    answer: "carlos ayala",
-    options: ["Diego Simeone", "Javier Zanetti", "Hernán Crespo", "Carlos Ayala"],
+    "country": "Argentina",
+    "question": "ARG-62 | ¿Quién fue el único jugador argentino que convirtió su penal en la definición ante Alemania en cuartos de final del Mundial 2006?",
+    "answer": "esteban cambiasso",
+    "options": ["Roberto Ayala", "Esteban Cambiasso", "Julio Cruz"]
   },
   {
-    country: "Argentina",
-    question: "ARG-63 | ¿Quién asistió a Maxi Rodríguez en el recordado gol ante México en los octavos de final de Alemania 2006?",
-    answer: "juan román riquelme",
-    options: ["Juan Román Riquelme", "Lionel Messi", "Carlos Tévez"],
+    "country": "Argentina",
+    "question": "ARG-63 | ¿Qué selección eliminó a Argentina en cuartos de final en dos Mundiales consecutivos (2006 y 2010)?",
+    "answer": "alemania",
+    "options": ["Italia", "Alemania", "Brasil"]
   },
   {
-    country: "Argentina",
-    question: "ARG-64 | ¿Quién fue el único jugador argentino que convirtió su penal en la definición ante Alemania en cuartos de final del Mundial 2006?",
-    answer: "julio cruz",
-    options: ["Roberto Ayala", "Esteban Cambiasso", "Julio Cruz"],
+    "country": "Argentina",
+    "question": "ARG-64 | ¿Quién dio la asistencia para el gol de Ángel Di María ante Suiza en los octavos de final del Mundial 2014?",
+    "answer": "lionel messi",
+    "options": ["Gonzalo Higuaín", "Lionel Messi", "Ezequiel Lavezzi"]
   },
   {
-    country: "Argentina",
-    question: "ARG-65 | ¿Qué selección eliminó a Argentina en cuartos de final en dos Mundiales consecutivos (2006 y 2010)?",
-    answer: "alemania",
-    options: ["Italia", "Alemania", "Brasil"],
+    "country": "Argentina",
+    "question": "ARG-65 | ¿Qué jugador argentino convirtió el penal que clasificó a Argentina a la final del Mundial 2014 frente a Países Bajos?",
+    "answer": "maxi rodríguez",
+    "options": ["Lionel Messi", "Sergio Agüero", "Maxi Rodríguez"]
   },
   {
-    country: "Argentina",
-    question: "ARG-66 | ¿Quién dio la asistencia para el gol de Ángel Di María ante Suiza en los octavos de final del Mundial 2014?",
-    answer: "lionel messi",
-    options: ["Gonzalo Higuaín", "Lionel Messi", "Ezequiel Lavezzi"],
+    "country": "Argentina",
+    "question": "ARG-66 | ¿Contra qué selección Lionel Messi disputó su primer partido como titular en una Copa del Mundo?",
+    "answer": "países bajos",
+    "options": ["Serbia y Montenegro", "Países Bajos", "c) Nigeria"]
   },
   {
-    country: "Argentina",
-    question: "ARG-67 | ¿Qué jugador argentino convirtió el penal que clasificó a Argentina a la final del Mundial 2014 frente a Países Bajos?",
-    answer: "maxi rodríguez",
-    options: ["Lionel Messi", "Sergio Agüero", "Maxi Rodríguez"],
+    "country": "Argentina",
+    "question": "ARG-67 | ¿Quién fue el capitán de Argentina en el partido ante Serbia y Montenegro, donde Argentina ganó 6-0 en 2006?",
+    "answer": "juan pablo sorín",
+    "options": ["Juan Pablo Sorín", "Roberto Ayala", "Javier Zanetti"]
   },
   {
-    country: "Argentina",
-    question: "ARG-68 | ¿Contra qué selección Lionel Messi disputó su primer partido como titular en una Copa del Mundo?",
-    answer: "países bajos",
-    options: ["Serbia y Montenegro", "Países Bajos", "Nigeria"],
+    "country": "Argentina",
+    "question": "ARG-68 | ¿Qué arquero argentino atajó el penal de Wesley Sneijder en la semifinal del Mundial 2014?",
+    "answer": "sergio romero",
+    "options": ["Sergio Romero", "Mariano Andújar", "Nahuel Guzmán"]
   },
   {
-    country: "Argentina",
-    question: "ARG-69 | ¿Quién fue el capitán de Argentina en el partido ante Serbia y Montenegro, donde Argentina ganó 6-0 en 2006?",
-    answer: "juan pablo sorín",
-    options: ["Juan Pablo Sorín", "Roberto Ayala", "Javier Zanetti"],
+    "country": "Argentina",
+    "question": "ARG-69 | ¿Qué jugador argentino provocó el penal cometido por Ousmane Dembélé en la final del Mundial 2022?",
+    "answer": "ángel di maría",
+    "options": ["Julián Álvarez", "Ángel Di María", "Alexis Mac Allister"]
   },
   {
-    country: "Argentina",
-    question: "ARG-70 | ¿Qué arquero argentino atajó el penal de Wesley Sneijder en la semifinal del Mundial 2014?",
-    answer: "sergio romero",
-    options: ["Sergio Romero", "Mariano Andújar", "Nahuel Guzmán"],
+    "country": "Argentina",
+    "question": "ARG-70 | ¿Que marca de camisetas uso la seleccion argentina en el mundial 1986?",
+    "answer": "le coq sportif",
+    "options": ["Le Coq Sportif", "Adidas", "Topper"]
   },
   {
-    country: "Argentina",
-    question: "ARG-71 | ¿Qué jugador argentino provocó el penal cometido por Ousmane Dembélé en la final del Mundial 2022?",
-    answer: "ángel di maría",
-    options: ["Julián Álvarez", "Ángel Di María", "Alexis Mac Allister"],
+    "country": "Argentina",
+    "question": "ARG-71 | ¿A Cuantos jugadores ingleses gambeteo Diego Armando Maradona antes de convertir el gol historico?",
+    "answer": "cinco",
+    "options": ["Cuatro", "Cinco", "Tres"]
+  },
+  {
+    "country": "Argentina",
+    "question": "ARG-72 | ¿Contra que equipo erro el penal Lionel Andres Messi en el mundial de qatar 2022?",
+    "answer": "polonia",
+    "options": ["Polonia", "Arabia Saudita", "Mexico"]
+  },
+  {
+    "country": "Argentina",
+    "question": "ARG-73 | ¿Que jugador de la seleccion Argentina hizo un agujero en la camiseta para poner un dedo debido a la lesion ocurrida en pleno partido en el mundial 1986?",
+    "answer": "jose luis brown",
+    "options": ["Oscar Ruggeri", "Claudio Caniggia", "Jose Luis Brown"]
+  },
+  {
+    "country": "Argentina",
+    "question": "ARG-74 | ¿Cuantos toques dio la seleccion argentina antes de hacer el gol a francia en el mundial 2022?",
+    "answer": "cinco",
+    "options": ["Cinco", "Siete", "Cuatro"]
+  },
+  {
+    "country": "Argentina",
+    "question": "ARG-75 | ¿En que mundial se utilizo la pelota reconocida como Gauchito?",
+    "answer": "gauchito",
+    "options": ["FulecoGauchito", "Juanito"]
+  },
+  {
+    "country": "Argentina",
+    "question": "ARG-76 | ¿Con que pais compartio argentina en el grupo del mundial 2014?",
+    "answer": "nigeria, iran y bosnia herzegovina",
+    "options": ["Nigeria, Iran y Bosnia Herzegovina", "Nigeria, Iran y Belgica", "Nigeria, Iran y Suiza."]
   },
 
 
   // ==========================================
-  // COLOMBIA (COL) Linea 202 - 
+  // Grupo A Linea 472 - 
   // ==========================================
+
   {
-    country: "Colombia",
-    question: "COL-1 | ¿Cuál es la Flor Nacional de Colombia?",
-    answer: "la orquídea",
-    options: ["La Rosa", "La Orquídea", "El clavel"],
+    "country": "Colombia",
+    "question": "COL-1 | Cual es la Flor Nacional de Colombia?",
+    "answer": "la orquídea",
+    "options": ["La Rosa", "La Orquídea", "El clavel"]
   },
   {
-    country: "Colombia",
-    question: "COL-2 | ¿A qué ciudad se le conoce como 'La ciudad de la eterna primavera'?",
-    answer: "medellín",
-    options: ["Medellín", "Cartagena", "Bogotá"],
+    "country": "Colombia",
+    "question": "COL-2 | ¿A qué ciudad se le conoce como \"La ciudad de la eterna primavera\"?",
+    "answer": "medellin",
+    "options": ["Medellin", "Cartagena", "Bogota"]
   },
   {
-    country: "Colombia",
-    question: "COL-3 | ¿Cuáles son los dos grandes cuerpos de agua que bañan las costas de Colombia?",
-    answer: "océano pacífico y atlántico (mar caribe)",
-    options: ["Océano Pacífico y Atlántico (mar Caribe)", "Océano Atlántico (mar Caribe) y Mar Rojo", "Océano Pacífico y Océano Índico"],
+    "country": "Colombia",
+    "question": "COL-3 | Cuales son los dos grandes cuerpos de agua que bañan las costas de Colombia?",
+    "answer": "oceano pacifico y atlantico (mar caribe)",
+    "options": ["Oceano Pacifico y Atlantico (mar caribe)", "Oceano Atlantico (mar caribe) y Mar Rojo", "Oceano Pacifico y Oceano Indico"]
   },
   {
-    country: "Colombia",
-    question: "COL-4 | ¿Cuál es el Árbol nacional de Colombia?",
-    answer: "palma de cera",
-    options: ["El Roble", "El Cedro", "Palma de Cera"],
+    "country": "Colombia",
+    "question": "COL-4 | Cual es el Arbol nacional de Colombia?",
+    "answer": "palma de cera",
+    "options": ["El Roble", "El Cedro", "Palma de Cera"]
   },
   {
-    country: "Colombia",
-    question: "COL-5 | ¿Quién es el autor de la Novela 'Cien años de soledad'?",
-    answer: "gabriel garcía márquez",
-    options: ["Álvaro Mutis", "Gabriel García Márquez", "Mario Vargas Llosa"],
+    "country": "Colombia",
+    "question": "COL-5 | Quien es el autor de la Novela \"Cien años de soledad\"?",
+    "answer": "gabriel garcia marquez",
+    "options": ["Alvaro Mutis", "Gabriel Garcia Marquez", "Mario Vargas Llosa"]
   },
   {
-    country: "Colombia",
-    question: "COL-6 | ¿Cómo se compone la división política de Colombia?",
-    answer: "1 distrito capital y 32 departamentos",
-    options: ["1 distrito capital y 42 departamentos", "1 distrito capital y 30 departamentos", "1 distrito capital y 32 departamentos"],
+    "country": "Colombia",
+    "question": "COL-6 | Como se compone la division politica de Colombia?",
+    "answer": "1 distrito capital y 32 departamentos",
+    "options": ["1 distrito capital y 42 departamentos", "1 distrito capital y 30 departamentos", "1 distrito capital y 32 departamentos"]
   },
   {
-    country: "Colombia",
-    question: "COL-7 | ¿Cuál es el deporte nacional por ley en Colombia?",
-    answer: "tejo",
-    options: ["Tejo", "Ciclismo", "Fútbol"],
+    "country": "Colombia",
+    "question": "COL-7 | Cual es el deporte nacional por ley en colombia?",
+    "answer": "tejo",
+    "options": ["Tejo", "Ciclismo", "Futbol"]
   },
   {
-    country: "Colombia",
-    question: "COL-8 | ¿En qué año ganó la selección de Fútbol Masculino de Colombia su primera Copa América?",
-    answer: "2001",
-    options: ["1993", "2001", "2014"],
+    "country": "Colombia",
+    "question": "COL-8 | En que año gano la seleccion de Futbol Masculino de Colombia su primera copa America?",
+    "answer": "2001",
+    "options": ["1993", "2001", "2014"]
   },
   {
-    country: "Colombia",
-    question: "COL-9 | ¿A qué selección derrotó Colombia con el histórico marcador de 5-0 en las eliminatorias al Mundial de 1994?",
-    answer: "argentina",
-    options: ["Argentina", "Brasil", "Chile"],
+    "country": "Colombia",
+    "question": "COL-9 | ¿A qué selección derrotó Colombia con el histórico marcador de 5-0 en las eliminatorias al Mundial de 1994?",
+    "answer": "argentina",
+    "options": ["Argentina", "Brasil", "Chile"]
   },
   {
-    country: "Colombia",
-    question: "COL-10 | ¿Quién es el jugador con más partidos disputados en la historia de la Copa América representando a Colombia?",
-    answer: "carlos el pibe valderrama",
-    options: ["James Rodríguez", "Carlos el pibe Valderrama", "Radamel Falcao"],
+    "country": "Colombia",
+    "question": "COL-10 | ¿Quién es el jugador con más partidos disputados en la historia de la Copa América representando a Colombia?",
+    "answer": "carlos el pibe valderrama",
+    "options": ["James Rodriguez", "Carlos el pibe Valderrama", "Radamel Falcao"]
   },
   {
-    country: "Colombia",
-    question: "COL-11 | ¿Quién es actualmente el máximo goleador histórico de la Selección Colombia masculina de mayores?",
-    answer: "radamel falcao",
-    options: ["Luis Díaz", "James Rodríguez", "Radamel Falcao"],
+    "country": "Colombia",
+    "question": "COL-11 | ¿Quién es actualmente el máximo goleador histórico de la Selección Colombia masculina de mayores?",
+    "answer": "radamel falcao",
+    "options": ["Luis Díaz", "James Rodriguez", "Radamel Falcao"]
   },
   {
-    country: "Colombia",
-    question: "COL-12 | ¿Con qué países compartió grupo en el Mundial 2014 Colombia?",
-    answer: "grecia - costa de marfil - japón",
-    options: ["Grecia - Costa de Marfil - Japón", "Grecia - Ghana - EEUU", "Holanda - Costa de Marfil - Japón"],
+    "country": "Colombia",
+    "question": "COL-12 | Con que paises compartio grupo en el mundia 2014 colombia?",
+    "answer": "grecia - costa de marfil - japon",
+    "options": ["Grecia - Costa de Marfil - Japon", "Grecia - Gana - EEUU", "Holanda - Costa de Marfil - Japon"]
   },
   {
-    country: "Colombia",
-    question: "COL-13 | ¿Qué representa el color amarillo en la bandera de Colombia?",
-    answer: "la riqueza del suelo, el sol y la soberanía",
-    options: ["Los dos océanos que bañan sus costas", "La riqueza del suelo, el sol y la soberanía", "La paz y la Justicia"],
+    "country": "Colombia",
+    "question": "COL-13 | ¿Qué representa el color amarillo en la bandera de colombia?",
+    "answer": "la riqueza del suelo, el sol y la soberania",
+    "options": ["Los dos oceanos que bañan sus costas", "La riqueza del suelo, el sol y la soberania", "La paz y la Justicia"]
   },
   {
-    country: "Colombia",
-    question: "COL-14 | ¿En qué grupo participó en el Mundial de Rusia 2018?",
-    answer: "h",
-    options: ["A", "D", "H"],
+    "country": "Colombia",
+    "question": "COL-14 | En que grupo participo en el mundial de Rusia 2018?",
+    "answer": "h",
+    "options": ["A", "D", "H"]
   },
   {
-    country: "Colombia",
-    question: "COL-15 | ¿Quién es el actual presidente de Colombia?",
-    answer: "gustavo petro urrego",
-    options: ["Gustavo Petro Uribe", "Gustavo Petro Urrego", "Gustavo Petro Quinteros"],
+    "country": "Colombia",
+    "question": "COL-15 | Quien es el actual presindente de Colombia?",
+    "answer": "gustavo pedro urrego",
+    "options": ["Gustavo Pedro Uribe", "Gustavo Pedro Urrego", "Gustavo Pedro Quinteros"]
   },
   {
-    country: "Colombia",
-    question: "COL-16 | ¿Contra qué país quedó eliminado en el Mundial 2018?",
-    answer: "inglaterra",
-    options: ["Holanda", "Francia", "Inglaterra"],
+    "country": "Colombia",
+    "question": "COL-16 | Contra que pais quedo eliminado en el mundial 2018?",
+    "answer": "inglaterrra",
+    "options": ["Holanda", "Francia", "Inglaterrra"]
   },
   {
-    country: "Colombia",
-    question: "COL-17 | ¿Cuál es la marca actual de la camiseta de Colombia?",
-    answer: "adidas",
-    options: ["Puma", "Adidas", "Nike"],
+    "country": "Colombia",
+    "question": "COL-17 | Marca actual de la camiseta de Colombia ?",
+    "answer": "adidas",
+    "options": ["Puma", "Adidas", "Nike"]
   },
   {
-    country: "Colombia",
-    question: "COL-18 | ¿Cuál es el río más largo de Colombia?",
-    answer: "río magdalena",
-    options: ["Río Cauca", "Río Putumayo", "Río Magdalena"],
+    "country": "Colombia",
+    "question": "COL-18 | Cual es el rio mas largo de colombia?",
+    "answer": "rio magdalena",
+    "options": ["Rio Cauca", "Rio Putumayo", "Rio Magdalena"]
   },
   {
-    country: "Colombia",
-    question: "COL-19 | ¿En qué ciudad colombiana nació el famoso pintor Fernando Botero?",
-    answer: "medellín",
-    options: ["Medellín", "Cali", "Bogotá"],
+    "country": "Colombia",
+    "question": "COL-19 | En que ciudad colombiana nacio el famoso pintor Fernado Botero ?",
+    "answer": "medellin",
+    "options": ["Medellin", "Cali", "Bogota"]
   },
   {
-    country: "Colombia",
-    question: "COL-20 | ¿Quién fue el primer presidente de la República de la Gran Colombia en 1819?",
-    answer: "simón bolívar",
-    options: ["Antonio Nariño", "Simón Bolívar", "Rafael Núñez"],
+    "country": "Colombia",
+    "question": "COL-20 | Quien fue el primer presidente de la Republica de la Gran Colombia en 1819?",
+    "answer": "simón bolivar",
+    "options": ["Antonio Nariño", "Simón Bolivar", "Rafael Nuñez"]
   },
   {
-    country: "Colombia",
-    question: "COL-21 | ¿Cuál es el sistema montañoso que atraviesa Colombia y se divide en tres cordilleras al entrar al país?",
-    answer: "cordillera de los andes",
-    options: ["Cordillera de los Andes", "Cordillera de los Alpes", "Montes de María"],
+    "country": "Colombia",
+    "question": "COL-21 | ¿Cuál es el sistema montañoso que atraviesa Colombia y se divide en tres cordilleras al entrar al país?",
+    "answer": "codillera de los andes",
+    "options": ["Codillera de los Andes", "Cordillera de los Alpes", "Montes de Maria"]
   },
   {
-    country: "Colombia",
-    question: "COL-22 | ¿Cuál es el ave nacional de Colombia, que también aparece en el escudo del país?",
-    answer: "el cóndor de los andes",
-    options: ["El flamenco", "El águila Arpía", "El cóndor de los Andes"],
+    "country": "Colombia",
+    "question": "COL-22 | ¿Cuál es el ave nacional de Colombia, que también aparece en el escudo del país?",
+    "answer": "el condor de los andes",
+    "options": ["El flamenco", "El aguila Arpía", "El condor de los Andes"]
   },
   {
-    country: "Colombia",
-    question: "COL-23 | ¿Cómo se le llama a la bebida fermentada a base de maíz que era sagrada para los indígenas y aún se consume en el centro del país?",
-    answer: "chicha",
-    options: ["Aguardiente", "Chicha", "Canelazo"],
+    "country": "Colombia",
+    "question": "COL-23 | ¿Cómo se le llama a la bebida fermentada a base de maíz que era sagrada para los indígenas y aún se consume en el centro del país?",
+    "answer": "chicha",
+    "options": ["Aguardiente", "Chicha", "Canelazo"]
   },
   {
-    country: "Colombia",
-    question: "COL-24 | ¿Cuál es el instrumento nacional de Colombia?",
-    answer: "tiple",
-    options: ["El Ukelele", "El Cuatro", "Tiple"],
+    "country": "Colombia",
+    "question": "COL-24 | ¿Cuál es el instrumento nacional de Colombia?",
+    "answer": "triple",
+    "options": ["El Ukelele", "El Cuatro", "Triple"]
   },
   {
-    country: "Colombia",
-    question: "COL-25 | ¿Quién es el actual director técnico de la Selección Colombia?",
-    answer: "néstor lorenzo",
-    options: ["Néstor Lorenzo", "José Pékerman", "Reinaldo Rueda"],
+    "country": "Colombia",
+    "question": "COL-25 | ¿Cuál es el actual director técnico de la Selección Colombia?",
+    "answer": "nestor lorenzo",
+    "options": ["Nestor Lorenzo", "Jose Pekerman", "Reinaldo Rueda"]
   },
   {
-    country: "Colombia",
-    question: "COL-26 | ¿Cuál es la capital de Colombia?",
-    answer: "bogotá",
-    options: ["Cartagena", "Bogotá", "Medellín"],
+    "country": "Colombia",
+    "question": "COL-26 | ¿Cuál es la capital de Colombia?",
+    "answer": "bogotá",
+    "options": ["Cartagena", "Bogotá", "Medellín"]
   },
   {
-    country: "Colombia",
-    question: "COL-27 | ¿En qué zona de Colombia crecen las palmeras de cera, las más altas del mundo?",
-    answer: "el valle de cocora",
-    options: ["El Valle de Cocora", "La selva Amazónica", "La sierra nevada de Santa Marta"],
+    "country": "Colombia",
+    "question": "COL-27 | ¿En que zona de Colombia crecen las palmeras de cera, las más altas del mundo?",
+    "answer": "el valle de cocora",
+    "options": ["El Valle de Cocora", "La selva Amazonica", "La sierra nevada de Santa Marta"]
   },
   {
-    country: "Colombia",
-    question: "COL-28 | ¿Qué línea imaginaria pasa por el extremo sur de Colombia?",
-    answer: "línea del ecuador",
-    options: ["Meridiano de Greenwich", "Trópico de Cáncer", "Línea del Ecuador"],
+    "country": "Colombia",
+    "question": "COL-28 | ¿Qué línea imaginaria pasa por el extremo sur de Colombia?",
+    "answer": "línea del ecuador",
+    "options": ["Meridiano de Greenwich", "Trópico de Cáncer", "Línea del Ecuador"]
   },
   {
-    country: "Colombia",
-    question: "COL-29 | ¿De cuántos mundiales participó la Selección de Colombia?",
-    answer: "6",
-    options: ["5", "6", "4"],
+    "country": "Colombia",
+    "question": "COL-29 | De cuantos mundiales participo la Seleccion de Colombia?",
+    "answer": "6",
+    "options": ["5", "6", "4"]
   },
   {
-    country: "Colombia",
-    question: "COL-30 | ¿Cuál fue la primer Copa del Mundo de la que participó la Selección Colombiana?",
-    answer: "1962",
-    options: ["1962", "1990", "1994"],
+    "country": "Colombia",
+    "question": "COL-30 | Cual fue la primer copa del mundo de la que participó la Selección de Colombiana?",
+    "answer": "1962",
+    "options": ["1962", "1990", "1994"]
   },
   {
-    country: "Colombia",
-    question: "COL-31 | ¿Cuántas copas del mundo ganó la Selección de Colombia?",
-    answer: "0",
-    options: ["1", "0", "2"],
+    "country": "Colombia",
+    "question": "COL-31 | Cuantas copas del mundo gano la Seleccion de Colombia?",
+    "answer": "0",
+    "options": ["1", "0", "2"]
   },
   {
-    country: "Colombia",
-    question: "COL-32 | ¿Cuál es el mejor puesto que logró la Selección Colombiana de Fútbol Masculino en un mundial?",
-    answer: "5to lugar",
-    options: ["3er Lugar", "7mo Lugar", "5to Lugar"],
+    "country": "Colombia",
+    "question": "COL-32 | Cual es el mejor puesto que logro la Seleccion Colombiana de Futbol Masculino en un mundial?",
+    "answer": "5to lugar",
+    "options": ["3er Lugar", "7mo Lugar", "5to Lugar"]
+  },
+
+  {
+    "country": "Colombia",
+    "question": "COL-33 | ¿Quién es el máximo goleador de Colombia en la historia de los Mundiales?",
+    "answer": "james rodríguez",
+    "options": ["Radamel Falcao", "Faustino Asprilla", "James Rodríguez", "Carlos Valderrama"]
+  },
+  {
+    "country": "Colombia",
+    "question": "COL-34 | ¿Cuántos goles convirtió James Rodríguez en el Mundial de Brasil 2014?",
+    "answer": "6",
+    "options": ["5", "6", "7", "8"]
+  },
+  {
+    "country": "Colombia",
+    "question": "COL-35 | ¿Qué director técnico llevó a Colombia a los cuartos de final del Mundial 2014, la mejor actuación de su historia?",
+    "answer": "josé pékerman",
+    "options": ["Francisco Maturana", "José Pékerman", "Hernán Darío Gómez", "Reinaldo Rueda"]
+  },
+  {
+    "country": "Colombia",
+    "question": "COL-36 | ¿Contra qué selección anotó James Rodríguez el gol que ganó el Premio Puskás 2014?",
+    "answer": "uruguay",
+    "options": ["Brasil", "Uruguay", "Costa de Marfil", "Grecia"]
+  },
+  {
+    "country": "Colombia",
+    "question": "COL-37 | ¿Quién es el jugador colombiano con más asistencias en Mundiales?",
+    "answer": "carlos valderrama",
+    "options": ["Freddy Rincón", "Carlos Valderrama", "James Rodríguez", "Juan Cuadrado"]
+  },
+  {
+    "country": "Colombia",
+    "question": "COL-38 | ¿Qué jugador colombiano marcó el primer gol de Colombia en la historia de los Mundiales?",
+    "answer": "marcos coll",
+    "options": ["Carlos Valderrama", "Bernardo Redín", "Marcos Coll", "Arnoldo Iguarán"]
+  },
+  {
+    "country": "Colombia",
+    "question": "COL-39 | ¿En qué Mundial Colombia alcanzó por primera vez los cuartos de final?",
+    "answer": "brasil 2014",
+    "options": ["Italia 1990", "Francia 1998", "Brasil 2014", "Rusia 2018"]
+  },
+  {
+    "country": "Colombia",
+    "question": "COL-40 | ¿Qué selección eliminó a Colombia en los cuartos de final de Brasil 2014?",
+    "answer": "brasil",
+    "options": ["Alemania", "Países Bajos", "Argentina", "Brasil"]
+  },
+  {
+    "country": "Colombia",
+    "question": "COL-41 | ¿Quién fue el capitán de Colombia durante gran parte del Mundial de Italia 1990?",
+    "answer": "carlos valderrama",
+    "options": ["René Higuita", "Leonel Álvarez", "Carlos Valderrama", "Freddy Rincón"]
+  },
+  {
+    "country": "Colombia",
+    "question": "COL-42 | ¿Qué arquero colombiano realizó el famoso “escorpión” años después de su participación mundialista?",
+    "answer": "rené higuita",
+    "options": ["David Ospina", "Miguel Calero", "René Higuita", "Faryd Mondragón"]
+  },
+  {
+    "country": "Colombia",
+    "question": "COL-43 | ¿Qué futbolista colombiano se convirtió en el jugador más veterano en disputar un Mundial al ingresar ante Japón en 2014?",
+    "answer": "faryd mondragón",
+    "options": ["René Higuita", "Mario Yepes", "Faryd Mondragón", "Óscar Córdoba"]
+  },
+  {
+    "country": "Colombia",
+    "question": "COL-44 | ¿Quién dio la asistencia para el histórico gol de Freddy Rincón ante Alemania en Italia 1990?",
+    "answer": "carlos valderrama",
+    "options": ["Leonel Álvarez", "Carlos Valderrama", "Bernardo Redín", "Antony de Ávila"]
+  },
+  {
+    "country": "Colombia",
+    "question": "COL-45 | ¿Cuántas veces participó Colombia en Mundiales masculinos hasta 2022?",
+    "answer": "6",
+    "options": ["5", "6", "7", "8"]
+  },
+  {
+    "country": "Colombia",
+    "question": "COL-46 | ¿Qué jugador colombiano fue Botín de Oro del Mundial 2014?",
+    "answer": "james rodríguez",
+    "options": ["Teófilo Gutiérrez", "Juan Cuadrado", "James Rodríguez", "Jackson Martínez"]
+  },
+  {
+    "country": "Colombia",
+    "question": "COL-47 | ¿Cuál fue el mejor resultado de Colombia en una fase de grupos mundialista?",
+    "answer": "ganar los tres partidos en 2014",
+    "options": ["Ganar los tres partidos en 2014", "Ganar dos partidos en 1990", "Empatar los tres partidos en 1998", "Ganar dos partidos en 2018"]
+  },
+  {
+    "country": "Colombia",
+    "question": "COL-48 | ¿Quién fue el máximo asistidor de Colombia en el Mundial 2014?",
+    "answer": "juan cuadrado",
+    "options": ["James Rodríguez", "Juan Cuadrado", "Pablo Armero", "Teófilo Gutiérrez"]
+  },
+  {
+    "country": "Colombia",
+    "question": "COL-49 | ¿Qué selección derrotó a Colombia por penales en octavos de final de Rusia 2018?",
+    "answer": "inglaterra",
+    "options": ["Inglaterra", "Suecia", "Bélgica", "Croacia"]
+  },
+  {
+    "country": "Colombia",
+    "question": "COL-50 | ¿Qué jugador anotó el empate agónico ante Inglaterra en el minuto 93 de Rusia 2018?",
+    "answer": "yerry mina",
+    "options": ["James Rodríguez", "Radamel Falcao", "Yerry Mina", "Juan Cuadrado"]
+  },
+  {
+    "country": "Colombia",
+    "question": "COL-51 | ¿Quién fue el entrenador de Colombia en el Mundial de Rusia 2018?",
+    "answer": "josé pékerman",
+    "options": ["José Pékerman", "Reinaldo Rueda", "Néstor Lorenzo", "Hernán Darío Gómez"]
+  },
+  {
+    "country": "Colombia",
+    "question": "COL-52 | ¿Qué colombiano fue elegido en el equipo ideal del Mundial 2014?",
+    "answer": "james rodríguez",
+    "options": ["Mario Yepes", "David Ospina", "James Rodríguez", "Carlos Sánchez"]
+  },
+
+  //============================
+  // Japon
+  //============================
+
+  {
+    "country": "Japón",
+    "question": "JAP-1 | Que representa el circulo central en la bandera de Japon?",
+    "answer": "el sol naciente",
+    "options": ["La luna llena", "El sol naciente", "La tierra fértil"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-2 | Cual es la montaña mas alta y emblematica de Japon?",
+    "answer": "monte fuji",
+    "options": ["Monte Takào", "Monte aso", "Monte Fuji"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-3 | Como se llamaba los guerreros de la antigua noblesa militar de Japon ?",
+    "answer": "samurài",
+    "options": ["Samurài", "Ninja", "Ronin"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-4 | Cual es la moneda oficial de Japon?",
+    "answer": "yen",
+    "options": ["Won", "Yuan", "Yen"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-5 | El arte Japones de doblar papel para formar figuras se conoce como ?",
+    "answer": "origami",
+    "options": ["Bonsai", "Origami", "Haiku"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-6 | Cual es la capital de Japon ?",
+    "answer": "tokio",
+    "options": ["Tokio", "Osaka", "Kioto"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-7 | Cual es la flor nacional oficial y emblema de la flia Imperial de Japon?",
+    "answer": "crisantemo (kiku)",
+    "options": ["Cerezo", "Crisantemo (Kiku)", "Rosa"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-8 | En que grupo participo en el mundial 2014?",
+    "answer": "c",
+    "options": ["A", "F", "C"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-9 | Contra que pais quedo eliminado en el mundial 2022?",
+    "answer": "croacia",
+    "options": ["Croacia", "Holanda", "Francia"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-10 | Contra que pais disputara su primer partido en el mundial 2026?",
+    "answer": "paises bajos (holanda)",
+    "options": ["Tunez", "Suecia", "Paises Bajos (Holanda)"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-11 | Quien es el entrenador actual de Japon ?",
+    "answer": "hajime moriyasu",
+    "options": ["Hajime Moriyasu", "Renn Moriyasu", "Masao Moriyasu"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-12 | Cual es la marca de la camiseta de Japon ?",
+    "answer": "adidas",
+    "options": ["Puma", "Nike", "Adidas"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-13 | Con que paises compartio el grupo E en el mundial  2010?",
+    "answer": "dinamarca, holanda y camerun",
+    "options": ["holanda, suecia, camerun", "Dinamarca, Holanda y Camerun", "Uruguay, Nigeria, Dinamarca"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-14 | Cuantas copas del Mundo gano la seleccion de Japon?",
+    "answer": "0",
+    "options": ["0", "1", "2"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-15 | Cual fue la instancia mas importante que logro Japon en una Copa del Mundo?",
+    "answer": "8vos de final",
+    "options": ["4tos de Final", "8vos de Final", "Semifinal"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-16 | De cuantas copas del mundo participo la Selección de Japon?",
+    "answer": "8",
+    "options": ["8", "7", "6"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-17 | En que año clasifico por primera vez la Selección de Japon a una Copa del Mundo?",
+    "answer": "1998",
+    "options": ["1970", "1994", "1998"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-18 | Quien es el Capitan de la Seleccion de Japon?",
+    "answer": "wataro endo",
+    "options": ["Wataro Endo", "Takumi Minamino", "Maya Yoshida"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-19 | ¿Contra qué equipo perdió Japón en los octavos de final de la Copa Mundial 2002?",
+    "answer": "turquia",
+    "options": ["Mexico", "Turquia", "EEUU"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-20 | ¿Cuántas islas principales forman aproximadamente el territorio japonés?",
+    "answer": "4",
+    "options": ["3", "4", "5"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-21 | ¿Qué acción se considera de mala educación en público en Japón?",
+    "answer": "sonarse la nariz",
+    "options": ["Sonarse la Nariz", "Usar Lentes de Sol", "Leer el periodico"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-22 | ¿Cómo se llama el tren bala japonés?",
+    "answer": "shinkansen",
+    "options": ["Maglev", "Shinkansen", "Yamato"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-23 | ¿Qué ciudad japonesa fue destruida por una bomba atómica en 1945 junto con Nagasaki?",
+    "answer": "hiroshima",
+    "options": ["Hiroshima", "Osaka", "Kyoto"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-24 | ¿Cuál es el deporte nacional tradicional de Japón?",
+    "answer": "sumo",
+    "options": ["Karate", "Judo", "Sumo"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-25 | ¿Qué océano baña las costas de Japón?",
+    "answer": "pacífico",
+    "options": ["Índico", "Pacífico", "Atlántico"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-26 | ¿Cuál es el famoso pez venenoso considerado un manjar en Japón?",
+    "answer": "fugu",
+    "options": ["Atún rojo", "Fugu", "Pez espada"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-27 | ¿Cómo se llama el sistema de escritura japonés utilizado para palabras extranjeras?",
+    "answer": "katakana",
+    "options": ["Hiragana", "Kanji", "Katakana"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-28 | ¿Qué selección derrotó Japón en el Mundial 2022 causando una gran sorpresa?",
+    "answer": "alemania",
+    "options": ["Francia", "Alemania", "Brasil"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-29 | ¿Qué jugador japonés es considerado uno de los más importantes de la historia reciente y jugó en el AC Milan?",
+    "answer": "keisuke honda",
+    "options": ["Shinji Okazaki", "Keisuke Honda", "Hidetoshi Nakata"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-30 | ¿Cuál es el nombre del emperador actual de Japón?",
+    "answer": "naruhito",
+    "options": ["Naruhito", "Akihito", "Hirohito"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-31 | ¿Qué ciudad japonesa es famosa por sus miles de templos y tradición histórica?",
+    "answer": "kyoto",
+    "options": ["Sapporo", "Kyoto", "Kobe"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-32 | ¿Qué empresa japonesa desarrolló el videojuego Mario Bros?",
+    "answer": "nintendo",
+    "options": ["Sega", "Nintendo", "Sony", "Bandai Namco"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-33 | ¿Cuál es la empresa japonesa creadora de la consola PlayStation?",
+    "answer": "sony",
+    "options": ["Panasonic", "Sony", "Toshiba"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-34 | ¿Qué país organizó junto con Japón el Mundial de fútbol 2002?",
+    "answer": "corea del sur",
+    "options": ["China", "Corea del Sur", "Australia"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-35 | ¿Cómo se llama el bosque japonés conocido por el florecimiento de los cerezos?",
+    "answer": "sakura forest",
+    "options": ["Sakura Forest", "Kamakura", "Fuji Garden"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-36 | ¿Quién es el máximo goleador de Japón en la historia de los Mundiales de fútbol?",
+    "answer": "keisuke honda",
+    "options": ["Shinji Okazaki", "Keisuke Honda", "Hidetoshi Nakata", "Takumi Minamino"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-37 | ¿Cuántos goles marcó Keisuke Honda en Copas del Mundo?",
+    "answer": "4",
+    "options": ["3", "4", "5", "6"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-38 | ¿Quién es el director técnico que llevó a Japón a los octavos de final en el Mundial de Qatar 2022 tras vencer a Alemania y España?",
+    "answer": "hajime moriyasu",
+    "options": ["Takeshi Okada", "Akira Nishino", "Hajime Moriyasu", "Zico"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-39 | ¿Qué jugador japonés participó directamente en 7 de los últimos 9 goles de Japón en Mundiales, sumando goles y asistencias?",
+    "answer": "keisuke honda",
+    "options": ["Shinji Kagawa", "Keisuke Honda", "Yuya Osako", "Junichi Inamoto"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-40 | ¿Cuántas asistencias registró Keisuke Honda en los Mundiales según las estadísticas destacadas por FIFA y la prensa internacional?",
+    "answer": "3",
+    "options": ["1", "2", "3", "4"]
+  },
+  {
+    "country": "Japón",
+    "question": "JAP-41 | ¿Qué futbolista japonés se convirtió en el primero de su país en marcar goles en tres Mundiales consecutivos?",
+    "answer": "keisuke honda",
+    "options": ["Shinji Okazaki", "Hidetoshi Nakata", "Keisuke Honda", "Shinji Kagawa"]
+  },
+
+  //-----------------------------
+  // Inglaterra
+  //-----------------------------
+
+  {
+    "country": "Inglaterra",
+    "question": "ING-1 | ¿Qué selección eliminó a Inglaterra en cuartos del Mundial 1986?",
+    "answer": "argentina",
+    "options": ["Brasil", "Argentina", "Francia"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-2 | ¿Quién era el capitán inglés en el Mundial 2006?",
+    "answer": "david beckham",
+    "options": ["David Beckham", "Steven Gerrard", "Frank Lampard"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-3 | ¿Qué jugador inglés fue expulsado ante Portugal en el Mundial 2006?",
+    "answer": "wayne rooney",
+    "options": ["Wayne Rooney", "Beckham", "Owen"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-4 | ¿Contra qué país quedó eliminado Inglaterra en semifinales del Mundial 2018?",
+    "answer": "croacia",
+    "options": ["Francia", "Croacia", "Bélgica"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-5 | ¿Cuál fue la mejor actuación de Inglaterra en mundiales después del mundial de 1966?",
+    "answer": "semifinalista",
+    "options": ["Campeón", "Finalista", "Semifinalista"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-6 | ¿Quién es el máximo goleador histórico de Inglaterra?",
+    "answer": "harry kane",
+    "options": ["Wayne Rooney", "Harry Kane", "Gary Lineker"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-7 | ¿Qué entrenador dirigió a Inglaterra en el Mundial 2022?",
+    "answer": "gareth southgate",
+    "options": ["Gareth Southgate", "Fabio Capello", "Sven-Göran Eriksson"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-8 | ¿Contra qué selección quedó eliminada Inglaterra en el Mundial 2022?",
+    "answer": "francia",
+    "options": ["Marruecos", "Francia", "Portugal"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-9 | ¿Qué famoso grupo musical nació en Liverpool?",
+    "answer": "the beatles",
+    "options": ["Queen", "The Beatles", "ABBA"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-10 | ¿Cómo se llama la residencia oficial de la monarquía británica en Londres?",
+    "answer": "buckingham palace",
+    "options": ["Windsor Castle", "Buckingham Palace", "Westminster"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-11 | ¿Qué universidad inglesa es una de las más antiguas y prestigiosas del mundo?",
+    "answer": "oxford",
+    "options": ["Harvard", "Oxford", "Salamanca"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-12 | ¿Cuál es el deporte creado en Inglaterra que luego se convirtió en el fútbol moderno?",
+    "answer": "football association",
+    "options": ["Rugby", "Cricket", "Football Association"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-13 | ¿Qué famoso naturalista inglés desarrolló la teoría de la evolución?",
+    "answer": "darwin",
+    "options": ["Darwin", "Pasteur", "Tesla"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-14 | ¿Cuál es el punto más alto de Inglaterra?",
+    "answer": "scafell pike",
+    "options": ["Ben Nevis", "Scafell Pike", "Snowdon"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-15 | ¿Qué selección derrotó a Inglaterra por penales en la Eurocopa 2021 disputada en Wembley?",
+    "answer": "italia",
+    "options": ["Italia", "España", "Francia"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-16 | ¿Qué número utilizaba David Beckham en gran parte de su carrera con Inglaterra?",
+    "answer": "7",
+    "options": ["7", "10", "23"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-17 | ¿Qué famoso físico inglés formuló las leyes del movimiento?",
+    "answer": "isaac newton",
+    "options": ["Isaac Newton", "Stephen Hawking", "Faraday"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-18 | ¿Cuál es el nombre del himno no oficial más tradicional del fútbol inglés?",
+    "answer": "three lions",
+    "options": ["Rule Britannia", "God Save the King", "Three Lions"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-19 | ¿Qué país comparte frontera terrestre con Inglaterra?",
+    "answer": "gales",
+    "options": ["Irlanda", "Escocia", "Gales"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-20 | ¿Qué arquero inglés fue expulsado en el Mundial 2010 tras un grave error ante Alemania?",
+    "answer": "robert green",
+    "options": ["Joe Hart", "David James", "Robert Green"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-21 | ¿Qué inventor inglés perfeccionó la máquina de vapor durante la Revolución Industrial?",
+    "answer": "james watt",
+    "options": ["James Watt", "Graham Bell", "Edison"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-22 | ¿Cuál es el ave símbolo del club inglés Liverpool FC?",
+    "answer": "cormorán (liver bird)",
+    "options": ["Halcón", "Cormorán (Liver Bird)", "Águila"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-23 | ¿Cuál es la flor nacional de Inglaterra?",
+    "answer": "rosa tudor",
+    "options": ["Rosa Mosqueta", "Rosa Divina", "Rosa Tudor"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-24 | ¿Qué famoso torneo de tenis se juega en Inglaterra?",
+    "answer": "wimbledon",
+    "options": ["Roland Garros", "Wimbledon", "US Open"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-25 | ¿En qué mundial Inglaterra goleó por 6-1 a Panamá?",
+    "answer": "2018",
+    "options": ["2022", "2018", "2010"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-26 | ¿Qué científico inglés es reconocido por descubrir la penicilina?",
+    "answer": "fleming",
+    "options": ["Fleming", "Darwin", "Newton"]
+  },
+  {
+    "country": "Inglaterra",
+    "question": "ING-27 | ¿Qué ciudad inglesa es conocida por su importante industria universitaria y tecnológica, junto con Oxford?",
+    "answer": "cambridge",
+    "options": ["Cambridge", "Bristol", "Leeds"]
   },
 
   // ==========================================
-  // JAPÓN (JPN)
+  // FRANCIA 1210
   // ==========================================
-  {
-    country: "Japón",
-    question: "JPN-1 | ¿Colores que componen la bandera de Japón?",
-    answer: "blanco y rojo",
-    options: ["Blanco, Rojo y Negro", "Rosa y Blanco", "Blanco y Rojo"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-2 | ¿Cuál es la montaña más alta y emblemática de Japón?",
-    answer: "monte fuji",
-    options: ["Monte Takao", "Monte Aso", "Monte Fuji"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-3 | ¿Cómo se llamaban los guerreros de la antigua nobleza militar de Japón?",
-    answer: "samurái",
-    options: ["Samurái", "Ninja", "Ronin"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-4 | ¿Cuál es la moneda oficial de Japón?",
-    answer: "yen",
-    options: ["Won", "Yuan", "Yen"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-5 | El arte japonés de doblar papel para formar figuras se conoce como:",
-    answer: "origami",
-    options: ["Bonsái", "Origami", "Haiku"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-6 | ¿Cuál es la capital de Japón?",
-    answer: "tokio",
-    options: ["Tokio", "Osaka", "Kioto"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-7 | ¿Cuál es la flor nacional oficial y emblema de la familia Imperial de Japón?",
-    answer: "crisantemo (kiku)",
-    options: ["Cerezo", "Crisantemo (Kiku)", "Rosa"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-8 | ¿En qué grupo participó en el Mundial 2014?",
-    answer: "c",
-    options: ["A", "F", "C"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-9 | ¿Contra qué país quedó eliminado en el Mundial 2022?",
-    answer: "croacia",
-    options: ["Croacia", "Holanda", "Francia"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-10 | ¿Contra qué país disputará su primer partido en el Mundial 2026?",
-    answer: "países bajos (holanda)",
-    options: ["Túnez", "Suecia", "Países Bajos (Holanda)"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-11 | ¿Quién es el entrenador actual de Japón?",
-    answer: "hajime moriyasu",
-    options: ["Hajime Moriyasu", "Renn Moriyasu", "Masao Moriyasu"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-12 | ¿Cuál es la marca de la camiseta de Japón?",
-    answer: "adidas",
-    options: ["Puma", "Nike", "Adidas"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-13 | ¿Con qué países compartió el grupo E en el Mundial 2010?",
-    answer: "dinamarca, holanda y camerún",
-    options: ["Holanda, suecia, camerun", "Dinamarca, Holanda y Camerún", "Uruguay, Nigeria, Dinamarca"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-14 | ¿Cuántas copas del Mundo ganó la selección de Japón?",
-    answer: "0",
-    options: ["0", "1", "2"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-15 | ¿Cuál fue la instancia más importante que logró Japón en una Copa del Mundo?",
-    answer: "8vos de final",
-    options: ["4tos de Final", "8vos de Final", "Semifinal"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-16 | ¿De cuántas copas del mundo participó la Selección de Japón?",
-    answer: "7",
-    options: ["8", "7", "6"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-17 | ¿En qué año clasificó por primera vez la Selección de Japón a una Copa del Mundo?",
-    answer: "1998",
-    options: ["1970", "1994", "1998"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-18 | ¿Quién es el Capitán de la Selección de Japón?",
-    answer: "wataru endo",
-    options: ["Wataru Endo", "Takumi Minamino", "Maya Yoshida"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-19 | ¿Contra qué equipo perdió Japón en los octavos de final de la Copa Mundial 2002?",
-    answer: "turquía",
-    options: ["México", "Turquía", "EEUU"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-20 | ¿Cuántas islas principales forman aproximadamente el territorio japonés?",
-    answer: "5",
-    options: ["3", "4", "5"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-21 | ¿Qué acción se considera de mala educación en público en Japón?",
-    answer: "sonarse la nariz",
-    options: ["Sonarse la Nariz", "Usar Lentes de Sol", "Leer el periódico"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-22 | ¿Cómo se llama el tren bala japonés?",
-    answer: "shinkansen",
-    options: ["Maglev", "Shinkansen", "Yamato"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-23 | ¿Qué ciudad japonesa fue destruida por una bomba atómica en 1945 junto con Nagasaki?",
-    answer: "hiroshima",
-    options: ["Hiroshima", "Osaka", "Kyoto"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-24 | ¿Cuál es el deporte nacional tradicional de Japón?",
-    answer: "sumo",
-    options: ["Karate", "Judo", "Sumo"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-25 | ¿Qué océano baña las costas de Japón?",
-    answer: "pacífico",
-    options: ["Índico", "Pacífico", "Atlántico"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-26 | ¿Cuál es el famoso pez venenoso considerado un manjar en Japón?",
-    answer: "fugu",
-    options: ["Atún rojo", "Fugu", "Pez espada"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-27 | ¿Cómo se llama el sistema de escritura japonés utilizado para palabras extranjeras?",
-    answer: "katakana",
-    options: ["Hiragana", "Kanji", "Katakana"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-28 | ¿Qué selección derrotó Japón en el Mundial 2022 causando una gran sorpresa?",
-    answer: "alemania",
-    options: ["Francia", "Alemania", "Brasil"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-29 | ¿Qué jugador japonés es considerado uno de los más importantes de la historia reciente y jugó en el AC Milan?",
-    answer: "keisuke honda",
-    options: ["Shinji Okazaki", "Keisuke Honda", "Hidetoshi Nakata"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-30 | ¿Cuál es el nombre del emperador actual de Japón?",
-    answer: "naruhito",
-    options: ["Naruhito", "Akihito", "Hirohito"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-31 | ¿Qué ciudad japonesa es famosa por sus miles de templos y tradición histórica?",
-    answer: "kyoto",
-    options: ["Sapporo", "Kyoto", "Kobe"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-32 | ¿Qué videojuego creado en Japón tiene como personaje principal a Mario?",
-    answer: "nintendo",
-    options: ["Sega", "Nintendo", "Sony"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-33 | ¿Cuál es la empresa japonesa creadora de la consola PlayStation?",
-    answer: "sony",
-    options: ["Panasonic", "Sony", "Toshiba"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-34 | ¿Qué país organizó junto con Japón el Mundial de fútbol 2002?",
-    answer: "corea del sur",
-    options: ["China", "Corea del Sur", "Australia"],
-  },
-  {
-    country: "Japón",
-    question: "JPN-35 | ¿Cómo se llama el bosque japonés conocido por el florecimiento de los cerezos?",
-    answer: "sakura forest",
-    options: ["Sakura Forest", "Kamakura", "Fuji Garden"],
-  },
 
-  // ==========================================
-  // INGLATERRA (ING)
-  // ==========================================
   {
-    country: "Inglaterra",
-    question: "ING-1 | ¿Qué selección eliminó a Inglaterra en cuartos del Mundial 1986 con el famoso gol de 'La Mano de Dios'?",
-    answer: "argentina",
-    options: ["Brasil", "Argentina", "Francia"],
+    "country": "Francia",
+    "question": "FRA-1 | ¿Cuál es la capital de Francia?",
+    "answer": "parís",
+    "options": ["Marsella", "Lyon", "París"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-2 | ¿Quién era el capitán inglés en el Mundial 2006?",
-    answer: "david beckham",
-    options: ["David Beckham", "Steven Gerrard", "Frank Lampard"],
+    "country": "Francia",
+    "question": "FRA-2 | ¿Qué colores tiene la bandera de Francia?",
+    "answer": "azul, blanco y rojo",
+    "options": ["Verde, blanco y rojo", "Azul, blanco y rojo", "Amarillo, azul y rojo"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-3 | ¿Qué jugador inglés fue expulsado ante Portugal en el Mundial 2006?",
-    answer: "wayne rooney",
-    options: ["Wayne Rooney", "Beckham", "Owen"],
+    "country": "Francia",
+    "question": "FRA-3 | ¿En qué año Francia ganó su primer Mundial de fútbol?",
+    "answer": "1998",
+    "options": ["1994", "1998", "2006"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-4 | ¿Contra qué país quedó eliminado Inglaterra en semifinales del Mundial 2018?",
-    answer: "croacia",
-    options: ["Francia", "Croacia", "Bélgica"],
+    "country": "Francia",
+    "question": "FRA-4 | ¿Qué jugador francés fue expulsado en la final del Mundial 2006?",
+    "answer": "zinedine zidane",
+    "options": ["Thierry Henry", "Didier Deschamps", "Zinedine Zidane"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-5 | ¿Cuál fue la mejor actuación de Inglaterra después de 1966?",
-    answer: "finalista",
-    options: ["Campeón", "Finalista", "Semifinalista"],
+    "country": "Francia",
+    "question": "FRA-5 | ¿Contra qué selección ganó Francia la final del Mundial 1998?",
+    "answer": "brasil",
+    "options": ["Brasil", "Italia", "Alemania"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-6 | ¿Quién es el máximo goleador histórico de Inglaterra?",
-    answer: "harry kane",
-    options: ["Wayne Rooney", "Harry Kane", "Gary Lineker"],
+    "country": "Francia",
+    "question": "FRA-6 | ¿Quién fue el entrenador de Francia campeón en 2018?",
+    "answer": "didier deschamps",
+    "options": ["Didier Deschamps", "Raymond Domenech", "Laurent Blanc"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-7 | ¿Qué entrenador dirigió a Inglaterra en el Mundial 2022?",
-    answer: "gareth southgate",
-    options: ["Gareth Southgate", "Fabio Capello", "Sven-Göran Eriksson"],
+    "country": "Francia",
+    "question": "FRA-7 | ¿Qué jugador marcó dos goles en la final del Mundial 1998?",
+    "answer": "zinedine zidane",
+    "options": ["David Trezeguet", "Zinedine Zidane", "Youri Djorkaeff"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-8 | ¿Contra qué selección quedó eliminada Inglaterra en el Mundial 2022?",
-    answer: "francia",
-    options: ["Marruecos", "Francia", "Portugal"],
+    "country": "Francia",
+    "question": "FRA-8 | ¿En qué país se disputó el Mundial que ganó Francia en 2018?",
+    "answer": "rusia",
+    "options": ["Rusia", "Qatar", "Alemania"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-9 | ¿Qué famoso grupo musical nació en Liverpool?",
-    answer: "the beatles",
-    options: ["Queen", "The Beatles", "ABBA"],
+    "country": "Francia",
+    "question": "FRA-9 | ¿Qué arquero francés fue campeón del mundo en 2018?",
+    "answer": "hugo lloris",
+    "options": ["Hugo Lloris", "Fabien Barthez", "Steve Mandanda"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-10 | ¿Cómo se llama la residencia oficial de la monarquía británica en Londres?",
-    answer: "buckingham palace",
-    options: ["Windsor Castle", "Buckingham Palace", "Westminster"],
+    "country": "Francia",
+    "question": "FRA-10 | ¿Cuál es el apodo de la selección francesa?",
+    "answer": "les bleus",
+    "options": ["La Roja", "Les Bleus", "Gli Azzurri"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-11 | ¿Qué universidad inglesa es una de las más antiguas y prestigiosas del mundo?",
-    answer: "oxford",
-    options: ["Harvard", "Oxford", "Salamanca"],
+    "country": "Francia",
+    "question": "FRA-11 | ¿Qué jugador francés ganó el Balón de Oro en 1998?",
+    "answer": "zinedine zidane",
+    "options": ["Thierry Henry", "Zinedine Zidane", "Patrick Vieira"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-12 | ¿Cuál es el deporte creado en Inglaterra que luego se convirtió en el fútbol moderno?",
-    answer: "football association",
-    options: ["Rugby", "Cricket", "Football Association"],
+    "country": "Francia",
+    "question": "FRA-12 | ¿En qué Mundial Francia fue anfitriona y campeona?",
+    "answer": "1998",
+    "options": ["1998", "1986", "2018"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-13 | ¿Qué famoso naturalista inglés desarrolló la teoría de la evolución?",
-    answer: "darwin",
-    options: ["Darwin", "Pasteur", "Tesla"],
+    "country": "Francia",
+    "question": "FRA-13 | ¿Qué selección eliminó a Francia en el Mundial 2014?",
+    "answer": "alemania",
+    "options": ["Alemania", "Argentina", "Brasil"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-14 | ¿Cuál es el punto más alto de Inglaterra?",
-    answer: "scafell pike",
-    options: ["Ben Nevis", "Scafell Pike", "Snowdon"],
+    "country": "Francia",
+    "question": "FRA-14 | ¿Quién anotó el gol de oro para Francia en la final de la Euro 2000?",
+    "answer": "david trezeguet",
+    "options": ["David Trezeguet", "Thierry Henry", "Zinedine Zidane"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-15 | ¿Qué selección derrotó a Inglaterra por penales en la Eurocopa 2021 disputada en Wembley?",
-    answer: "italia",
-    options: ["Italia", "España", "Francia"],
+    "country": "Francia",
+    "question": "FRA-15 | ¿Qué jugador joven destacó con Francia en el Mundial 2018?",
+    "answer": "kylian mbappé",
+    "options": ["Kylian Mbappé", "Karim Benzema", "Antoine Griezmann"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-16 | ¿Qué número utilizaba David Beckham en gran parte de su carrera con Inglaterra?",
-    answer: "7",
-    options: ["7", "10", "23"],
+    "country": "Francia",
+    "question": "FRA-16 | ¿Cuántos Mundiales ha ganado Francia hasta 2026?",
+    "answer": "2",
+    "options": ["1", "2", "3"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-17 | ¿Qué famoso físico inglés formuló las leyes del movimiento?",
-    answer: "isaac newton",
-    options: ["Isaac Newton", "Stephen Hawking", "Faraday"],
+    "country": "Francia",
+    "question": "FRA-17 | ¿Qué selección venció a Francia en la final del Mundial 2022?",
+    "answer": "argentina",
+    "options": ["Croacia", "Argentina", "Brasil"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-18 | ¿Cuál es el nombre del himno no oficial más tradicional del fútbol inglés?",
-    answer: "three lions",
-    options: ["Rule Britannia", "God Save the King", "Three Lions"],
+    "country": "Francia",
+    "question": "FRA-18 | ¿Quién fue capitán de Francia en el Mundial 2018?",
+    "answer": "hugo lloris",
+    "options": ["Paul Pogba", "Hugo Lloris", "Raphaël Varane"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-19 | ¿Qué países comparten frontera terrestre directa con Inglaterra?",
-    answer: "escocia y gales",
-    options: ["Irlanda y Escocia", "Escocia y Gales", "Francia y Gales"],
+    "country": "Francia",
+    "question": "FRA-19 | ¿Qué francés ganó la Bota de Oro del Mundial 1958?",
+    "answer": "just fontaine",
+    "options": ["Michel Platini", "Just Fontaine", "Jean Tigana"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-20 | ¿Qué arquero inglés cometió un grave error ante Alemania en el Mundial 2010 y fue muy cuestionado?",
-    answer: "robert green",
-    options: ["Joe Hart", "David James", "Robert Green"],
+    "country": "Francia",
+    "question": "FRA-20 | ¿Cuántos goles marcó Just Fontaine en el Mundial 1958?",
+    "answer": "13",
+    "options": ["10", "13", "15"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-21 | ¿Qué inventor inglés perfeccionó la máquina de vapor durante la Revolución Industrial?",
-    answer: "james watt",
-    options: ["James Watt", "Graham Bell", "Edison"],
+    "country": "Francia",
+    "question": "FRA-21 | ¿Qué país organizó el Mundial 1998?",
+    "answer": "francia",
+    "options": ["Italia", "Francia", "Estados Unidos"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-22 | ¿Cuál es el ave símbolo del club inglés Liverpool FC?",
-    answer: "cormorán (liver bird)",
-    options: ["Halcón", "Cormorán (Liver Bird)", "Águila"],
+    "country": "Francia",
+    "question": "FRA-22 | ¿Quién marcó un hat-trick en la final del Mundial 2022 para Francia?",
+    "answer": "kylian mbappé",
+    "options": ["Antoine Griezmann", "Kylian Mbappé", "Olivier Giroud"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-23 | ¿En qué continente se encuentra Inglaterra?",
-    answer: "europa",
-    options: ["Asia", "Oceanía", "Europa"],
+    "country": "Francia",
+    "question": "FRA-23 | ¿Cuál es la capital de Francia?",
+    "answer": "parís",
+    "options": ["Marsella", "Lyon", "París"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-24 | ¿Qué famoso torneo de tenis se juega en Inglaterra?",
-    answer: "wimbledon",
-    options: ["Roland Garros", "Wimbledon", "US Open"],
+    "country": "Francia",
+    "question": "FRA-24 | ¿Qué torre famosa se encuentra en París?",
+    "answer": "torre eiffel",
+    "options": ["Torre de Pisa", "Torre Eiffel", "Big Ben"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-25 | Inglaterra goleó 6-1 a Panamá en el Mundial 2018, ¿qué selección era la rival?",
-    answer: "inglaterra",
-    options: ["Bélgica", "Inglaterra", "Croacia"],
+    "country": "Francia",
+    "question": "FRA-25 | ¿En qué año comenzó la Revolución Francesa?",
+    "answer": "1789",
+    "options": ["1789", "1812", "1914"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-26 | ¿Qué científico inglés es reconocido por descubrir la penicilina?",
-    answer: "fleming",
-    options: ["Fleming", "Darwin", "Newton"],
+    "country": "Francia",
+    "question": "FRA-26 | ¿Quién fue el emperador francés derrotado en Waterloo?",
+    "answer": "napoleón bonaparte",
+    "options": ["Luis XIV", "Napoleón Bonaparte", "Carlos Magno"]
   },
   {
-    country: "Inglaterra",
-    question: "ING-27 | ¿Qué ciudad inglesa es conocida por su importante industria universitaria y tecnológica, junto con Oxford?",
-    answer: "cambridge",
-    options: ["Cambridge", "Bristol", "Leeds"],
+    "country": "Francia",
+    "question": "FRA-27 | ¿Qué río atraviesa París?",
+    "answer": "sena",
+    "options": ["Danubio", "Sena", "Loira"]
   },
-
-  // ==========================================
-  // FRANCIA
-  // ==========================================
   {
-    country: "Francia",
-    question: "FRA-01 | ¿Cuál es la capital de Francia?",
-    answer: "parís",
-    options: ["Marsella", "Lyon", "París"],
+    "country": "Francia",
+    "question": "FRA-28 | ¿Cuál es el lema de Francia?",
+    "answer": "libertad, igualdad y fraternidad",
+    "options": ["Orden y Progreso", "Libertad, Igualdad y Fraternidad", "Paz y Honor"]
   },
   {
-    country: "Francia",
-    question: "FRA-02 | ¿Qué colores tiene la bandera de Francia?",
-    answer: "azul, blanco y rojo",
-    options: ["Verde, blanco y rojo", "Azul, blanco y rojo", "Amarillo, azul y rojo"],
+    "country": "Francia",
+    "question": "FRA-29 | ¿Qué museo famoso alberga la Mona Lisa?",
+    "answer": "museo del louvre",
+    "options": ["Museo del Prado", "Museo Británico", "Museo del Louvre"]
   },
   {
-    country: "Francia",
-    question: "FRA-03 | ¿En qué año Francia ganó su primer Mundial de fútbol?",
-    answer: "1998",
-    options: ["1994", "1998", "2006"],
+    "country": "Francia",
+    "question": "FRA-30 | ¿Qué rey francés era conocido como el Rey Sol?",
+    "answer": "luis xiv",
+    "options": ["Luis XIV", "Luis XVI", "Enrique IV"]
   },
   {
-    country: "Francia",
-    question: "FRA-04 | ¿Qué jugador francés fue expulsado en la final del Mundial 2006?",
-    answer: "zinedine zidane",
-    options: ["Thierry Henry", "Didier Deschamps", "Zinedine Zidane"],
+    "country": "Francia",
+    "question": "FRA-31 | ¿Cuál es el idioma oficial de Francia?",
+    "answer": "francés",
+    "options": ["Italiano", "Francés", "Alemán"]
   },
   {
-    country: "Francia",
-    question: "FRA-05 | ¿Contra qué selección ganó Francia la final del Mundial 1998?",
-    answer: "brasil",
-    options: ["Brasil", "Italia", "Alemania"],
+    "country": "Francia",
+    "question": "FRA-32 | ¿Qué evento histórico ocurrió el 14 de julio de 1789?",
+    "answer": "la toma de la bastilla",
+    "options": ["La toma de la Bastilla", "La coronación de Napoleón", "La firma del Tratado de Versalles"]
   },
   {
-    country: "Francia",
-    question: "FRA-06 | ¿Quién fue el entrenador de Francia campeón en 2018?",
-    answer: "didier deschamps",
-    options: ["Didier Deschamps", "Raymond Domenech", "Laurent Blanc"],
+    "country": "Francia",
+    "question": "FRA-33 | ¿Qué famoso arco se encuentra en París?",
+    "answer": "arco del triunfo",
+    "options": ["Arco de Tito", "Arco del Triunfo", "Puerta de Brandeburgo"]
   },
   {
-    country: "Francia",
-    question: "FRA-07 | ¿Qué jugador marcó dos goles en la final del Mundial 1998?",
-    answer: "zinedine zidane",
-    options: ["David Trezeguet", "Zinedine Zidane", "Youri Djorkaeff"],
+    "country": "Francia",
+    "question": "FRA-34 | ¿Qué región francesa es famosa por su vino espumoso?",
+    "answer": "champaña",
+    "options": ["Normandía", "Champaña", "Bretaña"]
   },
   {
-    country: "Francia",
-    question: "FRA-08 | ¿En qué país se disputó el Mundial que ganó Francia en 2018?",
-    answer: "rusia",
-    options: ["Rusia", "Qatar", "Alemania"],
+    "country": "Francia",
+    "question": "FRA-35 | ¿Quién escribió 'Los Miserables'?",
+    "answer": "victor hugo",
+    "options": ["Victor Hugo", "Alexandre Dumas", "Voltaire"]
   },
   {
-    country: "Francia",
-    question: "FRA-09 | ¿Qué arquero francés fue campeón del mundo en 2018?",
-    answer: "hugo lloris",
-    options: ["Hugo Lloris", "Fabien Barthez", "Steve Mandanda"],
+    "country": "Francia",
+    "question": "FRA-36 | ¿Qué famosa catedral sufrió un incendio en 2019?",
+    "answer": "notre dame",
+    "options": ["Sagrada Familia", "Notre Dame", "Basílica del Sacré-Cœur"]
   },
   {
-    country: "Francia",
-    question: "FRA-10 | ¿Cuál es el apodo de la selección francesa?",
-    answer: "les bleus",
-    options: ["La Roja", "Les Bleus", "Gli Azzurri"],
+    "country": "Francia",
+    "question": "FRA-37 | ¿Cuál es el plato francés hecho con caracoles?",
+    "answer": "escargots",
+    "options": ["Ratatouille", "Escargots", "Fondue"]
   },
   {
-    country: "Francia",
-    question: "FRA-11 | ¿Qué jugador francés ganó el Balón de Oro en 1998?",
-    answer: "zinedine zidane",
-    options: ["Thierry Henry", "Zinedine Zidane", "Patrick Vieira"],
+    "country": "Francia",
+    "question": "FRA-38 | ¿Qué tratado puso fin a la Primera Guerra Mundial?",
+    "answer": "tratado de versalles",
+    "options": ["Tratado de Roma", "Tratado de Versalles", "Tratado de París"]
   },
   {
-    country: "Francia",
-    question: "FRA-12 | ¿En qué Mundial Francia fue anfitriona y campeona?",
-    answer: "1998",
-    options: ["1998", "1986", "2018"],
+    "country": "Francia",
+    "question": "FRA-39 | ¿Qué ciudad francesa es conocida por el Festival de Cine?",
+    "answer": "cannes",
+    "options": ["Niza", "Cannes", "Burdeos"]
   },
   {
-    country: "Francia",
-    question: "FRA-13 | ¿Qué selección eliminó a Francia en el Mundial 2014?",
-    answer: "alemania",
-    options: ["Alemania", "Argentina", "Brasil"],
+    "country": "Francia",
+    "question": "FRA-40 | ¿Qué reina francesa fue ejecutada durante la Revolución Francesa?",
+    "answer": "maría antonieta",
+    "options": ["Catalina de Médici", "María Antonieta", "Josefina"]
   },
   {
-    country: "Francia",
-    question: "FRA-14 | ¿Quién anotó el gol de oro para Francia en la final de la Euro 2000?",
-    answer: "david trezeguet",
-    options: ["David Trezeguet", "Thierry Henry", "Zinedine Zidane"],
+    "country": "Francia",
+    "question": "FRA-41 | ¿Qué escritor francés creó 'El Principito'?",
+    "answer": "antoine de saint-exupéry",
+    "options": ["Jean-Paul Sartre", "Antoine de Saint-Exupéry", "Albert Camus"]
   },
   {
-    country: "Francia",
-    question: "FRA-15 | ¿Qué jugador joven destacó con Francia en el Mundial 2018?",
-    answer: "kylian mbappé",
-    options: ["Kylian Mbappé", "Karim Benzema", "Antoine Griezmann"],
+    "country": "Francia",
+    "question": "FRA-42 | ¿Cuál es la montaña más alta de Francia y Europa Occidental?",
+    "answer": "monte blanco",
+    "options": ["Pirineos", "Monte Blanco", "Alpes Julianos"]
   },
   {
-    country: "Francia",
-    question: "FRA-16 | ¿Cuántos Mundiales ha ganado Francia hasta 2026?",
-    answer: "2",
-    options: ["1", "2", "3"],
+    "country": "Francia",
+    "question": "FRA-43 | ¿Cómo se llama el primer himno nacional de Francia?",
+    "answer": "la marsellesa",
+    "options": ["El Elíseo", "La Marsellesa", "La Bonaparte"]
   },
   {
-    country: "Francia",
-    question: "FRA-17 | ¿Qué selección venció a Francia en la final del Mundial 2022?",
-    answer: "argentina",
-    options: ["Croacia", "Argentina", "Brasil"],
+    "country": "Canadá",
+    "question": "CAN-1 | ¿Cuál es la capital de Canadá?",
+    "answer": "ottawa",
+    "options": ["Toronto", "Ottawa", "Vancouver"]
   },
   {
-    country: "Francia",
-    question: "FRA-18 | ¿Quién fue capitán de Francia en el Mundial 2018?",
-    answer: "hugo lloris",
-    options: ["Paul Pogba", "Hugo Lloris", "Raphaël Varane"],
+    "country": "Canadá",
+    "question": "CAN-2 | ¿Qué hoja aparece en la bandera canadiense?",
+    "answer": "hoja de arce",
+    "options": ["Hoja de roble", "Hoja de arce", "Hoja de pino"]
   },
   {
-    country: "Francia",
-    question: "FRA-19 | ¿Qué francés ganó la Bota de Oro del Mundial 1958?",
-    answer: "just fontaine",
-    options: ["Michel Platini", "Just Fontaine", "Jean Tigana"],
+    "country": "Canadá",
+    "question": "CAN-3 | ¿Cuál es el idioma más hablado en Canadá?",
+    "answer": "inglés",
+    "options": ["Francés", "Alemán", "Inglés"]
   },
   {
-    country: "Francia",
-    question: "FRA-20 | ¿Cuántos goles marcó Just Fontaine en el Mundial 1958?",
-    answer: "13",
-    options: ["10", "13", "15"],
+    "country": "Canadá",
+    "question": "CAN-4 | ¿Qué deporte es considerado el más tradicional en Canadá?",
+    "answer": "hockey sobre hielo",
+    "options": ["Béisbol", "Hockey sobre hielo", "Rugby"]
   },
   {
-    country: "Francia",
-    question: "FRA-21 | ¿Qué país organizó el Mundial 1998?",
-    answer: "francia",
-    options: ["Italia", "Francia", "Estados Unidos"],
+    "country": "Canadá",
+    "question": "CAN-5 | ¿Qué océano está al este de Canadá?",
+    "answer": "atlántico",
+    "options": ["Pacífico", "Índico", "Atlántico"]
   },
   {
-    country: "Francia",
-    question: "FRA-22 | ¿Quién marcó un hat-trick en la final del Mundial 2022 para Francia?",
-    answer: "kylian mbappé",
-    options: ["Antoine Griezmann", "Kylian Mbappé", "Olivier Giroud"],
+    "country": "Canadá",
+    "question": "CAN-6 | ¿Cuál es la moneda oficial de Canadá?",
+    "answer": "dólar canadiense",
+    "options": ["Euro", "Peso canadiense", "Dólar canadiense"]
   },
   {
-    country: "Francia",
-    question: "FRA-23 | ¿Qué torre famosa se encuentra en París?",
-    answer: "torre eiffel",
-    options: ["Torre de Pisa", "Torre Eiffel", "Big Ben"],
+    "country": "Canadá",
+    "question": "CAN-7 | ¿Qué animal aparece en la moneda de 5 centavos canadiense?",
+    "answer": "castor",
+    "options": ["Oso", "Castor", "Lobo"]
   },
   {
-    country: "Francia",
-    question: "FRA-24 | ¿En qué año comenzó la Revolución Francesa?",
-    answer: "1789",
-    options: ["1789", "1812", "1914"],
+    "country": "Canadá",
+    "question": "CAN-8 | ¿Cuál es la ciudad más grande de Canadá?",
+    "answer": "toronto",
+    "options": ["Montreal", "Toronto", "Calgary"]
   },
   {
-    country: "Francia",
-    question: "FRA-25 | ¿Quién fue el emperador francés derrotado en Waterloo?",
-    answer: "napoleón bonaparte",
-    options: ["Luis XIV", "Napoleón Bonaparte", "Carlos Magno"],
+    "country": "Canadá",
+    "question": "CAN-9 | ¿Qué cataratas famosas comparte Canadá con Estados Unidos?",
+    "answer": "niágara",
+    "options": ["Iguazú", "Victoria", "Niágara"]
   },
   {
-    country: "Francia",
-    question: "FRA-26 | ¿Qué río atraviesa París?",
-    answer: "sena",
-    options: ["Danubio", "Sena", "Loira"],
+    "country": "Canadá",
+    "question": "CAN-10 | ¿Cuál es el segundo idioma oficial de Canadá?",
+    "answer": "francés",
+    "options": ["Italiano", "Francés", "Portugués"]
   },
   {
-    country: "Francia",
-    question: "FRA-27 | ¿Cuál es el lema de Francia?",
-    answer: "libertad, igualdad y fraternidad",
-    options: ["Orden y Progreso", "Libertad, Igualdad y Fraternidad", "Paz y Honor"],
+    "country": "Canadá",
+    "question": "CAN-11 | ¿Qué provincia canadiense es mayoritariamente francófona?",
+    "answer": "quebec",
+    "options": ["Ontario", "Alberta", "Quebec"]
   },
   {
-    country: "Francia",
-    question: "FRA-28 | ¿Qué museo famoso alberga la Mona Lisa?",
-    answer: "museo del louvre",
-    options: ["Museo del Prado", "Museo Británico", "Museo del Louvre"],
+    "country": "Canadá",
+    "question": "CAN-12 | ¿Qué color NO está en la bandera de Canadá?",
+    "answer": "azul",
+    "options": ["Blanco", "Rojo", "Azul"]
   },
   {
-    country: "Francia",
-    question: "FRA-29 | ¿Qué rey francés era conocido como el Rey Sol?",
-    answer: "luis xiv",
-    options: ["Luis XIV", "Luis XVI", "Enrique IV"],
+    "country": "Canadá",
+    "question": "CAN-13 | ¿Cuál es el animal nacional de Canadá?",
+    "answer": "castor",
+    "options": ["Águila", "Castor", "Reno"]
   },
   {
-    country: "Francia",
-    question: "FRA-30 | ¿Cuál es el idioma oficial de Francia?",
-    answer: "francés",
-    options: ["Italiano", "Francés", "Alemán"],
+    "country": "Canadá",
+    "question": "CAN-14 | ¿Qué famoso cantante nació en Canadá?",
+    "answer": "justin bieber",
+    "options": ["Ed Sheeran", "Justin Bieber", "Bruno Mars"]
   },
   {
-    country: "Francia",
-    question: "FRA-31 | ¿Qué evento histórico ocurrió el 14 de julio de 1789?",
-    answer: "la toma de la bastilla",
-    options: ["La toma de la Bastilla", "La coronación de Napoleón", "La firma del Tratado de Versalles"],
+    "country": "Canadá",
+    "question": "CAN-15 | ¿Qué famoso jarabe produce Canadá en gran cantidad?",
+    "answer": "jarabe de arce",
+    "options": ["Chocolate", "Frutilla", "Jarabe de arce"]
   },
   {
-    country: "Francia",
-    question: "FRA-32 | ¿Qué famoso arco se encuentra en París?",
-    answer: "arco del triunfo",
-    options: ["Arco de Tito", "Arco del Triunfo", "Puerta de Brandeburgo"],
+    "country": "Canadá",
+    "question": "CAN-16 | ¿Cuál es la montaña más alta de Canadá?",
+    "answer": "monte logan",
+    "options": ["Everest", "Aconcagua", "Monte Logan"]
   },
   {
-    country: "Francia",
-    question: "FRA-33 | ¿Qué región francesa es famosa por su vino espumoso?",
-    answer: "champaña",
-    options: ["Normandía", "Champaña", "Bretaña"],
+    "country": "Canadá",
+    "question": "CAN-17 | ¿Qué selección ganó más medallas olímpicas en hockey sobre hielo?",
+    "answer": "canadá",
+    "options": ["Brasil", "España", "Canadá"]
   },
   {
-    country: "Francia",
-    question: "FRA-34 | ¿Quién escribió 'Los Miserables'?",
-    answer: "victor hugo",
-    options: ["Victor Hugo", "Alexandre Dumas", "Voltaire"],
+    "country": "Canadá",
+    "question": "CAN-18 | ¿Qué ciudad canadiense fue sede de los Juegos Olímpicos de Invierno 2010?",
+    "answer": "vancouver",
+    "options": ["Ottawa", "Vancouver", "Winnipeg"]
   },
   {
-    country: "Francia",
-    question: "FRA-35 | ¿Qué famosa catedral sufrió un incendio en 2019?",
-    answer: "notre dame",
-    options: ["Sagrada Familia", "Notre Dame", "Basílica del Sacré-Cœur"],
+    "country": "Canadá",
+    "question": "CAN-19 | ¿Con qué país comparte Canadá la frontera más larga del mundo?",
+    "answer": "estados unidos",
+    "options": ["México", "Rusia", "Estados Unidos"]
   },
   {
-    country: "Francia",
-    question: "FRA-36 | ¿Cuál es el plato francés hecho con caracoles?",
-    answer: "escargots",
-    options: ["Ratatouille", "Escargots", "Fondue"],
+    "country": "Canadá",
+    "question": "CAN-20 | ¿Qué famoso parque nacional canadiense está en las Montañas Rocosas?",
+    "answer": "banff",
+    "options": ["Yellowstone", "Yosemite", "Banff"]
   },
   {
-    country: "Francia",
-    question: "FRA-37 | ¿Qué tratado puso fin a la Primera Guerra Mundial?",
-    answer: "tratado de versalles",
-    options: ["Tratado de Roma", "Tratado de Versalles", "Tratado de París"],
+    "country": "Canadá",
+    "question": "CAN-21 | ¿En qué año participó Canadá por primera vez en un Mundial de fútbol?",
+    "answer": "1986",
+    "options": ["1986", "1984", "1990"]
   },
   {
-    country: "Francia",
-    question: "FRA-38 | ¿Qué ciudad francesa es conocida por el Festival de Cine?",
-    answer: "cannes",
-    options: ["Niza", "Cannes", "Burdeos"],
+    "country": "Canadá",
+    "question": "CAN-22 | ¿Cuántas veces ha clasificado Canadá a la Copa Mundial femenina?",
+    "answer": "8",
+    "options": ["5", "3", "8"]
   },
   {
-    country: "Francia",
-    question: "FRA-39 | ¿Qué reina francesa fue ejecutada durante la Revolución Francesa?",
-    answer: "maría antonieta",
-    options: ["Catalina de Médici", "María Antonieta", "Josefina"],
+    "country": "Canadá",
+    "question": "CAN-23 | ¿Quién fue el entrenador de Canadá en el Mundial de 1986?",
+    "answer": "tony waiters",
+    "options": ["Tony Waiters", "Stephen Hart", "John Herdman"]
   },
   {
-    country: "Francia",
-    question: "FRA-40 | ¿Qué escritor francés creó 'El Principito'?",
-    answer: "antoine de saint-exupéry",
-    options: ["Jean-Paul Sartre", "Antoine de Saint-Exupéry", "Albert Camus"],
+    "country": "Canadá",
+    "question": "CAN-24 | ¿Cuál es la mejor posición que ha alcanzado Canadá en un Mundial masculino?",
+    "answer": "fase de grupos",
+    "options": ["Cuartos de final", "Octavos de final", "Fase de grupos"]
   },
   {
-    country: "Francia",
-    question: "FRA-41 | ¿Cuál es la montaña más alta de Francia y Europa Occidental?",
-    answer: "monte blanco",
-    options: ["Pirineos", "Monte Blanco", "Alpes Julianos"],
+    "country": "Canadá",
+    "question": "CAN-25 | ¿En qué Mundial participó Canadá después de una pausa de más de 30 años?",
+    "answer": "2022",
+    "options": ["1994", "2022", "2018"]
   },
   {
-    country: "Francia",
-    question: "FRA-42 | ¿Cómo se llama el ritmo/himno nacional de Francia?",
-    answer: "la marsellesa",
-    options: ["El Elíseo", "La Marsellesa", "La Bonaparte"],
+    "country": "Canadá",
+    "question": "CAN-26 | ¿Cuántos goles anotó Canadá en total en el Mundial 1986?",
+    "answer": "0",
+    "options": ["2", "0", "1"]
   },
-
-  // ==========================================
-  // CANADÁ
-  // ==========================================
   {
-    country: "Canadá",
-    question: "CAN-01 | ¿Cuál es la capital de Canadá?",
-    answer: "ottawa",
-    options: ["Toronto", "Ottawa", "Vancouver"],
+    "country": "Canadá",
+    "question": "CAN-27 | ¿Quién fue el capitán de Canadá en su primer Mundial?",
+    "answer": "bruce wilson",
+    "options": ["Paul James", "Bruce Wilson", "Dale Mitchell"]
   },
   {
-    country: "Canadá",
-    question: "CAN-02 | ¿Qué hoja aparece en la bandera canadiense?",
-    answer: "hoja de arce",
-    options: ["Hoja de roble", "Hoja de arce", "Hoja de pino"],
+    "country": "Canadá",
+    "question": "CAN-28 | ¿En qué continente se jugó la primera participación de Canadá en un Mundial?",
+    "answer": "américa del norte",
+    "options": ["Europa", "América del Norte", "Asia"]
   },
   {
-    country: "Canadá",
-    question: "CAN-03 | ¿Cuál es el idioma más hablado en Canadá?",
-    answer: "inglés",
-    options: ["Francés", "Alemán", "Inglés"],
+    "country": "Canadá",
+    "question": "CAN-29 | ¿Cuál fue el resultado del primer partido de Canadá en un Mundial?",
+    "answer": "0-1",
+    "options": ["1-1", "0-0", "0-1"]
   },
   {
-    country: "Canadá",
-    question: "CAN-04 | ¿Qué deporte es considerado el más tradicional en Canadá?",
-    answer: "hockey sobre hielo",
-    options: ["Béisbol", "Hockey sobre hielo", "Rugby"],
+    "country": "Canadá",
+    "question": "CAN-30 | ¿En qué categoría Canadá ha tenido más éxito mundialmente?",
+    "answer": "fútbol femenino",
+    "options": ["Fútbol masculino", "Fútbol femenino", "Futsal"]
   },
   {
-    country: "Canadá",
-    question: "CAN-05 | ¿Qué océano está al este de Canadá?",
-    answer: "atlántico",
-    options: ["Pacífico", "Índico", "Atlántico"],
+    "country": "Canadá",
+    "question": "CAN-31 | ¿Qué año fue el primer Mundial femenino en el que participó Canadá?",
+    "answer": "1995",
+    "options": ["1995", "1991", "1999"]
   },
   {
-    country: "Canadá",
-    question: "CAN-06 | ¿Cuál es la moneda oficial de Canadá?",
-    answer: "dólar canadiense",
-    options: ["Euro", "Peso canadiense", "Dólar canadiense"],
+    "country": "Canadá",
+    "question": "CAN-32 | ¿Quién es la máxima goleadora canadiense en Copas del Mundo femeninas?",
+    "answer": "christine sinclair",
+    "options": ["Christine Sinclair", "Diana Matheson", "Sophie Schmidt"]
   },
   {
-    country: "Canadá",
-    question: "CAN-07 | ¿Qué animal aparece en la moneda de 5 centavos canadiense?",
-    answer: "castor",
-    options: ["Oso", "Castor", "Lobo"],
+    "country": "Canadá",
+    "question": "CAN-33 | ¿Contra qué país jugó Canadá su último partido en el Mundial 1986?",
+    "answer": "unión soviética",
+    "options": ["Bélgica", "Francia", "Unión Soviética"]
   },
   {
-    country: "Canadá",
-    question: "CAN-08 | ¿Cuál es la ciudad más grande de Canadá?",
-    answer: "toronto",
-    options: ["Montreal", "Toronto", "Calgary"],
+    "country": "Canadá",
+    "question": "CAN-34 | ¿Qué posición ocupó Canadá en el Mundial Femenino de 2015?",
+    "answer": "cuartos de final",
+    "options": ["Cuartos de final", "Semifinales", "Octavos de final"]
   },
   {
-    country: "Canadá",
-    question: "CAN-09 | ¿Qué cataratas famosas comparte Canadá con Estados Unidos?",
-    answer: "niágara",
-    options: ["Iguazú", "Victoria", "Niágara"],
+    "country": "Canadá",
+    "question": "CAN-35 | ¿Cuántas veces ha Canadá enfrentado a México en Copas Mundiales masculinas?",
+    "answer": "0",
+    "options": ["1", "0", "2"]
   },
   {
-    country: "Canadá",
-    question: "CAN-10 | ¿Cuál es el segundo idioma oficial de Canadá?",
-    answer: "francés",
-    options: ["Italiano", "Francés", "Portugués"],
+    "country": "Canadá",
+    "question": "CAN-36 | ¿En qué año Canadá obtuvo su primer triunfo en Juegos Olímpicos de fútbol?",
+    "answer": "1904",
+    "options": ["1984", "1904", "1992"]
   },
   {
-    country: "Canadá",
-    question: "CAN-11 | ¿Qué provincia canadiense es mayoritariamente francófona?",
-    answer: "quebec",
-    options: ["Ontario", "Alberta", "Quebec"],
+    "country": "Canadá",
+    "question": "CAN-37 | ¿Cuál fue el marcador del partido entre Canadá y Francia en 1986?",
+    "answer": "0-1",
+    "options": ["0-1", "1-1", "1-2"]
   },
   {
-    country: "Canadá",
-    question: "CAN-12 | ¿Qué color NO está en la bandera de Canadá?",
-    answer: "azul",
-    options: ["Blanco", "Rojo", "Azul"],
+    "country": "Canadá",
+    "question": "CAN-38 | ¿Quién fue el portero titular de Canadá en el Mundial de 1986?",
+    "answer": "paul dolan",
+    "options": ["Paul Dolan", "Terry Dunfield", "Craig Forrest"]
   },
   {
-    country: "Canadá",
-    question: "CAN-13 | ¿Cuál es el animal nacional de Canadá?",
-    answer: "castor",
-    options: ["Águila", "Castor", "Reno"],
+    "country": "Canadá",
+    "question": "CAN-39 | ¿En qué Mundial Canadá logró su primera victoria en el fútbol femenino?",
+    "answer": "2003",
+    "options": ["1999", "1995", "2003"]
   },
   {
-    country: "Canadá",
-    question: "CAN-14 | ¿Qué famoso cantante nació en Canadá?",
-    answer: "justin bieber",
-    options: ["Ed Sheeran", "Justin Bieber", "Bruno Mars"],
+    "country": "Canadá",
+    "question": "CAN-40 | ¿Cuál fue el resultado general de Canadá en la fase de grupos del Mundial 1986?",
+    "answer": "tres derrotas",
+    "options": ["Un empate y dos derrotas", "Tres derrotas", "Dos derrotas y un empate"]
   },
   {
-    country: "Canadá",
-    question: "CAN-15 | ¿Qué famoso jarabe produce Canadá en gran cantidad?",
-    answer: "jarabe de arce",
-    options: ["Chocolate", "Frutilla", "Jarabe de arce"],
+    "country": "Uruguay",
+    "question": "URU-1 | ¿En qué año se disputó el primer Mundial organizado y ganado por Uruguay?",
+    "answer": "1930",
+    "options": ["1924", "1930", "1934"]
   },
   {
-    country: "Canadá",
-    question: "CAN-16 | ¿Cuál es la montaña más alta de Canadá?",
-    answer: "monte logan",
-    options: ["Everest", "Aconcagua", "Monte Logan"],
+    "country": "Uruguay",
+    "question": "URU-2 | ¿Quién fue el capitán de Uruguay en la final de 1930 contra Argentina?",
+    "answer": "josé nasazzi",
+    "options": ["José Nasazzi", "Héctor Scarone", "José Leandro Andrade"]
   },
   {
-    country: "Canadá",
-    question: "CAN-17 | ¿Qué selección ganó más medallas olímpicas en hockey sobre hielo?",
-    answer: "canadá",
-    options: ["Brasil", "España", "Canadá"],
+    "country": "Uruguay",
+    "question": "URU-3 | ¿Cuál fue el resultado final de la final de 1930 entre Uruguay y Argentina?",
+    "answer": "4-2",
+    "options": ["2-1", "3-2", "4-2"]
   },
   {
-    country: "Canadá",
-    question: "CAN-18 | ¿Qué ciudad canadiense fue sede de los Juegos Olímpicos de Invierno 2010?",
-    answer: "vancouver",
-    options: ["Ottawa", "Vancouver", "Winnipeg"],
+    "country": "Uruguay",
+    "question": "URU-4 | ¿Cómo se conoce popularmente al último partido de Brasil 1950?",
+    "answer": "el maracanazo",
+    "options": ["El Centenariazo", "El Maracanazo", "La Hazaña de Río"]
   },
   {
-    country: "Canadá",
-    question: "CAN-19 | ¿Con qué país comparte Canadá la frontera más larga del mundo?",
-    answer: "estados unidos",
-    options: ["México", "Rusia", "Estados Unidos"],
+    "country": "Uruguay",
+    "question": "URU-5 | ¿Quién anotó el gol de la victoria definitiva (2-1) contra Brasil en 1950?",
+    "answer": "alcides ghiggia",
+    "options": ["Juan Alberto Schiaffino", "Alcides Ghiggia", "Obdulio Varela"]
   },
   {
-    country: "Canadá",
-    question: "CAN-20 | ¿Qué famoso parque nacional canadiense está en las Montañas Rocosas?",
-    answer: "banff",
-    options: ["Yellowstone", "Yosemite", "Banff"],
+    "country": "Uruguay",
+    "question": "URU-6 | ¿Quién era el capitán y líder espiritual de la selección en 1950?",
+    "answer": "obdulio varela",
+    "options": ["Obdulio Varela", "Roque Máspoli", "Schubert Gambetta"]
   },
   {
-    country: "Canadá",
-    question: "CAN-21 | ¿En qué año participó Canadá por primera vez en un Mundial de fútbol?",
-    answer: "1986",
-    options: ["1986", "1984", "1990"],
+    "country": "Uruguay",
+    "question": "URU-7 | ¿A qué selección goleó Uruguay 8-0 en el Mundial de 1950?",
+    "answer": "bolivia",
+    "options": ["Bolivia", "Escocia", "Chile"]
   },
   {
-    country: "Canadá",
-    question: "CAN-22 | ¿Cuántas veces ha clasificado Canadá a la Copa Mundial femenina hasta 2023?",
-    answer: "7", // Nota: Ajustado a la realidad histórica (Participó consecutivamente desde 1995 hasta 2023 inclusive)
-    options: ["5", "7", "3"],
+    "country": "Uruguay",
+    "question": "URU-8 | ¿En qué puesto quedó Uruguay en el Mundial de Suiza 1954?",
+    "answer": "cuarto",
+    "options": ["Tercero", "Cuarto", "Segundo"]
   },
   {
-    country: "Canadá",
-    question: "CAN-23 | ¿Quién fue el entrenador de Canadá en el Mundial de 1986?",
-    answer: "tony waiters",
-    options: ["Tony Waiters", "Stephen Hart", "John Herdman"],
+    "country": "Uruguay",
+    "question": "URU-9 | ¿Contra qué selección jugó el famoso partido de cuartos en Sudáfrica 2010?",
+    "answer": "ghana",
+    "options": ["Corea del Sur", "Ghana", "Países Bajos"]
   },
   {
-    country: "Canadá",
-    question: "CAN-24 | ¿Cuál es la mejor posición que ha alcanzado Canadá en un Mundial masculino?",
-    answer: "fase de grupos",
-    options: ["Cuartos de final", "Octavos de final", "Fase de grupos"],
+    "country": "Uruguay",
+    "question": "URU-10 | ¿Quién fue elegido como el Mejor Jugador (Balón de Oro) de Sudáfrica 2010?",
+    "answer": "diego forlán",
+    "options": ["Luis Suárez", "Edinson Cavani", "Diego Forlán"]
   },
   {
-    country: "Canadá",
-    question: "CAN-25 | ¿En qué Mundial participó Canadá después de una pausa de más de 30 años?",
-    answer: "2022",
-    options: ["1994", "2022", "2018"],
+    "country": "Uruguay",
+    "question": "URU-11 | ¿Quién fue el DT de Uruguay en 1990, 2010, 2014 y 2018?",
+    "answer": "óscar washington tabárez",
+    "options": ["Óscar Washington Tabárez", "Jorge Fossati", "Víctor Púa"]
   },
   {
-    country: "Canadá",
-    question: "CAN-26 | ¿Cuántos goles anotó Canadá en total en el Mundial 1986?",
-    answer: "0",
-    options: ["2", "0", "1"],
+    "country": "Uruguay",
+    "question": "URU-12 | ¿Cuántos goles anotó Diego Forlán en el Mundial de Sudáfrica 2010?",
+    "answer": "5",
+    "options": ["4", "5", "6"]
   },
   {
-    country: "Canadá",
-    question: "CAN-27 | ¿Quién fue el capitán de Canadá en su primer Mundial?",
-    answer: "bruce wilson",
-    options: ["Paul James", "Bruce Wilson", "Dale Mitchell"],
+    "country": "Uruguay",
+    "question": "URU-13 | ¿Quién recibió la tarjeta roja más rápida de los mundiales (56 seg) en 1986?",
+    "answer": "josé batista",
+    "options": ["José Batista", "Enzo Francescoli", "Nelson Gutiérrez"]
   },
   {
-    country: "Canadá",
-    question: "CAN-28 | ¿En qué continente se jugó la primera participación de Canadá en un Mundial?",
-    answer: "américa del norte",
-    options: ["Europa", "América del Norte", "Asia"],
+    "country": "Uruguay",
+    "question": "URU-14 | ¿Cuál es el máximo goleador histórico de Uruguay en Mundiales (8 goles)?",
+    "answer": "oscar míguez",
+    "options": ["Luis Suárez", "Oscar Míguez", "Diego Forlán"]
   },
   {
-    country: "Canadá",
-    question: "CAN-29 | ¿Cuál fue el resultado del primer partido de Canadá en un Mundial (Vs Francia)?",
-    answer: "0-1",
-    options: ["1-1", "0-0", "0-1"],
+    "country": "Uruguay",
+    "question": "URU-15 | ¿En qué Mundial Uruguay volvió a semis después de 40 años?",
+    "answer": "sudáfrica 2010",
+    "options": ["Alemania 2006", "Sudáfrica 2010", "Brasil 2014"]
   },
   {
-    country: "Canadá",
-    question: "CAN-30 | ¿En qué categoría de fútbol de mayores Canadá ha tenido más éxito mundialmente?",
-    answer: "fútbol femenino",
-    options: ["Fútbol masculino", "Fútbol femenino", "Futsal"],
+    "country": "Uruguay",
+    "question": "URU-16 | ¿Quién hizo los dos goles en la victoria 2-1 ante Inglaterra en 2014?",
+    "answer": "luis suárez",
+    "options": ["Diego Godín", "Luis Suárez", "Edinson Cavani"]
   },
   {
-    country: "Canadá",
-    question: "CAN-31 | ¿Qué año fue el primer Mundial femenino en el que participó Canadá?",
-    answer: "1995",
-    options: ["1995", "1991", "1999"],
+    "country": "Uruguay",
+    "question": "URU-17 | ¿En qué puesto terminó Uruguay en el Mundial de México 1970?",
+    "answer": "cuarto",
+    "options": ["Segundo", "Tercero", "Cuarto"]
   },
   {
-    country: "Canadá",
-    question: "CAN-32 | ¿Quién es la máxima goleadora canadiense en Copas del Mundo femeninas?",
-    answer: "christine sinclair",
-    options: ["Christine Sinclair", "Charmaine Hooper", "Diana Matheson"],
+    "country": "Uruguay",
+    "question": "URU-18 | ¿Quién era la figura de Uruguay en los Mundiales de 1986 y 1990?",
+    "answer": "enzo francescoli",
+    "options": ["Rubén Sosa", "Enzo Francescoli", "Carlos Aguilera"]
   },
   {
-    country: "Canadá",
-    question: "CAN-33 | ¿Contra qué país jugó Canadá su último partido en el Mundial 1986?",
-    answer: "uruguay",
-    options: ["Bélgica", "Francia", "Uruguay"],
+    "country": "Uruguay",
+    "question": "URU-19 | ¿Contra qué país debutó Uruguay ganando 1-0 en Rusia 2018?",
+    "answer": "egipto",
+    "options": ["Egipto", "Arabia Saudita", "Rusia"]
   },
   {
-    country: "Canadá",
-    question: "CAN-34 | ¿Qué posición ocupó Canadá en el Mundial Femenino de 2015 en el que fue local?",
-    answer: "cuartos de final",
-    options: ["Cuartos de final", "Semifinales", "Octavos de final"],
+    "country": "Uruguay",
+    "question": "URU-20 | ¿Cuántas estrellas tiene el escudo de la AUF por títulos mundiales?",
+    "answer": "4",
+    "options": ["2", "3", "4"]
   },
   {
-    country: "Canadá",
-    question: "CAN-35 | ¿Cuántas veces Canadá ha enfrentado a México en Copas Mundiales masculinas?",
-    answer: "0", // Ajustado: Históricamente no se cruzaron en mundiales masculinos absolutos
-    options: ["1", "0", "2"],
+    "country": "Uruguay",
+    "question": "URU-21 | ¿Cuál es el punto más alto de Uruguay?",
+    "answer": "cerro catedral",
+    "options": ["Cerro del Verdún", "Cerro Catedral", "Cerro de las Ánimas"]
   },
   {
-    country: "Canadá",
-    question: "CAN-36 | ¿En qué año Canadá obtuvo su primer triunfo (Medalla de Oro) en Juegos Olímpicos de fútbol masculino?",
-    answer: "1904",
-    options: ["1984", "1904", "1992"],
+    "country": "Uruguay",
+    "question": "URU-22 | ¿Quién es considerado el \"Prócer de la Patria\" en Uruguay?",
+    "answer": "josé gervasio artigas",
+    "options": ["José Gervasio Artigas", "Juan Antonio Lavalleja", "Manuel Oribe"]
   },
   {
-    country: "Canadá",
-    question: "CAN-37 | ¿Cuál fue el marcador del partido entre Canadá y Hungría en el Mundial de 1986?",
-    answer: "0-2",
-    options: ["0-1", "0-2", "1-2"],
+    "country": "Uruguay",
+    "question": "URU-23 | ¿En qué departamento se encuentran las Grutas del Palacio?",
+    "answer": "flores",
+    "options": ["Durazno", "Flores", "San José"]
   },
   {
-    country: "Canadá",
-    question: "CAN-38 | ¿Quién fue el portero titular de Canadá en el Mundial de 1986?",
-    answer: "tino lettieri", // Ajustado error ortográfico (Lettieri/Olivieri)
-    options: ["Tino Lettieri", "Terry Dunfield", "Craig Forrest"],
+    "country": "Uruguay",
+    "question": "URU-24 | ¿Cuál es la flor nacional de Uruguay?",
+    "answer": "ceibo",
+    "options": ["Margarita", "Ceibo", "Clavel"]
   },
   {
-    country: "Canadá",
-    question: "CAN-39 | ¿En qué Mundial Canadá logró su primera victoria en el fútbol femenino?",
-    answer: "1999",
-    options: ["1999", "1995", "2003"],
+    "country": "Uruguay",
+    "question": "URU-25 | ¿Quién es el autor de la famosa obra \"La cumparsita\"?",
+    "answer": "gerardo matos rodríguez",
+    "options": ["Gerardo Matos Rodríguez", "Carlos Gardel", "Julio Sosa"]
   },
   {
-    country: "Canadá",
-    question: "CAN-40 | ¿Cuál fue el resultado general de Canadá en la fase de grupos del Mundial 1986?",
-    answer: "tres derrotas",
-    options: ["Un empate y dos derrotas", "Tres derrotas", "Dos derrotas y un empate"],
+    "country": "Uruguay",
+    "question": "URU-26 | ¿En qué año se juró la primera Constitución de Uruguay?",
+    "answer": "1830",
+    "options": ["1825", "1830", "1811"]
   },
-
-  // ==========================================
-  // URUGUAY
-  // ==========================================
   {
-    country: "Uruguay",
-    question: "URU-01 | ¿En qué año se disputó el primer Mundial organizado y ganado por Uruguay?",
-    answer: "1930",
-    options: ["1924", "1930", "1934"],
+    "country": "Uruguay",
+    "question": "URU-27 | ¿Cuál es el departamento más pequeño de Uruguay en superficie?",
+    "answer": "montevideo",
+    "options": ["Montevideo", "Canelones", "Maldonado"]
   },
   {
-    country: "Uruguay",
-    question: "URU-02 | ¿Quién fue el capitán de Uruguay en la final de 1930 contra Argentina?",
-    answer: "josé nasazzi",
-    options: ["José Nasazzi", "Héctor Scarone", "José Leandro Andrade"],
+    "country": "Uruguay",
+    "question": "URU-28 | ¿Qué ave es considerada el Ave Nacional de Uruguay?",
+    "answer": "tero",
+    "options": ["Hornero", "Tero", "Cardenal"]
   },
   {
-    country: "Uruguay",
-    question: "URU-03 | ¿Cuál fue el resultado final de la final de 1930 entre Uruguay y Argentina?",
-    answer: "4-2",
-    options: ["2-1", "3-2", "4-2"],
+    "country": "Uruguay",
+    "question": "URU-29 | ¿Cómo se llama el río que cruza Uruguay de este a oeste y divide al país en dos?",
+    "answer": "río negro",
+    "options": ["Río Santa Lucía", "Río Negro", "Río Yi"]
   },
   {
-    country: "Uruguay",
-    question: "URU-04 | ¿Cómo se conoce popularmente al último partido de Brasil 1950?",
-    answer: "el maracanazo",
-    options: ["El Centenariazo", "El Maracanazo", "La Hazaña de Río"],
+    "country": "Uruguay",
+    "question": "URU-30 | ¿Quién fue el primer presidente de la República Oriental del Uruguay?",
+    "answer": "fructuoso rivera",
+    "options": ["Fructuoso Rivera", "Manuel Oribe", "Joaquín Suárez"]
   },
   {
-    country: "Uruguay",
-    question: "URU-05 | ¿Quién anotó el gol de la victoria definitiva (2-1) contra Brasil en 1950?",
-    answer: "alcides ghiggia",
-    options: ["Juan Alberto Schiaffino", "Alcides Ghiggia", "Obdulio Varela"],
+    "country": "Uruguay",
+    "question": "URU-31 | ¿Cuál es el puerto más profundo de Uruguay?",
+    "answer": "puerto de la paloma",
+    "options": ["Puerto de Montevideo", "Puerto de La Paloma", "Puerto de Fray Bentos"]
   },
   {
-    country: "Uruguay",
-    question: "URU-06 | ¿Quién era el capitán y líder espiritual de la selección en 1950?",
-    answer: "obdulio varela",
-    options: ["Obdulio Varela", "Roque Máspoli", "Schubert Gambetta"],
+    "country": "Uruguay",
+    "question": "URU-32 | ¿Qué religioso y naturalista fundó la Biblioteca Nacional de Uruguay?",
+    "answer": "dámaso antonio larrañaga",
+    "options": ["Dámaso Antonio Larrañaga", "Jacinto Vera", "José Pedro Varela"]
   },
   {
-    country: "Uruguay",
-    question: "URU-07 | ¿A qué selección goleó Uruguay 8-0 en el Mundial de 1950?",
-    answer: "bolivia",
-    options: ["Bolivia", "Escocia", "Chile"],
+    "country": "Uruguay",
+    "question": "URU-33 | ¿En qué departamento se encuentra el Cerro Arequita?",
+    "answer": "lavalleja",
+    "options": ["Maldonado", "Rocha", "Lavalleja"]
   },
   {
-    country: "Uruguay",
-    question: "URU-08 | ¿En qué puesto quedó Uruguay en el Mundial de Suiza 1954?",
-    answer: "cuarto",
-    options: ["Tercero", "Cuarto", "Segundo"],
+    "country": "Uruguay",
+    "question": "URU-34 | ¿Quién fue el impulsor de la reforma escolar en Uruguay en el siglo XIX?",
+    "answer": "josé pedro varela",
+    "options": ["Domingo Faustino Sarmiento", "José Pedro Varela", "José Enrique Rodó"]
   },
   {
-    country: "Uruguay",
-    question: "URU-09 | ¿Contra qué selección jugó el famoso partido de cuartos en Sudáfrica 2010?",
-    answer: "ghana",
-    options: ["Corea del Sur", "Ghana", "Países Bajos"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-10 | ¿Quién fue elegido como el Mejor Jugador (Balón de Oro) de Sudáfrica 2010?",
-    answer: "diego forlán",
-    options: ["Luis Suárez", "Edinson Cavani", "Diego Forlán"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-11 | ¿Quién fue el DT de Uruguay en 1990, 2010, 2014 y 2018?",
-    answer: "óscar washington tabárez",
-    options: ["Óscar Washington Tabárez", "Jorge Fossati", "Víctor Púa"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-12 | ¿Cuántos goles anotó Diego Forlán en el Mundial de Sudáfrica 2010?",
-    answer: "5",
-    options: ["4", "5", "6"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-13 | ¿Quién recibió la tarjeta roja más rápida de los mundiales (56 seg) en 1986?",
-    answer: "josé batista",
-    options: ["José Batista", "Enzo Francescoli", "Nelson Gutiérrez"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-14 | ¿Cuál es el máximo goleador histórico de Uruguay en Mundiales (8 goles)?",
-    answer: "oscar míguez",
-    options: ["Luis Suárez", "Oscar Míguez", "Diego Forlán"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-15 | ¿En qué Mundial Uruguay volvió a semis después de 40 años?",
-    answer: "sudáfrica 2010",
-    options: ["Alemania 2006", "Sudáfrica 2010", "Brasil 2014"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-16 | ¿Quién hizo los dos goles en la victoria 2-1 ante Inglaterra en 2014?",
-    answer: "luis suárez",
-    options: ["Diego Godín", "Luis Suárez", "Edinson Cavani"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-17 | ¿En qué puesto terminó Uruguay en el Mundial de México 1970?",
-    answer: "cuarto",
-    options: ["Segundo", "Tercero", "Cuarto"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-18 | ¿Quién era la figura de Uruguay en los Mundiales de 1986 y 1990?",
-    answer: "enzo francescoli",
-    options: ["Rubén Sosa", "Enzo Francescoli", "Carlos Aguilera"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-19 | ¿Contra qué país debutó Uruguay ganando 1-0 en Rusia 2018?",
-    answer: "egipto",
-    options: ["Egipto", "Arabia Saudita", "Rusia"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-20 | ¿Cuántas estrellas oficiales tiene el escudo de la AUF por títulos mundiales reconocidos por FIFA?",
-    answer: "4",
-    options: ["2", "3", "4"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-21 | ¿Cuál es el punto más alto de Uruguay?",
-    answer: "cerro catedral",
-    options: ["Cerro del Verdún", "Cerro Catedral", "Cerro de las Ánimas"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-22 | ¿Quién es considerado el 'Prócer de la Patria' en Uruguay?",
-    answer: "josé gervasio artigas",
-    options: ["José Gervasio Artigas", "Juan Antonio Lavalleja", "Manuel Oribe"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-23 | ¿En qué departamento se encuentran las Grutas del Palacio?",
-    answer: "flores",
-    options: ["Durazno", "Flores", "San José"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-24 | ¿Cuál es la flor nacional de Uruguay?",
-    answer: "ceibo",
-    options: ["Margarita", "Ceibo", "Clavel"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-25 | ¿Quién es el autor de la famosa obra 'La cumparsita'?",
-    answer: "gerardo matos rodríguez",
-    options: ["Gerardo Matos Rodríguez", "Carlos Gardel", "Julio Sosa"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-26 | ¿En qué año se juró la primera Constitución de Uruguay?",
-    answer: "1830",
-    options: ["1825", "1830", "1811"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-27 | ¿Cuál es el departamento más pequeño de Uruguay en superficie?",
-    answer: "montevideo",
-    options: ["Montevideo", "Canelones", "Maldonado"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-28 | ¿Qué ave es considerada el Ave Nacional de Uruguay?",
-    answer: "tero",
-    options: ["Hornero", "Tero", "Cardenal"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-29 | ¿Cómo se llama el río que cruza Uruguay de este a oeste y divide al país en dos?",
-    answer: "río negro",
-    options: ["Río Santa Lucía", "Río Negro", "Río Yi"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-30 | ¿Quién fue el primer presidente de la República Oriental del Uruguay?",
-    answer: "fructuoso rivera",
-    options: ["Fructuoso Rivera", "Manuel Oribe", "Joaquín Suárez"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-31 | ¿Cuál es el puerto más profundo de Uruguay?",
-    answer: "puerto de la paloma",
-    options: ["Puerto de Montevideo", "Puerto de La Paloma", "Puerto de Fray Bentos"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-32 | ¿Qué religioso y naturalista fundó la Biblioteca Nacional de Uruguay?",
-    answer: "dámaso antonio larrañaga",
-    options: ["Dámaso Antonio Larrañaga", "Jacinto Vera", "José Pedro Varela"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-33 | ¿En qué departamento se encuentra el Cerro Arequita?",
-    answer: "lavalleja",
-    options: ["Maldonado", "Rocha", "Lavalleja"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-34 | ¿Quién fue el impulsor de la reforma escolar en Uruguay en el siglo XIX?",
-    answer: "josé pedro varela",
-    options: ["Domingo Faustino Sarmiento", "José Pedro Varela", "José Enrique Rodó"],
-  },
-  {
-    country: "Uruguay",
-    question: "URU-35 | ¿Cuál es el departamento uruguayo famoso por sus piedras semipreciosas (Amatistas)?",
-    answer: "artigas",
-    options: ["Artigas", "Rivera", "Tacuarembó"],
+    "country": "Uruguay",
+    "question": "URU-35 | ¿Cuál es el departamento uruguayo famoso por sus piedras semipreciosas (Amatistas)?",
+    "answer": "artigas",
+    "options": ["Artigas", "Rivera", "Tacuarembó"]
   },
 
   // ==========================================
@@ -5079,7 +5265,7 @@ export const QUESTIONS_DB: QuestionItem[] = [
     options: ["Mayas", "Olmecas", "Tlaxcaltecas", "Incas"],
   },
 
-// ==========================================
+  // ==========================================
   // SUIZA (SUI)
   // ==========================================
   {
@@ -5868,7 +6054,7 @@ export const QUESTIONS_DB: QuestionItem[] = [
   // ==========================================
   // Noruega
   // ==========================================
- 
+
   {
     country: "Noruega",
     question: "NOR-1 | ¿Cuál es la ciudad más poblada de Noruega?",
