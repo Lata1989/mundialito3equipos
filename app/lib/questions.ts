@@ -1898,7 +1898,7 @@ export const QUESTIONS_DB: QuestionItem[] = [
   {
     "country": "Uruguay",
     "question": "URU-31 | ¿Cuál es el puerto más profundo de Uruguay?",
-    "answer": "puerto de la paloma",
+    "answer": "puerto de montevideo",
     "options": ["Puerto de Montevideo", "Puerto de La Paloma", "Puerto de Fray Bentos"]
   },
   {
@@ -2117,7 +2117,7 @@ export const QUESTIONS_DB: QuestionItem[] = [
   },
   {
     country: "Brasil",
-    question: "BRA-32 | ¿Qué país eliminó a Brasil en los penales en Francia 1998 antes de la final?",
+    question: "BRA-32 | ¿Brasil,a qué país eliminó en semifinales por penales en Francia 1998?",
     answer: "holanda",
     options: ["Holanda", "Inglaterra", "Croacia"],
   },
@@ -2177,9 +2177,9 @@ export const QUESTIONS_DB: QuestionItem[] = [
   },
   {
     country: "Brasil",
-    question: "BRA-42 | ¿Cuál es el idioma oficial de Brasil?",
-    answer: "portugués",
-    options: ["Español", "Portugués", "Italiano"],
+    question: "BRA-42 | ¿Cuál es la cuarta ciudad mas poblada de Brasil?",
+    answer: "salvador",
+    options: ["Salvador", "Brasilia", "Río de Janeiro"],
   },
   {
     country: "Brasil",
@@ -2241,9 +2241,9 @@ export const QUESTIONS_DB: QuestionItem[] = [
   },
   {
     country: "Marruecos",
-    question: "MAR-07 | ¿Quién fue el primer marroquí en ganar la Champions League?",
-    answer: "redouane naybet",
-    options: ["Achraf Hakimi", "Redouane Naybet", "Ziyech"],
+    question: "MAR-07 | ¿Cuál es la segunda ciudad mas poblada de Marruecos?",
+    answer: "tanger",
+    options: ["Casablanca", "Tanger", "Fest"],
   },
   {
     country: "Marruecos",
@@ -2367,9 +2367,9 @@ export const QUESTIONS_DB: QuestionItem[] = [
   },
   {
     country: "Marruecos",
-    question: "MAR-28 | ¿Qué selección africana enfrentó Marruecos en la final de la Copa Africana 2004?",
-    answer: "túnez",
-    options: ["Túnez", "Egipto", "Camerún"],
+    question: "MAR-28 | ¿Quien es el segundo goleador historico de la seleccion Marruecos",
+    answer: "ayoub el kaabi",
+    options: ["Ayoub El Kaabi", "Ahmed Faras", "Hakim Ziyech"],
   },
   {
     country: "Marruecos",
