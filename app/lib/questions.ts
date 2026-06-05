@@ -1127,9 +1127,9 @@ export const QUESTIONS_DB: QuestionItem[] = [
   },
   {
     "country": "Inglaterra",
-    "question": "ING-15 | ¿Qué selección derrotó a Inglaterra por penales en la Eurocopa 2021 disputada en Wembley?",
-    "answer": "italia",
-    "options": ["Italia", "España", "Francia"]
+    "question": "ING-15 | ¿Cuál es la tercer ciudad mas poblada de Inglaterra?",
+    "answer": "Manchester",
+    "options": ["Manchester", "Liverpool", "Birmingham"]
   },
   {
     "country": "Inglaterra",
