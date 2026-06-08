@@ -62,9 +62,11 @@ export default function SoccerQuizTriangular() {
   const [isMultipleChoice, setIsMultipleChoice] = useState(false);
   const [score, setScore] = useState({ blue: 0, red: 0, white: 0 });
   
-  // --- ESTADOS DE PREGUNTAS ---
+  // --- ESTADOS DE PREGUNTAS Y TRANSICIÓN ---
   const [poolQuestions, setPoolQuestions] = useState<any[]>([]);
   const [currentQ, setCurrentQ] = useState<any>(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [transitionCountdown, setTransitionCountdown] = useState(5);
 
   const [timeLeft, setTimeLeft] = useState(30);
   const [isTimerRunning, setIsTimerRunning] = useState(false); 
@@ -93,9 +95,9 @@ export default function SoccerQuizTriangular() {
     return [goalkeeper, ...baseFields];
   }, []);
 
-  // --- TIMER ---
+  // --- TIMER DEL JUEGO ---
   useEffect(() => {
-    if (!teams || !teams.white || !isTimerRunning) return;
+    if (!teams || !teams.white || !isTimerRunning || isTransitioning) return;
 
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
@@ -108,7 +110,27 @@ export default function SoccerQuizTriangular() {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [teams, possession, isTimerRunning]);
+  }, [teams, possession, isTimerRunning, isTransitioning]);
+
+  // --- TIMER DE TRANSICIÓN (5 SEGUNDOS) ---
+  useEffect(() => {
+    if (!isTransitioning) return;
+
+    const transTimer = setInterval(() => {
+      setTransitionCountdown((prev) => {
+        if (prev <= 1) {
+          clearInterval(transTimer);
+          setIsTransitioning(false);
+          // CORREGIDO: Al mostrar la pregunta el tiempo debe estar parado hasta dar Play
+          setIsTimerRunning(false); 
+          return 5;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(transTimer);
+  }, [isTransitioning]);
 
   // --- REPRODUCTOR DE AUDIOS ---
   const triggerAudio = (
@@ -205,6 +227,9 @@ export default function SoccerQuizTriangular() {
 
   const advanceToNextPlay = (updatedPool?: any[]) => {
     const currentPool = updatedPool || poolQuestions;
+    
+    setIsTransitioning(true);
+    setTransitionCountdown(5);
 
     if (currentPool.length === 0) {
       const freshPool = [...availableQuestionsPool];
@@ -262,40 +287,43 @@ export default function SoccerQuizTriangular() {
   const handleButtonClick = (
     buttonType: "pase-largo" | "pase-corto" | "mal-pase" | "gol",
   ) => {
-    setIsTimerRunning(false); 
-    if (buttonType === "gol") {
-      triggerAudio("gol");
-      setScore((prev) => ({
-        ...prev,
-        [possession.team]: prev[possession.team] + 1,
-      }));
-      setPossession((prev) => ({
-        team: getDefenderTeam(prev.team),
-        role: "5", // CORREGIDO: El equipo que recibe el gol saca desde el medio con el '5'
-      }));
-      setTimeLeft(30);
-      setIsMultipleChoice(false);
-      advanceToNextPlay();
-    } else if (buttonType === "mal-pase") {
-      triggerAudio("error");
-      setPossession((prev) => ({
-        team: getDefenderTeam(prev.team),
-        role: getRecoveryRole(prev.role),
-      }));
-      setTimeLeft(30);
-      setIsMultipleChoice(false);
-      advanceToNextPlay();
-    } else if (buttonType === "pase-largo") {
-      triggerAudio("pase-largo");
-      const roles: Role[] = ["DEF", "5", "VOL", "ENG", "9"];
-      const currentIndex = roles.indexOf(possession.role as any);
-      let nextIndex = Math.min(currentIndex + 2, roles.length - 1);
-      setPossession((prev) => ({ ...prev, role: roles[nextIndex] }));
-      setTimeLeft(30);
-      setIsMultipleChoice(false);
-      advanceToNextPlay();
-    } else if (buttonType === "pase-corto") {
+    if (buttonType === "pase-corto") {
+      // CORREGIDO: El reloj NO se para, continúa corriendo mientras el usuario ve las opciones.
       setIsMultipleChoice(true);
+    } else {
+      setIsTimerRunning(false); 
+      if (buttonType === "gol") {
+        triggerAudio("gol");
+        setScore((prev) => ({
+          ...prev,
+          [possession.team]: prev[possession.team] + 1,
+        }));
+        setPossession((prev) => ({
+          team: getDefenderTeam(prev.team),
+          role: "5",
+        }));
+        setTimeLeft(30);
+        setIsMultipleChoice(false);
+        advanceToNextPlay();
+      } else if (buttonType === "mal-pase") {
+        triggerAudio("error");
+        setPossession((prev) => ({
+          team: getDefenderTeam(prev.team),
+          role: getRecoveryRole(prev.role),
+        }));
+        setTimeLeft(30);
+        setIsMultipleChoice(false);
+        advanceToNextPlay();
+      } else if (buttonType === "pase-largo") {
+        triggerAudio("pase-largo");
+        const roles: Role[] = ["DEF", "5", "VOL", "ENG", "9"];
+        const currentIndex = roles.indexOf(possession.role as any);
+        let nextIndex = Math.min(currentIndex + 2, roles.length - 1);
+        setPossession((prev) => ({ ...prev, role: roles[nextIndex] }));
+        setTimeLeft(30);
+        setIsMultipleChoice(false);
+        advanceToNextPlay();
+      }
     }
   };
 
@@ -310,7 +338,7 @@ export default function SoccerQuizTriangular() {
         }));
         setPossession((prev) => ({
           team: getDefenderTeam(prev.team),
-          role: "5", // CORREGIDO: Al definir colocado y meter gol, también saca el '5' rival
+          role: "5",
         }));
       } else {
         triggerAudio("pase-corto");
@@ -379,66 +407,81 @@ export default function SoccerQuizTriangular() {
         </div>
 
         <div className="flex-1 flex flex-col justify-center max-w-lg mx-auto w-full">
-          <div className="mb-2 flex items-center gap-2">
-            <span className={`px-3 py-1 border rounded-full text-[10px] font-black uppercase tracking-[0.2em] flex items-center gap-2 transition-colors ${isDarkTheme ? "bg-blue-600/20 border-blue-500/50 text-blue-400" : "bg-blue-100 border-blue-400 text-blue-600"}`}>
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-              </span>
-              Ataca: {BANDERAS[currentTeamName]} {currentTeamName} (Dorsal {DORSALES[possession.role] || "1"})
-            </span>
-          </div>
-
-          <div className="mb-4 flex flex-wrap items-center gap-3 bg-black/5 dark:bg-white/5 p-3 rounded-2xl border border-slate-300 dark:border-zinc-800 w-full justify-between sm:w-fit">
-            <div className={`text-3xl font-black tabular-nums ${timeLeft <= 10 ? "text-red-500 animate-pulse" : ""}`}>⏱️ {timeLeft}s</div>
-            <div className="flex flex-wrap gap-1.5">
-              <button onClick={() => setIsTimerRunning(true)} className={`px-2.5 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all active:scale-95 ${isTimerRunning ? "bg-green-600 text-white opacity-40 cursor-not-allowed" : "bg-green-600 text-white hover:bg-green-700 shadow-md"}`} disabled={isTimerRunning}>▶️ Play</button>
-              <button onClick={() => setIsTimerRunning(false)} className={`px-2.5 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all active:scale-95 ${!isTimerRunning ? "bg-amber-500 text-white opacity-40 cursor-not-allowed" : "bg-amber-500 text-white hover:bg-amber-600 shadow-md"}`} disabled={!isTimerRunning}>⏸️ Pausa</button>
-              <button onClick={handleSkipQuestion} className={`px-2.5 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all active:scale-95 bg-indigo-600 text-white hover:bg-indigo-700 shadow-md border-b-2 border-indigo-800`}>🔄 Cambiar</button>
+          {isTransitioning ? (
+            /* Pantalla de Espera entre preguntas (5 segundos) */
+            <div className="flex flex-col items-center justify-center py-12 text-center animate-pulse">
+              <div className="text-6xl mb-4">📢</div>
+              <h3 className="text-2xl font-black uppercase italic tracking-tight mb-2">Preparando la siguiente jugada...</h3>
+              <p className="text-sm opacity-70 mb-6">Analizando táctica en el vestuario</p>
+              <div className={`text-5xl font-black px-6 py-3 rounded-2xl ${isDarkTheme ? "bg-zinc-900 border border-zinc-800" : "bg-white border border-slate-200"} shadow-md`}>
+                {transitionCountdown}s
+              </div>
             </div>
-          </div>
+          ) : (
+            /* Interfaz de Juego Activa */
+            <>
+              <div className="mb-2 flex items-center gap-2">
+                <span className={`px-3 py-1 border rounded-full text-[10px] font-black uppercase tracking-[0.2em] flex items-center gap-2 transition-colors ${isDarkTheme ? "bg-blue-600/20 border-blue-500/50 text-blue-400" : "bg-blue-100 border-blue-400 text-blue-600"}`}>
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                  </span>
+                  Ataca: {BANDERAS[currentTeamName]} {currentTeamName} (Dorsal {DORSALES[possession.role] || "1"})
+                </span>
+              </div>
 
-          <div className={`mb-2 text-xs font-black tracking-widest uppercase italic ${isDarkTheme ? "text-zinc-500" : "text-slate-600"}`}>Pregunta de {currentQ?.country || "Fútbol"}</div>
-          <h2 className="text-3xl md:text-4xl font-black mb-10 leading-none italic uppercase tracking-tight">{currentQ?.question}</h2>
-
-          <div className="space-y-3">
-            {!isMultipleChoice ? (
-              <>
-                {possession.role === "9" ? (
-                  <>
-                    <button onClick={() => handleButtonClick("gol")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-orange-600 text-white border-orange-600 hover:bg-orange-700">🚀 Reventar el Arco (GOOOOL!!!!)</button>
-                    <button onClick={() => handleButtonClick("pase-corto")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-blue-600 text-white border-blue-600 hover:bg-blue-700">🎯 Tiro colocado (Ver Opciones)</button>
-                    <button onClick={() => handleButtonClick("mal-pase")} className={`w-full p-4 font-black rounded-lg transition-all text-base uppercase border-2 ${isDarkTheme ? "bg-red-900/20 border-red-800 text-red-400 hover:bg-red-900/40" : "bg-red-50 border-red-300 text-red-600 hover:bg-red-100"}`}>❌ Tirarla a la tribuna</button>
-                  </>
-                ) : possession.role === "ENG" ? (
-                  <>
-                    <button onClick={() => handleButtonClick("gol")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-orange-600 text-white border-orange-600 hover:bg-orange-700">🚀 Tiro fuerte (¡Gol!)</button>
-                    <button onClick={() => handleButtonClick("pase-corto")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-blue-600 text-white border-blue-600 hover:bg-blue-700">🎯 Pase corto (Ver Opciones)</button>
-                    <button onClick={() => handleButtonClick("mal-pase")} className={`w-full p-4 font-black rounded-lg transition-all text-base uppercase border-2 ${isDarkTheme ? "bg-red-900/20 border-red-800 text-red-400 hover:bg-red-900/40" : "bg-red-50 border-red-300 text-red-600 hover:bg-red-100"}`}>❌ Mal pase</button>
-                  </>
-                ) : (
-                  <>
-                    <button onClick={() => handleButtonClick("pase-largo")} className={`w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 ${isDarkTheme ? "bg-white text-black border-white hover:bg-zinc-100" : "bg-slate-800 text-white border-slate-800 hover:bg-slate-700"}`}>🔫 Pase Largo</button>
-                    <button onClick={() => handleButtonClick("pase-corto")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-blue-600 text-white border-blue-600 hover:bg-blue-700">🎯 Pase Corto (Ver Opciones)</button>
-                    <button onClick={() => handleButtonClick("mal-pase")} className={`w-full p-4 font-black rounded-lg transition-all text-base uppercase border-2 ${isDarkTheme ? "bg-red-900/20 border-red-800 text-red-400 hover:bg-red-900/40" : "bg-red-50 border-red-300 text-red-600 hover:bg-red-100"}`}>❌ Pelota perdida</button>
-                  </>
-                )}
-              </>
-            ) : (
-              <div className="space-y-4">
-                <div className={`text-sm font-black tracking-widest uppercase ${isDarkTheme ? "text-blue-400" : "text-blue-600"}`}>{possession.role === "9" ? "Opciones para definir Colocado:" : "Opciones para descargar Pase Corto:"}</div>
-                <div className="grid grid-cols-1 gap-2">
-                  {currentQ?.options.map((opt: string) => (
-                    <div key={opt} className={`p-4 font-bold rounded-lg text-base uppercase border ${isDarkTheme ? "bg-zinc-900 border-zinc-800 text-zinc-300" : "bg-white border-slate-200 text-slate-700"}`}>• {opt}</div>
-                  ))}
-                </div>
-                <div className="grid grid-cols-2 gap-3 pt-2">
-                  <button onClick={() => handleMenuDecision(true)} className="p-5 font-black rounded-xl transition-all text-lg uppercase bg-green-600 text-white hover:bg-green-700 active:scale-95 shadow-md">{possession.role === "9" ? "⚽ ¡GOL!" : "✅ Pase Exitoso"}</button>
-                  <button onClick={() => handleMenuDecision(false)} className="p-5 font-black rounded-xl transition-all text-lg uppercase bg-red-600 text-white hover:bg-red-700 active:scale-95 shadow-md">{possession.role === "9" ? "❌ Tiro Errado" : "❌ Pase Cortado"}</button>
+              <div className="mb-4 flex flex-wrap items-center gap-3 bg-black/5 dark:bg-white/5 p-3 rounded-2xl border border-slate-300 dark:border-zinc-800 w-full justify-between sm:w-fit">
+                <div className={`text-3xl font-black tabular-nums ${timeLeft <= 10 ? "text-red-500 animate-pulse" : ""}`}>⏱️ {timeLeft}s</div>
+                <div className="flex flex-wrap gap-1.5">
+                  <button onClick={() => setIsTimerRunning(true)} className={`px-2.5 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all active:scale-95 ${isTimerRunning ? "bg-green-600 text-white opacity-40 cursor-not-allowed" : "bg-green-600 text-white hover:bg-green-700 shadow-md"}`} disabled={isTimerRunning}>▶️ Play</button>
+                  <button onClick={() => setIsTimerRunning(false)} className={`px-2.5 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all active:scale-95 ${!isTimerRunning ? "bg-amber-500 text-white opacity-40 cursor-not-allowed" : "bg-amber-500 text-white hover:bg-amber-600 shadow-md"}`} disabled={!isTimerRunning}>⏸️ Pausa</button>
+                  <button onClick={handleSkipQuestion} className={`px-2.5 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all active:scale-95 bg-indigo-600 text-white hover:bg-indigo-700 shadow-md border-b-2 border-indigo-800`}>🔄 Cambiar</button>
                 </div>
               </div>
-            )}
-          </div>
+
+              <div className={`mb-2 text-xs font-black tracking-widest uppercase italic ${isDarkTheme ? "text-zinc-500" : "text-slate-600"}`}>Pregunta de {currentQ?.country || "Fútbol"}</div>
+              <h2 className="text-3xl md:text-4xl font-black mb-10 leading-none italic uppercase tracking-tight">{currentQ?.question}</h2>
+
+              <div className="space-y-3">
+                {!isMultipleChoice ? (
+                  <>
+                    {possession.role === "9" ? (
+                      <>
+                        <button onClick={() => handleButtonClick("gol")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-orange-600 text-white border-orange-600 hover:bg-orange-700">🚀 Reventar el Arco (GOOOOL!!!!)</button>
+                        <button onClick={() => handleButtonClick("pase-corto")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-blue-600 text-white border-blue-600 hover:bg-blue-700">🎯 Tiro colocado (Ver Opciones)</button>
+                        <button onClick={() => handleButtonClick("mal-pase")} className={`w-full p-4 font-black rounded-lg transition-all text-base uppercase border-2 ${isDarkTheme ? "bg-red-900/20 border-red-800 text-red-400 hover:bg-red-900/40" : "bg-red-50 border-red-300 text-red-600 hover:bg-red-100"}`}>❌ Tirarla a la tribuna</button>
+                      </>
+                    ) : possession.role === "ENG" ? (
+                      <>
+                        <button onClick={() => handleButtonClick("gol")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-orange-600 text-white border-orange-600 hover:bg-orange-700">🚀 Tiro fuerte (¡Gol!)</button>
+                        <button onClick={() => handleButtonClick("pase-corto")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-blue-600 text-white border-blue-600 hover:bg-blue-700">🎯 Pase corto (Ver Opciones)</button>
+                        <button onClick={() => handleButtonClick("mal-pase")} className={`w-full p-4 font-black rounded-lg transition-all text-base uppercase border-2 ${isDarkTheme ? "bg-red-900/20 border-red-800 text-red-400 hover:bg-red-900/40" : "bg-red-50 border-red-300 text-red-600 hover:bg-red-100"}`}>❌ Mal pase</button>
+                      </>
+                    ) : (
+                      <>
+                        <button onClick={() => handleButtonClick("pase-largo")} className={`w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 ${isDarkTheme ? "bg-white text-black border-white hover:bg-zinc-100" : "bg-slate-800 text-white border-slate-800 hover:bg-slate-700"}`}>🔫 Pase Largo</button>
+                        <button onClick={() => handleButtonClick("pase-corto")} className="w-full p-5 font-black uppercase text-lg transition-all active:scale-95 shadow-lg rounded border-2 bg-blue-600 text-white border-blue-600 hover:bg-blue-700">🎯 Pase Corto (Ver Opciones)</button>
+                        <button onClick={() => handleButtonClick("mal-pase")} className={`w-full p-4 font-black rounded-lg transition-all text-base uppercase border-2 ${isDarkTheme ? "bg-red-900/20 border-red-800 text-red-400 hover:bg-red-900/40" : "bg-red-50 border-red-300 text-red-600 hover:bg-red-100"}`}>❌ Pelota perdida</button>
+                      </>
+                    )}
+                  </>
+                ) : (
+                  <div className="space-y-4">
+                    <div className={`text-sm font-black tracking-widest uppercase ${isDarkTheme ? "text-blue-400" : "text-blue-600"}`}>{possession.role === "9" ? "Opciones para definir Colocado:" : "Opciones para descargar Pase Corto:"}</div>
+                    <div className="grid grid-cols-1 gap-2">
+                      {currentQ?.options.map((opt: string) => (
+                        <div key={opt} className={`p-4 font-bold rounded-lg text-base uppercase border ${isDarkTheme ? "bg-zinc-900 border-zinc-800 text-zinc-300" : "bg-white border-slate-200 text-slate-700"}`}>• {opt}</div>
+                      ))}
+                    </div>
+                    <div className="grid grid-cols-2 gap-3 pt-2">
+                      <button onClick={() => handleMenuDecision(true)} className="p-5 font-black rounded-xl transition-all text-lg uppercase bg-green-600 text-white hover:bg-green-700 active:scale-95 shadow-md">{possession.role === "9" ? "⚽ ¡GOL!" : "✅ Pase Exitoso"}</button>
+                      <button onClick={() => handleMenuDecision(false)} className="p-5 font-black rounded-xl transition-all text-lg uppercase bg-red-600 text-white hover:bg-red-700 active:scale-95 shadow-md">{possession.role === "9" ? "❌ Tiro Errado" : "❌ Pase Cortado"}</button>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </>
+          )}
         </div>
       </div>
 
