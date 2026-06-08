@@ -2840,7 +2840,7 @@ export const QUESTIONS_DB: QuestionItem[] = [
   },
   {
     country: "España",
-    question: "ESP-13 | ¿Qué artistba español lideró el movimiento cubista y pintó el 'Guernica'?",
+    question: "ESP-13 | ¿Qué artista español lideró el movimiento cubista y pintó el 'Guernica'?",
     answer: "pablo picasso",
     options: ["Joan Miró", "Salvador Dalí", "Pablo Picasso"],
   },
